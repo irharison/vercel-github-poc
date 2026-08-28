@@ -105,7 +105,7 @@ export default function Home() {
             {facts.map((fact) => (
               <div
                 key={fact.label}
-                className="border-t border-line px-5 py-4 sm:border-t-0 sm:border-l sm:first:border-l-0 lg:border-l"
+                className="border-t border-line px-5 py-4 last:border-b-0 sm:odd:border-r lg:border-r lg:last:border-r-0"
               >
                 <dt className="font-mono text-[11px] tracking-wider text-muted uppercase">
                   {fact.label}
