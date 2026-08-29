@@ -2,6 +2,7 @@
   "name": "vercel-github-poc",
   "version": "0.1.0",
   "private": true,
+  "description": "Unofficial public register of Labour office-holders with a documented Fabian Society relationship",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

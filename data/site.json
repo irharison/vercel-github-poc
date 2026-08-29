@@ -1,0 +1,15 @@
+{
+  "title": "Labour–Fabian public register",
+  "shortTitle": "Public register",
+  "lastUpdated": "2026-08-29",
+  "tagline": "A sourced directory of Labour public office-holders with a documented relationship to the Fabian Society.",
+  "repoUrl": "https://github.com/irharison/vercel-github-poc",
+  "limitations": [
+    "The Fabian Society does not publish a complete membership list. This register only includes people for whom a named Fabian role, an explicit membership statement, or a published Fabian pamphlet/essay can be cited from a public URL.",
+    "The society’s 2024–25 annual report said 141 Fabian MPs were elected in July 2024. That list was not published. Those unnamed MPs are not invented here.",
+    "Writing a pamphlet or speaking at a Fabian event is not the same as membership. People included only as authors are labelled as such and are excluded from the ‘named role or membership’ count.",
+    "Wikipedia is treated as a lead, never as the sole source.",
+    "Donation and register-of-interests coverage is incomplete. Where a figure was not copied from an official record, the field is left blank.",
+    "This is not an official Fabian Society or Labour Party list."
+  ]
+}

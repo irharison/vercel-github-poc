@@ -1,10 +1,12 @@
-# GitHub → Vercel PoC
+# Labour–Fabian public register
 
-A small Next.js (App Router) web app that proves GitHub → Vercel auto-deploy.
+An unofficial, statically generated directory of **Labour public office-holders** with a **documented** relationship to the [Fabian Society](https://fabians.org.uk/).
 
-Vercel detects Next.js from `package.json` and deploys with **zero extra config**. Pushing to `main` triggers a production deployment. No custom server, no `vercel.json`, and no extra secrets.
+Live site: <https://vercel-github-poc.vercel.app>
 
-The homepage is a finished one-pager named as a GitHub → Vercel proof of concept — not the default create-next-app splash.
+This is political transparency, not a membership scrape. The Fabian Society does not publish a complete membership list. People are included only when a public source names a Fabian role, states membership, or records a Fabian pamphlet or essay. Wikipedia is never the sole source.
+
+The site is not an official Fabian Society or Labour Party publication.
 
 ## Local
 
@@ -15,10 +17,25 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000). `npm run build` is the same command Vercel runs.
 
-## Deploy on Vercel
+## How to add a person
 
-1. Import [this GitHub repo](https://github.com/irharison/vercel-github-poc) in Vercel.
-2. Leave the detected Next.js settings as-is.
-3. Push to `main`. Vercel builds and deploys automatically.
+1. Open `data/people.json`.
+2. Copy an existing object and give it a unique `slug`.
+3. Fill only fields you can source. Leave donations, organisations or output blank if unknown.
+4. Set `inclusionBasis` to `named_role_or_membership` only when a source names a role or states membership. Use `documented_output_only` for pamphlet or essay authors without a membership citation.
+5. Add every citation to `sources` with `url`, `label` and `accessed` (ISO date).
+6. Check the TypeScript fields in `lib/types.ts` if the build fails.
 
-Connect the project once; after that, every push to `main` ships a new production deploy.
+Do not invent membership. Do not scrape member-only, leaked or paywalled lists.
+
+Site-wide copy and the last-updated date live in `data/site.json`.
+
+## Deploy
+
+This repo is already linked to the Vercel project `vercel-github-poc`. Next.js is auto-detected. There is no `vercel.json` and no runtime API keys.
+
+Push to `main` to deploy production.
+
+## What this replaced
+
+The previous homepage was a GitHub → Vercel proof of concept. That copy is gone.

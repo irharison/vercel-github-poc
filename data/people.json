@@ -1,0 +1,2356 @@
+[
+  {
+    "slug": "keir-starmer",
+    "name": "Keir Starmer",
+    "honorific": "Sir",
+    "currentPosition": "MP for Holborn and St Pancras; former Prime Minister (2024–2026)",
+    "positionType": "mp",
+    "constituency": "Holborn and St Pancras",
+    "chamber": "commons",
+    "labourRole": "former_minister",
+    "party": "Labour",
+    "fabianSummary": "Former executive committee member; authored The Road Ahead (2021).",
+    "primaryFabianStatus": "executive",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "executive",
+        "title": "Executive committee member",
+        "end": "2020",
+        "current": false,
+        "summary": "The Fabian Society states he was a serving executive member when he became Labour leader in 2020, then stood down from the committee."
+      },
+      {
+        "status": "member",
+        "title": "Member",
+        "current": true,
+        "summary": "The society’s official history lists him among the Fabian membership of the 2020 Shadow Cabinet."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "pamphlet",
+        "title": "The Road Ahead",
+        "date": "2021-09-22",
+        "url": "https://fabians.org.uk/publication/the-road-ahead/"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society, Our history",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/on-the-horizon/",
+        "label": "Andrew Harrop, On the Horizon",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/publication/the-road-ahead/",
+        "label": "The Road Ahead pamphlet page",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://members.parliament.uk/member/4514/contact",
+        "label": "UK Parliament member page",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "wes-streeting",
+    "name": "Wes Streeting",
+    "honorific": "The Rt Hon",
+    "currentPosition": "Secretary of State for Defence; MP for Ilford North",
+    "positionType": "mp",
+    "constituency": "Ilford North",
+    "chamber": "commons",
+    "labourRole": "cabinet",
+    "party": "Labour",
+    "fabianSummary": "Former executive committee member; pamphlet author and 2025 New Year Conference keynote.",
+    "primaryFabianStatus": "executive",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "executive",
+        "title": "Executive committee member",
+        "end": "2024-07",
+        "current": false,
+        "summary": "Listed on the 2023–24 executive; the annual report says he stepped down after the 2024 election on joining government."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "pamphlet",
+        "title": "Let Us Face The Future Again",
+        "date": "2020-03-22",
+        "url": "https://fabians.org.uk/publication/let-us-face-the-future-again/"
+      },
+      {
+        "kind": "foreword",
+        "title": "Foreword, Care to Share: Building the National Care Service",
+        "url": "https://fabians.org.uk/"
+      },
+      {
+        "kind": "speech",
+        "title": "Keynote, Fabian Society New Year Conference 2025",
+        "date": "2025"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2024/11/Final-ANNUAL-REPORT-2023-2024-compressed.pdf",
+        "label": "Fabian Society annual report 2023–24",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society, Our history",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/publication/let-us-face-the-future-again/",
+        "label": "Let Us Face The Future Again",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.gov.uk/government/people/wes-streeting",
+        "label": "GOV.UK, Wes Streeting",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "anneliese-dodds",
+    "name": "Anneliese Dodds",
+    "honorific": "Dame",
+    "currentPosition": "MP for Oxford East; co-chair of the Fabian Society",
+    "positionType": "mp",
+    "constituency": "Oxford East",
+    "chamber": "commons",
+    "labourRole": "former_minister",
+    "party": "Labour and Co-operative",
+    "fabianSummary": "Current co-chair; former vice-chair; pamphlet author.",
+    "primaryFabianStatus": "co_chair",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "co_chair",
+        "title": "Co-chair",
+        "start": "2026-08",
+        "current": true,
+        "summary": "Elected co-chair with Dr Sonia Adesara in August 2026."
+      },
+      {
+        "status": "vice_chair",
+        "title": "Vice-chair",
+        "end": "2024-07",
+        "current": false,
+        "summary": "Vice-chair on the 2023–24 executive; stood down after joining government."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "pamphlet",
+        "title": "Equal Footing",
+        "date": "2024-01-09",
+        "url": "https://fabians.org.uk/publication/equal-footing/"
+      },
+      {
+        "kind": "essay",
+        "title": "A changing world, in Common Endeavour",
+        "date": "2026-04-14",
+        "url": "https://fabians.org.uk/publication/common-endeavour/"
+      },
+      {
+        "kind": "article",
+        "title": "Are you already thinking like a Fabian? (with Sonia Adesara)",
+        "date": "2026-08",
+        "url": "https://labourlist.org/2026/08/are-you-already-thinking-like-a-fabian/"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/executive-committee-2017-19/",
+        "label": "Fabian Society executive committee",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://labourlist.org/2026/08/are-you-already-thinking-like-a-fabian/",
+        "label": "LabourList, August 2026",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/publication/equal-footing/",
+        "label": "Equal Footing",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2024/11/Final-ANNUAL-REPORT-2023-2024-compressed.pdf",
+        "label": "Fabian Society annual report 2023–24",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/publication/common-endeavour/",
+        "label": "Common Endeavour",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "angela-rayner",
+    "name": "Angela Rayner",
+    "honorific": "The Rt Hon",
+    "currentPosition": "Secretary of State for Housing, Communities and Local Government; MP for Ashton-under-Lyne",
+    "positionType": "mp",
+    "constituency": "Ashton-under-Lyne",
+    "chamber": "commons",
+    "labourRole": "cabinet",
+    "party": "Labour",
+    "fabianSummary": "Named by the Fabian Society as a member while deputy Labour leader.",
+    "primaryFabianStatus": "member",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "member",
+        "title": "Member",
+        "current": true,
+        "summary": "The society’s official history says the 2020 Shadow Cabinet’s Fabian membership included Rayner as deputy Labour leader."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society, Our history",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.gov.uk/government/news/ministerial-appointments-july-2026",
+        "label": "GOV.UK ministerial appointments, July 2026",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "rachel-reeves",
+    "name": "Rachel Reeves",
+    "honorific": "The Rt Hon",
+    "currentPosition": "MP for Leeds West and Pudsey; former Chancellor of the Exchequer",
+    "positionType": "mp",
+    "constituency": "Leeds West and Pudsey",
+    "chamber": "commons",
+    "labourRole": "former_minister",
+    "party": "Labour",
+    "fabianSummary": "Former executive committee member (including 2014–15).",
+    "primaryFabianStatus": "executive",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "executive",
+        "title": "Executive committee member",
+        "end": "2015",
+        "current": false,
+        "summary": "Named on the 2014–15 executive. The society’s history later describes her as a former executive member and a Fabian in the 2020 Shadow Cabinet."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society, Our history",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2018/01/Annual-report-2015-small.pdf",
+        "label": "Fabian Society annual report 2014–15",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.gov.uk/government/news/ministerial-appointments-july-2026",
+        "label": "GOV.UK ministerial appointments, July 2026",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "ed-miliband",
+    "name": "Ed Miliband",
+    "honorific": "The Rt Hon",
+    "currentPosition": "Secretary of State for Foreign, Commonwealth and Development Affairs; MP for Doncaster North",
+    "positionType": "mp",
+    "constituency": "Doncaster North",
+    "chamber": "commons",
+    "labourRole": "cabinet",
+    "party": "Labour",
+    "fabianSummary": "Described by the Fabian Society as a prominent member while Labour leader, 2010–2015.",
+    "primaryFabianStatus": "member",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "member",
+        "title": "Member",
+        "current": true,
+        "summary": "The society’s official history calls him ‘a prominent member of the society’ during his Labour leadership."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society, Our history",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.gov.uk/government/ministers",
+        "label": "GOV.UK ministers list",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "seema-malhotra",
+    "name": "Seema Malhotra",
+    "currentPosition": "MP for Feltham and Heston; Fabian Society vice-president",
+    "positionType": "mp",
+    "constituency": "Feltham and Heston",
+    "chamber": "commons",
+    "labourRole": "former_minister",
+    "party": "Labour and Co-operative",
+    "fabianSummary": "Vice-president; former chair (2005–06 and 2014–16); founder of the Fabian Women's Network.",
+    "primaryFabianStatus": "vice_president",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "vice_president",
+        "title": "Vice-president",
+        "current": true,
+        "summary": "Listed among current vice-presidents on the society’s Our people page."
+      },
+      {
+        "status": "chair",
+        "title": "Chair",
+        "start": "2014",
+        "end": "2016",
+        "current": false,
+        "summary": "Named as chair in the society’s published chairs list (also 2005–06)."
+      },
+      {
+        "status": "fabian_womens_network",
+        "title": "Founder, Fabian Women's Network",
+        "start": "2005",
+        "current": false,
+        "summary": "The 2024–25 annual report credits her with founding FWN."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/",
+        "label": "Fabian Society, Our people",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society chairs list",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.gov.uk/government/people/seema-malhotra",
+        "label": "GOV.UK, Seema Malhotra",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "sadiq-khan",
+    "name": "Sadiq Khan",
+    "honorific": "The Rt Hon",
+    "currentPosition": "Mayor of London",
+    "positionType": "mayor",
+    "constituency": "Greater London",
+    "chamber": "mayoral",
+    "labourRole": "mayor",
+    "party": "Labour and Co-operative",
+    "fabianSummary": "Vice-president; chair 2008–10; pamphlet author.",
+    "primaryFabianStatus": "vice_president",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "vice_president",
+        "title": "Vice-president",
+        "current": true,
+        "summary": "Listed among current vice-presidents."
+      },
+      {
+        "status": "chair",
+        "title": "Chair",
+        "start": "2008",
+        "end": "2010",
+        "current": false,
+        "summary": "Named as chair in the society’s chairs list and in a 2015 society article."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "pamphlet",
+        "title": "Fairness not Favours",
+        "date": "2008-09-01",
+        "url": "https://fabians.org.uk/publication/fairness-not-favours/"
+      },
+      {
+        "kind": "pamphlet",
+        "title": "Punishment and Reform (editor)",
+        "date": "2011",
+        "url": "https://fabians.org.uk/sadiq-khan-a-fabian-for-london/"
+      },
+      {
+        "kind": "pamphlet",
+        "title": "Our London (editor)",
+        "date": "2013",
+        "url": "https://fabians.org.uk/sadiq-khan-a-fabian-for-london/"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/",
+        "label": "Fabian Society, Our people",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society chairs list",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/sadiq-khan-a-fabian-for-london/",
+        "label": "Sadiq Khan: A Fabian for London (2015)",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/publication/fairness-not-favours/",
+        "label": "Fairness not Favours",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "liam-byrne",
+    "name": "Liam Byrne",
+    "honorific": "The Rt Hon",
+    "currentPosition": "MP for Birmingham Hodge Hill and Solihull North",
+    "positionType": "mp",
+    "constituency": "Birmingham Hodge Hill and Solihull North",
+    "chamber": "commons",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Current executive committee member; Common Endeavour contributor.",
+    "primaryFabianStatus": "executive",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "executive",
+        "title": "Executive committee member",
+        "current": true,
+        "summary": "Listed on the current executive page and in the 2024–25 annual report."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "essay",
+        "title": "Why populists are winning, in Common Endeavour",
+        "date": "2026-04-14",
+        "url": "https://fabians.org.uk/publication/common-endeavour/"
+      }
+    ],
+    "donations": [],
+    "organisations": [
+      {
+        "name": "Global Parliamentary Network on the World Bank and IMF",
+        "kind": "parliamentary network",
+        "role": "Chair"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/executive-committee-2017-19/",
+        "label": "Fabian Society executive committee",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/publication/common-endeavour/",
+        "label": "Common Endeavour",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "sarah-russell",
+    "name": "Sarah Russell",
+    "currentPosition": "MP for Congleton",
+    "positionType": "mp",
+    "constituency": "Congleton",
+    "chamber": "commons",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Executive committee member; FWN mentoring graduate. Declared on the Commons register.",
+    "primaryFabianStatus": "executive",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "executive",
+        "title": "Executive committee member",
+        "start": "2024-07-16",
+        "current": true,
+        "summary": "Declared as an unpaid executive role on the Register of Members’ Financial Interests; also listed on the society’s executive page."
+      },
+      {
+        "status": "fabian_womens_network",
+        "title": "Graduate, Fabian Women's Mentoring Scheme",
+        "current": false,
+        "summary": "Stated on her Fabian executive biography."
+      }
+    ],
+    "outputs": [],
+    "donations": [
+      {
+        "donor": "Not a donation",
+        "date": "2024-07-16",
+        "nature": "Unpaid miscellaneous interest: member of the Fabian Society executive committee",
+        "recipient": "Sarah Russell MP (declaration)",
+        "recordUrl": "https://www.theyworkforyou.com/mp/26571/sarah_russell/congleton/register",
+        "fabianRelated": true
+      }
+    ],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://www.theyworkforyou.com/mp/26571/sarah_russell/congleton/register",
+        "label": "TheyWorkForYou register extract",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/executive-committee-2017-19/",
+        "label": "Fabian Society executive committee",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "johanna-baxter",
+    "name": "Johanna Baxter",
+    "currentPosition": "MP for Paisley and Renfrewshire South",
+    "positionType": "mp",
+    "constituency": "Paisley and Renfrewshire South",
+    "chamber": "commons",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Current executive committee member; former FWN executive member.",
+    "primaryFabianStatus": "executive",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "executive",
+        "title": "Executive committee member",
+        "current": true,
+        "summary": "Listed with biography on the current executive page."
+      },
+      {
+        "status": "fabian_womens_network",
+        "title": "Fabian Women's Network executive (former)",
+        "current": false,
+        "summary": "Her official Fabian biography says she previously served on the FWN executive."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [
+      {
+        "name": "Work and Pensions Select Committee",
+        "kind": "parliamentary committee",
+        "role": "Vice-chair"
+      },
+      {
+        "name": "APPG for Ending the Need for Foodbanks",
+        "kind": "all-party group",
+        "role": "Chair"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/executive-committee-2017-19/",
+        "label": "Fabian Society executive committee",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "bayo-alaba",
+    "name": "Bayo Alaba",
+    "currentPosition": "MP for Southend East and Rochford",
+    "positionType": "mp",
+    "constituency": "Southend East and Rochford",
+    "chamber": "commons",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Named on the 2024–25 national executive committee.",
+    "primaryFabianStatus": "executive",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "executive",
+        "title": "Executive committee member",
+        "current": false,
+        "summary": "Listed on the 2024–25 executive in the society’s annual report. Later executive pages do not list him; treat as a recent rather than confirmed current role."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://members.parliament.uk/member/5097/contact",
+        "label": "UK Parliament, Bayo Alaba",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "catherine-fookes",
+    "name": "Catherine Fookes",
+    "currentPosition": "MP for Monmouthshire",
+    "positionType": "mp",
+    "constituency": "Monmouthshire",
+    "chamber": "commons",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Named on the 2024–25 national executive; FWN-linked parliamentary activity recorded by the society.",
+    "primaryFabianStatus": "executive",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "executive",
+        "title": "Executive committee member",
+        "current": false,
+        "summary": "Listed on the 2024–25 executive. Later executive pages do not list her."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "article",
+        "title": "Welsh elections commentary in Fabian Review (cited in 2024–25 annual report)",
+        "date": "2025"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "jeevun-sandher",
+    "name": "Jeevun Sandher",
+    "currentPosition": "MP for Loughborough",
+    "positionType": "mp",
+    "constituency": "Loughborough",
+    "chamber": "commons",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Named on the 2024–25 executive; lead contributor to Common Endeavour.",
+    "primaryFabianStatus": "executive",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "executive",
+        "title": "Executive committee member",
+        "current": false,
+        "summary": "Listed on the 2024–25 executive."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "essay",
+        "title": "Ending the affordability crisis, in Common Endeavour",
+        "date": "2026-04-14",
+        "url": "https://fabians.org.uk/publication/common-endeavour/"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/publication/common-endeavour/",
+        "label": "Common Endeavour",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "taiwo-owatemi",
+    "name": "Taiwo Owatemi",
+    "currentPosition": "MP for Coventry North West",
+    "positionType": "mp",
+    "constituency": "Coventry North West",
+    "chamber": "commons",
+    "labourRole": "former_minister",
+    "party": "Labour",
+    "fabianSummary": "Former executive committee member; stood down after the 2024 election.",
+    "primaryFabianStatus": "executive",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "executive",
+        "title": "Executive committee member",
+        "end": "2024-07",
+        "current": false,
+        "summary": "Listed on the 2023–24 executive as having stepped down after the election."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2024/11/Final-ANNUAL-REPORT-2023-2024-compressed.pdf",
+        "label": "Fabian Society annual report 2023–24",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.gov.uk/government/news/ministerial-appointments-july-2026",
+        "label": "GOV.UK ministerial appointments, July 2026",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "martin-mccluskey",
+    "name": "Martin McCluskey",
+    "currentPosition": "Parliamentary Under-Secretary of State (Minister for Local Energy and Jobs); MP for Inverclyde and Renfrewshire West",
+    "positionType": "mp",
+    "constituency": "Inverclyde and Renfrewshire West",
+    "chamber": "commons",
+    "labourRole": "minister",
+    "party": "Labour",
+    "fabianSummary": "Scottish Fabians chair (2024–25 annual report); earlier national executive representative.",
+    "primaryFabianStatus": "chair",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "chair",
+        "title": "Chair, Scottish Fabians",
+        "current": false,
+        "summary": "Named as Scottish Fabians chair in the 2024–25 annual report."
+      },
+      {
+        "status": "executive",
+        "title": "National executive (Scottish Fabians representative)",
+        "end": "2024-07",
+        "current": false,
+        "summary": "Listed on the 2023–24 national executive; stood down after the election."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2024/11/Final-ANNUAL-REPORT-2023-2024-compressed.pdf",
+        "label": "Fabian Society annual report 2023–24",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.gov.uk/government/ministers",
+        "label": "GOV.UK ministers list",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "ian-murray",
+    "name": "Ian Murray",
+    "honorific": "The Rt Hon",
+    "currentPosition": "Minister of State, Department for Digital, Culture, Media and Sport; MP for Edinburgh South",
+    "positionType": "mp",
+    "constituency": "Edinburgh South",
+    "chamber": "commons",
+    "labourRole": "minister",
+    "party": "Labour",
+    "fabianSummary": "Named on the Scottish Fabians executive in the 2024–25 annual report.",
+    "primaryFabianStatus": "executive",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "executive",
+        "title": "Scottish Fabians executive",
+        "current": false,
+        "summary": "Listed on the Scottish Fabians executive in the 2024–25 annual report. Current status after July 2026 ministerial appointment is not separately confirmed."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.gov.uk/government/news/ministerial-appointments-july-2026",
+        "label": "GOV.UK ministerial appointments, July 2026",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "jess-asato",
+    "name": "Jess Asato",
+    "currentPosition": "MP for Lowestoft",
+    "positionType": "mp",
+    "constituency": "Lowestoft",
+    "chamber": "commons",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Former chair of the Fabian Society (2012–14) and former Young Fabians chair.",
+    "primaryFabianStatus": "chair",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "chair",
+        "title": "Chair, Fabian Society",
+        "start": "2012",
+        "end": "2014",
+        "current": false,
+        "summary": "Named in the society’s official chairs list."
+      },
+      {
+        "status": "young_fabian",
+        "title": "Chair, Young Fabians",
+        "start": "2003",
+        "end": "2004",
+        "current": false,
+        "summary": "Young Fabians profile on fabians.org.uk describes her as chair in 2003/04."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society chairs list",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/fifteen-for-2015-jess-asato-one-of-our-own/",
+        "label": "Young Fabians, Fifteen for 2015: Jess Asato",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2018/01/Annual-Report-2014.pdf",
+        "label": "Fabian Society annual report 2014",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "steve-race",
+    "name": "Steve Race",
+    "currentPosition": "MP for Exeter",
+    "positionType": "mp",
+    "constituency": "Exeter",
+    "chamber": "commons",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Former Young Fabians chair and later a Fabian Society vice-chair.",
+    "primaryFabianStatus": "young_fabian",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "young_fabian",
+        "title": "Chair, Young Fabians",
+        "end": "2013",
+        "current": false,
+        "summary": "Signed the Young Fabians chair’s report in the 2013 annual report."
+      },
+      {
+        "status": "vice_chair",
+        "title": "Vice-chair, Fabian Society",
+        "start": "2014",
+        "end": "2015",
+        "current": false,
+        "summary": "Listed as vice-chair on the 2014 and 2014–15 executives."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2018/01/Annual-Report-FINAL.pdf",
+        "label": "Fabian Society annual report 2013",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2018/01/Annual-Report-2014.pdf",
+        "label": "Fabian Society annual report 2014",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2018/01/Annual-report-2015-small.pdf",
+        "label": "Fabian Society annual report 2014–15",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "margaret-hodge",
+    "name": "Margaret Hodge",
+    "honorific": "Dame",
+    "currentPosition": "Fabian Society vice-president; MP for Barking until 2024",
+    "positionType": "mp",
+    "constituency": "Barking (until 2024)",
+    "chamber": "commons",
+    "labourRole": "former_minister",
+    "party": "Labour",
+    "fabianSummary": "Vice-president; chair 1997–98. Included as a recent Labour MP still listed in a named Fabian office.",
+    "primaryFabianStatus": "vice_president",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "vice_president",
+        "title": "Vice-president",
+        "current": true,
+        "summary": "Listed among current vice-presidents (the society still styles her ‘MP’)."
+      },
+      {
+        "status": "chair",
+        "title": "Chair",
+        "start": "1997",
+        "end": "1998",
+        "current": false,
+        "summary": "Named in the society’s chairs list."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/",
+        "label": "Fabian Society, Our people",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society chairs list",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "kate-green",
+    "name": "Kate Green",
+    "currentPosition": "Deputy Mayor of Greater Manchester for Safer and Stronger Communities",
+    "positionType": "combined_authority",
+    "constituency": "Greater Manchester",
+    "chamber": "combined_authority",
+    "labourRole": "local_executive",
+    "party": "Labour",
+    "fabianSummary": "Vice-president; chair 2016–18. GMCA biography also records former executive chair.",
+    "primaryFabianStatus": "vice_president",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "vice_president",
+        "title": "Vice-president",
+        "current": true,
+        "summary": "Listed among current vice-presidents."
+      },
+      {
+        "status": "chair",
+        "title": "Chair",
+        "start": "2016",
+        "end": "2018",
+        "current": false,
+        "summary": "Named in the society’s chairs list and contemporaneous LabourList report."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [
+      {
+        "name": "Manchester Metropolitan University",
+        "kind": "university",
+        "role": "Governor"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/",
+        "label": "Fabian Society, Our people",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society chairs list",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://greatermanchester-ca.gov.uk/who-we-are/gmca-members/deputy-mayor-kate-green",
+        "label": "GMCA, Deputy Mayor Kate Green",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://labourlist.org/2016/12/fabians-appoint-centre-left-former-shadow-minister-kate-green-as-chair/",
+        "label": "LabourList, December 2016",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "alf-dubs",
+    "name": "Alf Dubs",
+    "honorific": "The Rt Hon Lord Dubs",
+    "currentPosition": "Member of the House of Lords",
+    "positionType": "peer",
+    "chamber": "lords",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Vice-president; chair 1994–95.",
+    "primaryFabianStatus": "vice_president",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "vice_president",
+        "title": "Vice-president",
+        "current": true,
+        "summary": "Listed among current vice-presidents."
+      },
+      {
+        "status": "chair",
+        "title": "Chair",
+        "start": "1994",
+        "end": "1995",
+        "current": false,
+        "summary": "Named in the society’s chairs list."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/",
+        "label": "Fabian Society, Our people",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society chairs list",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "dianne-hayter",
+    "name": "Dianne Hayter",
+    "honorific": "Baroness Hayter of Kentish Town",
+    "currentPosition": "Member of the House of Lords",
+    "positionType": "peer",
+    "chamber": "lords",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Vice-president; general secretary 1976–82; chair 1992–93.",
+    "primaryFabianStatus": "vice_president",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "vice_president",
+        "title": "Vice-president",
+        "current": true,
+        "summary": "Listed among current vice-presidents."
+      },
+      {
+        "status": "chair",
+        "title": "Chair",
+        "start": "1992",
+        "end": "1993",
+        "current": false,
+        "summary": "Named in the society’s chairs list."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/",
+        "label": "Fabian Society, Our people",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society chairs and general secretaries",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "neil-kinnock",
+    "name": "Neil Kinnock",
+    "honorific": "The Rt Hon Lord Kinnock",
+    "currentPosition": "Member of the House of Lords",
+    "positionType": "peer",
+    "chamber": "lords",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Vice-president. The society’s history records his engagement as Labour leader in the 1980s.",
+    "primaryFabianStatus": "vice_president",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "vice_president",
+        "title": "Vice-president",
+        "current": true,
+        "summary": "Listed among current vice-presidents."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/",
+        "label": "Fabian Society, Our people",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society, Our history",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "glenys-thornton",
+    "name": "Glenys Thornton",
+    "honorific": "Baroness Thornton",
+    "currentPosition": "Member of the House of Lords",
+    "positionType": "peer",
+    "chamber": "lords",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Vice-president; acting general secretary 1993–94.",
+    "primaryFabianStatus": "vice_president",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "vice_president",
+        "title": "Vice-president",
+        "current": true,
+        "summary": "Listed among current vice-presidents."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/",
+        "label": "Fabian Society, Our people",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society general secretaries list",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "roy-kennedy",
+    "name": "Roy Kennedy",
+    "honorific": "The Rt Hon Lord Kennedy of Southwark",
+    "currentPosition": "Captain of the Honourable Corps of Gentlemen-at-Arms (Lords Chief Whip)",
+    "positionType": "peer",
+    "chamber": "lords",
+    "labourRole": "whip",
+    "party": "Labour and Co-operative",
+    "fabianSummary": "Former chair (2022–23) and treasurer; interest ceased July 2024 on the Lords register.",
+    "primaryFabianStatus": "chair",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "chair",
+        "title": "Chair",
+        "start": "2022",
+        "end": "2023",
+        "current": false,
+        "summary": "Named in the society’s chairs list."
+      },
+      {
+        "status": "treasurer",
+        "title": "Treasurer and executive member",
+        "end": "2024-07-09",
+        "current": false,
+        "summary": "Lords register: treasurer and executive member, interest ceased 9 July 2024."
+      }
+    ],
+    "outputs": [],
+    "donations": [
+      {
+        "donor": "Not a donation",
+        "date": "2024-07-09",
+        "nature": "Registered interest: Treasurer and Member, Executive Committee, Fabian Society (ceased 9 July 2024)",
+        "recipient": "Lord Kennedy of Southwark (declaration)",
+        "recordUrl": "https://members.parliament.uk/member/4153/registeredinterests",
+        "fabianRelated": true
+      }
+    ],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://members.parliament.uk/member/4153/registeredinterests",
+        "label": "House of Lords register of interests",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society chairs list",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.gov.uk/government/ministers",
+        "label": "GOV.UK ministers list",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "sonny-leong",
+    "name": "Sonny Leong",
+    "honorific": "Lord Leong CBE",
+    "currentPosition": "Parliamentary Under-Secretary of State (Minister for Small Business and Enterprise)",
+    "positionType": "peer",
+    "chamber": "lords",
+    "labourRole": "minister",
+    "party": "Labour",
+    "fabianSummary": "Former vice-chair; stood down after the 2024 election.",
+    "primaryFabianStatus": "vice_chair",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "vice_chair",
+        "title": "Vice-chair",
+        "end": "2024-07",
+        "current": false,
+        "summary": "Listed as vice-chair on the 2023–24 executive; stood down after the election."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2024/11/Final-ANNUAL-REPORT-2023-2024-compressed.pdf",
+        "label": "Fabian Society annual report 2023–24",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.gov.uk/government/ministers",
+        "label": "GOV.UK ministers list",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "sara-hyde",
+    "name": "Sara Hyde",
+    "honorific": "Baroness Hyde of Bemerton",
+    "currentPosition": "Baroness in Waiting (Government Whip); former chair of the Fabian Society",
+    "positionType": "peer",
+    "chamber": "lords",
+    "labourRole": "whip",
+    "party": "Labour",
+    "fabianSummary": "Chair from 2023; later listed as chair in society materials before the August 2026 co-chair election.",
+    "primaryFabianStatus": "chair",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "chair",
+        "title": "Chair",
+        "start": "2023",
+        "end": "2026-08",
+        "current": false,
+        "summary": "Named as chair from 2023 on the society’s chairs list and as chair in the 2024–25 annual report. Succeeded as co-chairs by Dodds and Adesara in August 2026."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [
+      {
+        "name": "Islington London Borough Council",
+        "kind": "local authority",
+        "role": "Councillor (Caledonian); former executive member for health and social care"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society chairs list",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.gov.uk/government/news/ministerial-appointments-july-2026",
+        "label": "GOV.UK ministerial appointments, July 2026",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://labourlist.org/2026/08/are-you-already-thinking-like-a-fabian/",
+        "label": "LabourList on the 2026 co-chair election",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "mike-hedges",
+    "name": "Mike Hedges",
+    "currentPosition": "Member of the Senedd; chair of Welsh Fabians / Fabians Cymru",
+    "positionType": "senedd",
+    "constituency": "Wales (Senedd)",
+    "chamber": "senedd",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Welsh Fabians chair and national executive representative.",
+    "primaryFabianStatus": "chair",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "chair",
+        "title": "Chair, Welsh Fabians / Fabians Cymru",
+        "current": true,
+        "summary": "Named as Welsh Fabians chair in the 2024–25 annual report and on the current executive page."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "article",
+        "title": "Welsh Fabian blog articles (cited in 2024–25 annual report)",
+        "date": "2024-2025"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/executive-committee-2017-19/",
+        "label": "Fabian Society executive committee",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "michael-marra",
+    "name": "Michael Marra",
+    "currentPosition": "MSP for North East Scotland",
+    "positionType": "msp",
+    "constituency": "North East Scotland",
+    "chamber": "holyrood",
+    "labourRole": "opposition_frontbench",
+    "party": "Labour",
+    "fabianSummary": "Scottish Fabians representative on the 2024–25 national executive.",
+    "primaryFabianStatus": "executive",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "executive",
+        "title": "National executive (Scottish Fabians)",
+        "current": false,
+        "summary": "Listed on the 2024–25 national executive as the Scottish Fabians representative."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "article",
+        "title": "New foundations (Fabian Society site)",
+        "url": "https://fabians.org.uk/"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "daniel-johnson",
+    "name": "Daniel Johnson",
+    "currentPosition": "Member of the Scottish Parliament",
+    "positionType": "msp",
+    "chamber": "holyrood",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Declares Fabian membership on the Holyrood register; named on the Scottish Fabians executive.",
+    "primaryFabianStatus": "member",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "member",
+        "title": "Member",
+        "current": true,
+        "summary": "Holyrood register: ‘I am a member of the Fabian Society.’"
+      },
+      {
+        "status": "executive",
+        "title": "Scottish Fabians executive",
+        "current": false,
+        "summary": "Listed on the Scottish Fabians executive in the 2024–25 annual report."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [
+      {
+        "name": "Co-operative Party",
+        "kind": "political organisation",
+        "role": "Member"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.theyworkforyou.com/interests/category.php?category_id=voluntary&chamber=scottish-parliament&date=2026-08-03",
+        "label": "TheyWorkForYou, Scottish Parliament voluntary interests",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "sarah-boyack",
+    "name": "Sarah Boyack",
+    "currentPosition": "Member of the Scottish Parliament",
+    "positionType": "msp",
+    "chamber": "holyrood",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Named on the Scottish Fabians executive in the 2024–25 annual report.",
+    "primaryFabianStatus": "executive",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "executive",
+        "title": "Scottish Fabians executive",
+        "current": false,
+        "summary": "Listed on the Scottish Fabians executive; the annual report also records her hosting FWN mentees at Holyrood."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "paul-sweeney",
+    "name": "Paul Sweeney",
+    "currentPosition": "Member of the Scottish Parliament",
+    "positionType": "msp",
+    "chamber": "holyrood",
+    "labourRole": "backbench",
+    "party": "Labour and Co-operative",
+    "fabianSummary": "Declares Fabian membership on the Holyrood register.",
+    "primaryFabianStatus": "member",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "member",
+        "title": "Member",
+        "current": true,
+        "summary": "Holyrood register: ‘I am a Member of the Fabian Society.’"
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [
+      {
+        "name": "Co-operative Party",
+        "kind": "political organisation",
+        "role": "National Executive Committee member"
+      },
+      {
+        "name": "Open Labour",
+        "kind": "political organisation",
+        "role": "Executive committee member"
+      },
+      {
+        "name": "GMB",
+        "kind": "trade union",
+        "role": "Member"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.theyworkforyou.com/interests/category.php?category_id=voluntary&chamber=scottish-parliament&date=2026-08-03",
+        "label": "TheyWorkForYou, Scottish Parliament voluntary interests",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "joe-fagan",
+    "name": "Joe Fagan",
+    "currentPosition": "MSP for South Scotland",
+    "positionType": "msp",
+    "constituency": "South Scotland",
+    "chamber": "holyrood",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Declares Fabian membership on his official Holyrood biography.",
+    "primaryFabianStatus": "member",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "member",
+        "title": "Member",
+        "current": true,
+        "summary": "Scottish Parliament register: ‘I am a member of the Fabian Society.’"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "article",
+        "title": "Local power (Fabian Society site)",
+        "url": "https://fabians.org.uk/"
+      }
+    ],
+    "donations": [],
+    "organisations": [
+      {
+        "name": "GMB",
+        "kind": "trade union",
+        "role": "Member"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.parliament.scot/msps/current-and-previous-msps/joe-fagan",
+        "label": "Scottish Parliament, Joe Fagan",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "joe-long",
+    "name": "Joe Long",
+    "currentPosition": "MSP for Mid Scotland and Fife; Scottish Labour shadow minister for community care and mental wellbeing",
+    "positionType": "msp",
+    "constituency": "Mid Scotland and Fife",
+    "chamber": "holyrood",
+    "labourRole": "opposition_frontbench",
+    "party": "Labour and Co-operative",
+    "fabianSummary": "Declares Fabian membership on the Holyrood register.",
+    "primaryFabianStatus": "member",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "member",
+        "title": "Member",
+        "current": true,
+        "summary": "Holyrood register: ‘I am a member of the Fabian Society.’"
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [
+      {
+        "name": "Labour Campaign for International Development",
+        "kind": "campaign",
+        "role": "Member"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.theyworkforyou.com/interests/category.php?category_id=voluntary&chamber=scottish-parliament&date=2026-08-03",
+        "label": "TheyWorkForYou, Scottish Parliament voluntary interests",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.parliament.scot/msps/current-and-previous-msps/joe-long",
+        "label": "Scottish Parliament, Joe Long",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "joy-allen",
+    "name": "Joy Allen",
+    "currentPosition": "Police and Crime Commissioner for Durham",
+    "positionType": "pcc",
+    "constituency": "County Durham and Darlington",
+    "chamber": "pcc",
+    "labourRole": "pcc",
+    "party": "Labour",
+    "fabianSummary": "Current executive committee member; FWN mentoring graduate.",
+    "primaryFabianStatus": "executive",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "executive",
+        "title": "Executive committee member",
+        "current": true,
+        "summary": "Listed with biography on the current executive page and in the 2024–25 annual report."
+      },
+      {
+        "status": "fabian_womens_network",
+        "title": "Graduate, Fabian Women's Network Mentoring Programme",
+        "current": false,
+        "summary": "Stated on her Fabian executive biography."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [
+      {
+        "name": "Association of Police and Crime Commissioners",
+        "kind": "public body association",
+        "role": "National lead, addictions and substance misuse; environment and sustainability"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/executive-committee-2017-19/",
+        "label": "Fabian Society executive committee",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "marianna-masters",
+    "name": "Marianna Masters",
+    "currentPosition": "Councillor for Streatham Wells, Lambeth; chair of the Fabian Women's Network",
+    "positionType": "councillor",
+    "constituency": "Streatham Wells, Lambeth",
+    "chamber": "local_government",
+    "labourRole": "local_executive",
+    "party": "Labour",
+    "fabianSummary": "FWN chair and national executive representative.",
+    "primaryFabianStatus": "fabian_womens_network",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "fabian_womens_network",
+        "title": "Chair, Fabian Women's Network",
+        "current": true,
+        "summary": "Named as FWN chair in the 2024–25 annual report and on the current executive page."
+      },
+      {
+        "status": "executive",
+        "title": "National executive (FWN representative)",
+        "current": true,
+        "summary": "FWN representative on the national executive."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [
+      {
+        "name": "Guy's and St Thomas' NHS Foundation Trust",
+        "kind": "NHS trust",
+        "role": "Governor"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/executive-committee-2017-19/",
+        "label": "Fabian Society executive committee",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "luke-john-davies",
+    "name": "Luke John Davies",
+    "currentPosition": "Labour and Co-operative councillor, Smethwick; former Fabian vice-chair and local societies representative",
+    "positionType": "councillor",
+    "constituency": "Smethwick",
+    "chamber": "local_government",
+    "labourRole": "local_executive",
+    "party": "Labour and Co-operative",
+    "fabianSummary": "Vice-chair and local societies representative in 2024–25; Labour and Co-operative councillor.",
+    "primaryFabianStatus": "vice_chair",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "vice_chair",
+        "title": "Vice-chair",
+        "current": false,
+        "summary": "Named vice-chair in the 2024–25 annual report."
+      },
+      {
+        "status": "local_officer",
+        "title": "Local societies representative; Birmingham and West Midlands contact",
+        "current": false,
+        "summary": "Local societies convenor and Birmingham contact in the 2024–25 annual report."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "article",
+        "title": "Onwards and upwards (local societies)",
+        "url": "https://fabians.org.uk/onwards-and-upwards-vol-1-2/"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/onwards-and-upwards-vol-1-2/",
+        "label": "Onwards and upwards",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "jennifer-hemingway",
+    "name": "Jennifer Hemingway",
+    "currentPosition": "Labour and Co-operative councillor, West Midlands; Fabian local government representative",
+    "positionType": "councillor",
+    "chamber": "local_government",
+    "labourRole": "local_executive",
+    "party": "Labour and Co-operative",
+    "fabianSummary": "Local government representative on the national executive.",
+    "primaryFabianStatus": "executive",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "executive",
+        "title": "Local government representative",
+        "current": true,
+        "summary": "Listed on the current executive page and in the 2024–25 annual report."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [
+      {
+        "name": "Co-operative Party",
+        "kind": "political organisation",
+        "role": "Equalities officer"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-people/executive-committee-2017-19/",
+        "label": "Fabian Society executive committee",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "kamal-preet-kaur",
+    "name": "Kamal Preet Kaur",
+    "currentPosition": "Councillor, London Borough of Hillingdon",
+    "positionType": "councillor",
+    "constituency": "Hillingdon",
+    "chamber": "local_government",
+    "labourRole": "local_executive",
+    "party": "Labour",
+    "fabianSummary": "Named on the Fabian Women's Network executive in the 2024–25 annual report.",
+    "primaryFabianStatus": "fabian_womens_network",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "fabian_womens_network",
+        "title": "Fabian Women's Network executive",
+        "current": false,
+        "summary": "Listed on the FWN executive in the 2024–25 annual report (as Kamal Preet-Kaur)."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "article",
+        "title": "A Councillor's View: Where Next for Labour?",
+        "date": "2025-05-26",
+        "url": "https://www.fabianwomen.org.uk/blog"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/labour-party-conference-2025-text-version/",
+        "label": "Fabian Society, Labour Party Conference 2025 programme",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.fabianwomen.org.uk/blog",
+        "label": "Fabian Women's Network blog",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "lucy-rigby",
+    "name": "Lucy Rigby",
+    "honorific": "The Rt Hon",
+    "currentPosition": "Economic Secretary to the Treasury; MP for Northampton North",
+    "positionType": "mp",
+    "constituency": "Northampton North",
+    "chamber": "commons",
+    "labourRole": "minister",
+    "party": "Labour",
+    "fabianSummary": "Named as the Derby local Fabian society contact in the 2024–25 annual report.",
+    "primaryFabianStatus": "local_officer",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "local_officer",
+        "title": "Derby Fabian Society contact",
+        "current": false,
+        "summary": "Listed as the Derby local society contact in the 2024–25 annual report. Whether she still holds that role after becoming a minister is not confirmed here."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25, local societies list",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.gov.uk/government/news/ministerial-appointments-july-2026",
+        "label": "GOV.UK ministerial appointments, July 2026",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "mike-reader",
+    "name": "Mike Reader",
+    "currentPosition": "MP for Northampton South",
+    "positionType": "mp",
+    "constituency": "Northampton South",
+    "chamber": "commons",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Named as the Northampton local Fabian society contact in the 2024–25 annual report.",
+    "primaryFabianStatus": "local_officer",
+    "inclusionBasis": "named_role_or_membership",
+    "involvement": [
+      {
+        "status": "local_officer",
+        "title": "Northampton Fabian Society contact",
+        "current": false,
+        "summary": "Listed as the Northampton local society contact in the 2024–25 annual report."
+      }
+    ],
+    "outputs": [],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2025/12/ANNUAL-REPORT-2024-2025-3.pdf",
+        "label": "Fabian Society annual report 2024–25, local societies list",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "andy-burnham",
+    "name": "Andy Burnham",
+    "honorific": "The Rt Hon",
+    "currentPosition": "Prime Minister; MP for Makerfield",
+    "positionType": "mp",
+    "constituency": "Makerfield",
+    "chamber": "commons",
+    "labourRole": "cabinet",
+    "party": "Labour",
+    "fabianSummary": "Documented Fabian pamphlet and essay author. Membership is not independently confirmed on the sources used here.",
+    "primaryFabianStatus": "pamphlet_author",
+    "inclusionBasis": "documented_output_only",
+    "involvement": [
+      {
+        "status": "pamphlet_author",
+        "title": "Pamphlet and essay author",
+        "current": false,
+        "summary": "Authored and contributed to Fabian publications. This is not treated as proof of current membership."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "pamphlet",
+        "title": "Together",
+        "date": "2013-07-03",
+        "url": "https://fabians.org.uk/publication/together/"
+      },
+      {
+        "kind": "essay",
+        "title": "Contribution to Leading Labour: the Fabian essays",
+        "date": "2015-08-14",
+        "url": "https://fabians.org.uk/publication/leading-labour-the-fabian-essays/"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/publication/together/",
+        "label": "Together pamphlet page",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/publication/leading-labour-the-fabian-essays/",
+        "label": "Leading Labour",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.gov.uk/government/ministers/prime-minister",
+        "label": "GOV.UK, Prime Minister",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "yvette-cooper",
+    "name": "Yvette Cooper",
+    "honorific": "The Rt Hon",
+    "currentPosition": "Secretary of State for Health and Social Care; MP for Pontefract, Castleford and Knottingley",
+    "positionType": "mp",
+    "constituency": "Pontefract, Castleford and Knottingley",
+    "chamber": "commons",
+    "labourRole": "cabinet",
+    "party": "Labour",
+    "fabianSummary": "Documented contributor to Leading Labour (2015). Membership is not independently confirmed on the sources used here.",
+    "primaryFabianStatus": "pamphlet_author",
+    "inclusionBasis": "documented_output_only",
+    "involvement": [
+      {
+        "status": "pamphlet_author",
+        "title": "Essay author",
+        "current": false,
+        "summary": "Named author of the 2015 Fabian collection Leading Labour. This is not treated as proof of current membership."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "essay",
+        "title": "Contribution to Leading Labour: the Fabian essays",
+        "date": "2015-08-14",
+        "url": "https://fabians.org.uk/publication/leading-labour-the-fabian-essays/"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/publication/leading-labour-the-fabian-essays/",
+        "label": "Leading Labour",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.gov.uk/government/ministers",
+        "label": "GOV.UK ministers list",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "alex-mayer",
+    "name": "Alex Mayer",
+    "currentPosition": "MP for Dunstable and Leighton Buzzard",
+    "positionType": "mp",
+    "constituency": "Dunstable and Leighton Buzzard",
+    "chamber": "commons",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Author of the 2025 Fabian pamphlet In the Fast Lane. Membership is not independently confirmed.",
+    "primaryFabianStatus": "pamphlet_author",
+    "inclusionBasis": "documented_output_only",
+    "involvement": [
+      {
+        "status": "pamphlet_author",
+        "title": "Pamphlet author",
+        "current": false,
+        "summary": "Author of Fabian Ideas 667. Authorship is not treated as proof of membership."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "pamphlet",
+        "title": "In the Fast Lane",
+        "date": "2025-04-22",
+        "url": "https://fabians.org.uk/publication/in-the-fast-lane/"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/publication/in-the-fast-lane/",
+        "label": "In the Fast Lane",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "beccy-cooper",
+    "name": "Beccy Cooper",
+    "currentPosition": "MP for Worthing West",
+    "positionType": "mp",
+    "constituency": "Worthing West",
+    "chamber": "commons",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Author of the 2025 Fabian pamphlet Where’s the harm? Membership is not independently confirmed.",
+    "primaryFabianStatus": "pamphlet_author",
+    "inclusionBasis": "documented_output_only",
+    "involvement": [
+      {
+        "status": "pamphlet_author",
+        "title": "Pamphlet author",
+        "current": false,
+        "summary": "Author of a 2025 Fabian pamphlet on gambling harm. Authorship is not treated as proof of membership."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "pamphlet",
+        "title": "Where’s the harm?",
+        "date": "2025-07-01",
+        "url": "https://fabians.org.uk/publication/wheres-the-harm/"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/publication/wheres-the-harm/",
+        "label": "Where’s the harm?",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "anna-gelderd",
+    "name": "Anna Gelderd",
+    "currentPosition": "MP for South East Cornwall",
+    "positionType": "mp",
+    "constituency": "South East Cornwall",
+    "chamber": "commons",
+    "labourRole": "backbench",
+    "party": "Labour and Co-operative",
+    "fabianSummary": "Co-author of Common Endeavour (2026). Membership is not independently confirmed.",
+    "primaryFabianStatus": "pamphlet_author",
+    "inclusionBasis": "documented_output_only",
+    "involvement": [
+      {
+        "status": "pamphlet_author",
+        "title": "Essay author",
+        "current": false,
+        "summary": "Named contributor to the Fabian collection Common Endeavour."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "essay",
+        "title": "The value of our data, in Common Endeavour",
+        "date": "2026-04-14",
+        "url": "https://fabians.org.uk/publication/common-endeavour/"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/publication/common-endeavour/",
+        "label": "Common Endeavour",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2026/04/Common-Endeavour-Web-fixed-14-april.pdf",
+        "label": "Common Endeavour PDF",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "luke-murphy",
+    "name": "Luke Murphy",
+    "currentPosition": "MP for Basingstoke",
+    "positionType": "mp",
+    "constituency": "Basingstoke",
+    "chamber": "commons",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Co-author of Common Endeavour (2026). Membership is not independently confirmed.",
+    "primaryFabianStatus": "pamphlet_author",
+    "inclusionBasis": "documented_output_only",
+    "involvement": [
+      {
+        "status": "pamphlet_author",
+        "title": "Essay author",
+        "current": false,
+        "summary": "Named contributor to Common Endeavour."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "essay",
+        "title": "Building the climate consensus / A more active state, in Common Endeavour",
+        "date": "2026-04-14",
+        "url": "https://fabians.org.uk/publication/common-endeavour/"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/publication/common-endeavour/",
+        "label": "Common Endeavour",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2026/04/Common-Endeavour-Web-fixed-14-april.pdf",
+        "label": "Common Endeavour PDF",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "andrew-lewin",
+    "name": "Andrew Lewin",
+    "currentPosition": "MP for Welwyn Hatfield",
+    "positionType": "mp",
+    "constituency": "Welwyn Hatfield",
+    "chamber": "commons",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Co-author of Common Endeavour (2026). Membership is not independently confirmed.",
+    "primaryFabianStatus": "pamphlet_author",
+    "inclusionBasis": "documented_output_only",
+    "involvement": [
+      {
+        "status": "pamphlet_author",
+        "title": "Essay author",
+        "current": false,
+        "summary": "Named contributor to Common Endeavour."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "essay",
+        "title": "The failure of Brexit, in Common Endeavour",
+        "date": "2026-04-14",
+        "url": "https://fabians.org.uk/publication/common-endeavour/"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/publication/common-endeavour/",
+        "label": "Common Endeavour",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2026/04/Common-Endeavour-Web-fixed-14-april.pdf",
+        "label": "Common Endeavour PDF",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "alex-baker",
+    "name": "Alex Baker",
+    "currentPosition": "MP for Aldershot",
+    "positionType": "mp",
+    "constituency": "Aldershot",
+    "chamber": "commons",
+    "labourRole": "backbench",
+    "party": "Labour",
+    "fabianSummary": "Co-author of a Common Endeavour chapter. Membership is not independently confirmed.",
+    "primaryFabianStatus": "pamphlet_author",
+    "inclusionBasis": "documented_output_only",
+    "involvement": [
+      {
+        "status": "pamphlet_author",
+        "title": "Essay author",
+        "current": false,
+        "summary": "Co-authored the Common Endeavour chapter on rearming Britain."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "essay",
+        "title": "Rearming Britain, in Common Endeavour (with Calvin Bailey)",
+        "date": "2026-04-14",
+        "url": "https://fabians.org.uk/publication/common-endeavour/"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/publication/common-endeavour/",
+        "label": "Common Endeavour",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://fabians.org.uk/wp-content/uploads/2026/04/Common-Endeavour-Web-fixed-14-april.pdf",
+        "label": "Common Endeavour PDF",
+        "accessed": "2026-08-29"
+      }
+    ]
+  },
+  {
+    "slug": "calvin-bailey",
+    "name": "Calvin Bailey",
+    "currentPosition": "Parliamentary Under-Secretary of State (Minister for Veterans and People); MP for Leyton and Wanstead",
+    "positionType": "mp",
+    "constituency": "Leyton and Wanstead",
+    "chamber": "commons",
+    "labourRole": "minister",
+    "party": "Labour",
+    "fabianSummary": "Co-author of a Common Endeavour chapter. Membership is not independently confirmed.",
+    "primaryFabianStatus": "pamphlet_author",
+    "inclusionBasis": "documented_output_only",
+    "involvement": [
+      {
+        "status": "pamphlet_author",
+        "title": "Essay author",
+        "current": false,
+        "summary": "Co-authored the Common Endeavour chapter on rearming Britain."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "essay",
+        "title": "Rearming Britain, in Common Endeavour (with Alex Baker)",
+        "date": "2026-04-14",
+        "url": "https://fabians.org.uk/publication/common-endeavour/"
+      }
+    ],
+    "donations": [],
+    "organisations": [],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/publication/common-endeavour/",
+        "label": "Common Endeavour",
+        "accessed": "2026-08-29"
+      },
+      {
+        "url": "https://www.gov.uk/government/ministers",
+        "label": "GOV.UK ministers list",
+        "accessed": "2026-08-29"
+      }
+    ]
+  }
+]

@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #07090f;
-  --foreground: #eef2ff;
-  --muted: #9aa4bb;
-  --card: #101522;
-  --line: rgba(148, 163, 184, 0.16);
-  --accent: #7ee0c4;
-  --accent-dim: rgba(126, 224, 196, 0.12);
+  --background: #f6f1e8;
+  --foreground: #1c1916;
+  --muted: #5c564e;
+  --card: #fffdf8;
+  --line: #d8cfc0;
+  --accent: #6b2d2d;
+  --accent-dim: #f0e4d4;
+  --ink: #1c1916;
 }
 
 @theme inline {
@@ -18,8 +19,13 @@
   --color-line: var(--line);
   --color-accent: var(--accent);
   --color-accent-dim: var(--accent-dim);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --font-sans: var(--font-source-sans);
+  --font-serif: var(--font-source-serif);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -28,10 +34,28 @@ body {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
-.hero-grid {
-  background-image:
-    linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 35%, transparent 80%);
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 50;
+  background: var(--card);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+}
+
+.skip-link:focus {
+  top: 1rem;
 }
