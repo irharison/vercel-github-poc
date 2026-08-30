@@ -5,7 +5,7 @@ import { counts, getPeopleSorted } from "@/lib/people";
 export const metadata: Metadata = {
   title: "Directory",
   description:
-    "Searchable directory of Labour politicians, former office-holders, peers, donors and other public figures with a documented Fabian Society relationship.",
+    "Searchable public directory of people with a documented Fabian Society relationship, including job, organisation and source quality.",
 };
 
 export default function DirectoryPage() {
@@ -16,17 +16,15 @@ export default function DirectoryPage() {
     <main className="mx-auto w-full max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
       <h1 className="font-serif text-4xl text-ink">Directory</h1>
       <p className="mt-4 max-w-2xl text-lg leading-8 text-muted">
-        {stats.total} people. {stats.named} have a named Fabian role, an
-        explicit membership statement or a sourced Society donation.{" "}
-        {stats.outputOnly} appear only as authors of a Fabian pamphlet or essay.
-        Filter by former MP, donor or other public figure to browse beyond
-        sitting office-holders.
+        {stats.total} people. {stats.living} living, {stats.deceased} deceased.{" "}
+        {stats.corroborated} corroborated beyond Wikipedia; {stats.wikipediaOnly}{" "}
+        Wikipedia only. {stats.outputOnly} appear only as authors of a pamphlet
+        or essay.
       </p>
       <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
-        Cards show name, current public role and the Fabian relationship in one
-        line.
-        Open a person for the timeline, donations table, organisations and full
-        citations.
+        Cards show job and organisation on one line. Filter by sector, party,
+        living or deceased, and source quality. Search matches organisation
+        names such as BBC, Cabinet Office or a university.
       </p>
       <div className="mt-10">
         <DirectoryExplorer people={people} />

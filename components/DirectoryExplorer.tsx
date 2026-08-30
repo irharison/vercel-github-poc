@@ -4,10 +4,11 @@ import { useMemo, useState } from "react";
 import { PersonCard } from "@/components/PersonCard";
 import type { Person } from "@/lib/types";
 import {
-  CHAMBER_LABELS,
   FABIAN_STATUS_LABELS,
-  LABOUR_ROLE_LABELS,
+  PARTY_LABELS,
   POSITION_LABELS,
+  SECTOR_LABELS,
+  SOURCE_QUALITY_LABELS,
 } from "@/lib/types";
 
 const selectClass =
@@ -16,10 +17,12 @@ const selectClass =
 export function DirectoryExplorer({ people }: { people: Person[] }) {
   const [query, setQuery] = useState("");
   const [positionType, setPositionType] = useState("");
-  const [labourRole, setLabourRole] = useState("");
-  const [chamber, setChamber] = useState("");
+  const [sector, setSector] = useState("");
+  const [party, setParty] = useState("");
+  const [life, setLife] = useState("");
   const [fabianRole, setFabianRole] = useState("");
   const [basis, setBasis] = useState("");
+  const [quality, setQuality] = useState("");
   const [hasDonations, setHasDonations] = useState(false);
   const [hasPamphlets, setHasPamphlets] = useState(false);
 
@@ -35,10 +38,13 @@ export function DirectoryExplorer({ people }: { people: Person[] }) {
       } else if (positionType && person.positionType !== positionType) {
         return false;
       }
-      if (labourRole && person.labourRole !== labourRole) return false;
-      if (chamber && person.chamber !== chamber) return false;
+      if (sector && person.sector !== sector) return false;
+      if (party && person.party !== party) return false;
+      if (life === "living" && !person.living) return false;
+      if (life === "deceased" && person.living) return false;
       if (fabianRole && person.primaryFabianStatus !== fabianRole) return false;
       if (basis && person.inclusionBasis !== basis) return false;
+      if (quality && person.sourceQuality !== quality) return false;
       if (hasDonations && person.donations.length === 0) return false;
       if (hasPamphlets && person.outputs.length === 0) return false;
       if (!q) return true;
@@ -47,8 +53,11 @@ export function DirectoryExplorer({ people }: { people: Person[] }) {
         person.name,
         person.honorific,
         person.currentPosition,
+        person.jobTitle,
+        person.organisation,
         person.constituency,
         person.fabianSummary,
+        ...person.organisations.map((item) => item.name),
         ...person.outputs.map((item) => item.title),
       ]
         .filter(Boolean)
@@ -61,10 +70,12 @@ export function DirectoryExplorer({ people }: { people: Person[] }) {
     people,
     query,
     positionType,
-    labourRole,
-    chamber,
+    sector,
+    party,
+    life,
     fabianRole,
     basis,
+    quality,
     hasDonations,
     hasPamphlets,
   ]);
@@ -85,9 +96,26 @@ export function DirectoryExplorer({ people }: { people: Person[] }) {
               type="search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Name, constituency, pamphlet title…"
+              placeholder="Name, organisation, job, pamphlet… (try Unilever, Cabinet Office, BBC)"
               className={selectClass}
             />
+          </label>
+          <label>
+            <span className="mb-1 block text-xs tracking-wide text-muted uppercase">
+              Sector
+            </span>
+            <select
+              className={selectClass}
+              value={sector}
+              onChange={(event) => setSector(event.target.value)}
+            >
+              <option value="">All</option>
+              {Object.entries(SECTOR_LABELS).map(([value, label]) => (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              ))}
+            </select>
           </label>
           <label>
             <span className="mb-1 block text-xs tracking-wide text-muted uppercase">
@@ -108,15 +136,15 @@ export function DirectoryExplorer({ people }: { people: Person[] }) {
           </label>
           <label>
             <span className="mb-1 block text-xs tracking-wide text-muted uppercase">
-              Labour role
+              Party
             </span>
             <select
               className={selectClass}
-              value={labourRole}
-              onChange={(event) => setLabourRole(event.target.value)}
+              value={party}
+              onChange={(event) => setParty(event.target.value)}
             >
               <option value="">All</option>
-              {Object.entries(LABOUR_ROLE_LABELS).map(([value, label]) => (
+              {Object.entries(PARTY_LABELS).map(([value, label]) => (
                 <option key={value} value={value}>
                   {label}
                 </option>
@@ -125,19 +153,16 @@ export function DirectoryExplorer({ people }: { people: Person[] }) {
           </label>
           <label>
             <span className="mb-1 block text-xs tracking-wide text-muted uppercase">
-              Chamber
+              Living or deceased
             </span>
             <select
               className={selectClass}
-              value={chamber}
-              onChange={(event) => setChamber(event.target.value)}
+              value={life}
+              onChange={(event) => setLife(event.target.value)}
             >
               <option value="">All</option>
-              {Object.entries(CHAMBER_LABELS).map(([value, label]) => (
-                <option key={value} value={value}>
-                  {label}
-                </option>
-              ))}
+              <option value="living">Living</option>
+              <option value="deceased">Deceased</option>
             </select>
           </label>
           <label>
@@ -151,6 +176,23 @@ export function DirectoryExplorer({ people }: { people: Person[] }) {
             >
               <option value="">All</option>
               {Object.entries(FABIAN_STATUS_LABELS).map(([value, label]) => (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label>
+            <span className="mb-1 block text-xs tracking-wide text-muted uppercase">
+              Source quality
+            </span>
+            <select
+              className={selectClass}
+              value={quality}
+              onChange={(event) => setQuality(event.target.value)}
+            >
+              <option value="">All</option>
+              {Object.entries(SOURCE_QUALITY_LABELS).map(([value, label]) => (
                 <option key={value} value={value}>
                   {label}
                 </option>
@@ -204,7 +246,7 @@ export function DirectoryExplorer({ people }: { people: Person[] }) {
       {filtered.length === 0 ? (
         <p className="mt-8 rounded-xl border border-dashed border-line bg-card px-5 py-10 text-center text-muted">
           No records match these filters. Try clearing a field or searching a
-          different name.
+          different name or organisation.
         </p>
       ) : (
         <div className="mt-6 grid gap-4 md:grid-cols-2">

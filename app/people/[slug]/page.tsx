@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SourcesList } from "@/components/SourcesList";
+import { jobLine } from "@/lib/format";
 import { getPeopleSorted, getPerson } from "@/lib/people";
 import {
   CHAMBER_LABELS,
   FABIAN_STATUS_LABELS,
-  LABOUR_ROLE_LABELS,
+  PARTY_LABELS,
   POSITION_LABELS,
+  SECTOR_LABELS,
+  SOURCE_QUALITY_LABELS,
 } from "@/lib/types";
 
 export function generateStaticParams() {
@@ -35,6 +38,7 @@ export default async function PersonPage({
   if (!person) notFound();
 
   const outputOnly = person.inclusionBasis === "documented_output_only";
+  const wikiOnly = person.sourceQuality === "wikipedia_only";
 
   return (
     <article className="mx-auto w-full max-w-4xl px-5 py-12 sm:px-8 sm:py-16">
@@ -44,35 +48,56 @@ export default async function PersonPage({
         </Link>
       </p>
       <p className="mt-6 text-xs tracking-[0.18em] text-muted uppercase">
-        {POSITION_LABELS[person.positionType]} · {LABOUR_ROLE_LABELS[person.labourRole]}
+        {SECTOR_LABELS[person.sector]} · {POSITION_LABELS[person.positionType]}
+        {" · "}
+        {person.living ? "Living" : "Deceased"}
         {outputOnly ? " · authorship only" : ""}
+        {wikiOnly ? " · Wikipedia only" : ""}
       </p>
       <h1 className="mt-3 font-serif text-4xl leading-tight text-ink">
         {person.honorific ? `${person.honorific} ` : ""}
         {person.name}
       </h1>
-      <p className="mt-4 text-lg leading-8 text-muted">{person.currentPosition}</p>
+      <p className="mt-4 text-lg leading-8 text-muted">{jobLine(person)}</p>
+      {person.currentPosition !== jobLine(person) ? (
+        <p className="mt-2 text-base leading-7 text-muted">{person.currentPosition}</p>
+      ) : null}
 
       <dl className="mt-8 grid gap-4 border-y border-line py-6 sm:grid-cols-2">
         <div>
-          <dt className="text-xs tracking-wide text-muted uppercase">Chamber</dt>
-          <dd className="mt-1">{CHAMBER_LABELS[person.chamber]}</dd>
+          <dt className="text-xs tracking-wide text-muted uppercase">Job title</dt>
+          <dd className="mt-1">{person.jobTitle}</dd>
         </div>
         <div>
-          <dt className="text-xs tracking-wide text-muted uppercase">
-            Constituency or area
-          </dt>
-          <dd className="mt-1">{person.constituency ?? "Not recorded in sources used"}</dd>
+          <dt className="text-xs tracking-wide text-muted uppercase">Organisation</dt>
+          <dd className="mt-1">{person.organisation}</dd>
         </div>
         <div>
           <dt className="text-xs tracking-wide text-muted uppercase">Party</dt>
-          <dd className="mt-1">{person.party}</dd>
+          <dd className="mt-1">{PARTY_LABELS[person.party]}</dd>
         </div>
         <div>
           <dt className="text-xs tracking-wide text-muted uppercase">
             Primary Fabian status
           </dt>
           <dd className="mt-1">{FABIAN_STATUS_LABELS[person.primaryFabianStatus]}</dd>
+        </div>
+        <div>
+          <dt className="text-xs tracking-wide text-muted uppercase">Source quality</dt>
+          <dd className="mt-1">{SOURCE_QUALITY_LABELS[person.sourceQuality]}</dd>
+        </div>
+        <div>
+          <dt className="text-xs tracking-wide text-muted uppercase">
+            {person.chamber === "none" ? "Record notes" : "Chamber or institution"}
+          </dt>
+          <dd className="mt-1">
+            {person.chamber === "none"
+              ? person.died
+                ? `Died ${person.died}`
+                : "Not a parliamentary seat"
+              : CHAMBER_LABELS[person.chamber]}
+            {person.constituency ? ` · ${person.constituency}` : ""}
+          </dd>
         </div>
       </dl>
 
@@ -84,6 +109,14 @@ export default async function PersonPage({
             Included because of documented Fabian output, not because membership
             has been independently confirmed. Do not read this page as a
             membership claim.
+          </p>
+        ) : null}
+        {wikiOnly ? (
+          <p className="mt-3 rounded-lg bg-accent-dim px-4 py-3 text-sm leading-6">
+            The Fabian link on this page is cited from Wikipedia only. The
+            article body does state a Fabian connection, but it has not yet been
+            corroborated on a Society, parliamentary or news page. Treat it as a
+            lead, not as a closed official record.
           </p>
         ) : null}
         <ol className="mt-6 space-y-4">

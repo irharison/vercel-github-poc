@@ -1,6 +1,7 @@
 import peopleJson from "@/data/people.json";
 import siteJson from "@/data/site.json";
-import type { Person } from "@/lib/types";
+import type { Person, Sector } from "@/lib/types";
+import { SECTOR_LABELS } from "@/lib/types";
 
 export const people = peopleJson as Person[];
 export const site = siteJson;
@@ -13,22 +14,37 @@ export function getPeopleSorted(): Person[] {
   return [...people].sort((a, b) => a.name.localeCompare(b.name, "en-GB"));
 }
 
+export { jobLine } from "@/lib/format";
+
 export function counts() {
   const named = people.filter((p) => p.inclusionBasis === "named_role_or_membership");
   const outputOnly = people.filter((p) => p.inclusionBasis === "documented_output_only");
-  const withDonations = people.filter((p) => p.donations.length > 0);
-  const withPamphlets = people.filter((p) => p.outputs.length > 0);
-  const cabinetOrMinister = people.filter(
-    (p) => p.labourRole === "cabinet" || p.labourRole === "minister" || p.labourRole === "whip",
-  );
+  const living = people.filter((p) => p.living);
+  const deceased = people.filter((p) => !p.living);
+  const corroborated = people.filter((p) => p.sourceQuality === "corroborated");
+  const wikipediaOnly = people.filter((p) => p.sourceQuality === "wikipedia_only");
+
+  const bySector = Object.fromEntries(
+    (Object.keys(SECTOR_LABELS) as Sector[]).map((sector) => [
+      sector,
+      people.filter((p) => p.sector === sector).length,
+    ]),
+  ) as Record<Sector, number>;
 
   return {
     total: people.length,
     named: named.length,
     outputOnly: outputOnly.length,
-    withDonations: withDonations.length,
-    withPamphlets: withPamphlets.length,
-    cabinetOrMinister: cabinetOrMinister.length,
+    living: living.length,
+    deceased: deceased.length,
+    corroborated: corroborated.length,
+    wikipediaOnly: wikipediaOnly.length,
+    bySector,
+    withDonations: people.filter((p) => p.donations.length > 0).length,
+    withPamphlets: people.filter((p) => p.outputs.length > 0).length,
+    cabinetOrMinister: people.filter(
+      (p) => p.labourRole === "cabinet" || p.labourRole === "minister" || p.labourRole === "whip",
+    ).length,
     mps: people.filter((p) => p.positionType === "mp").length,
     formerMps: people.filter((p) => p.positionType === "former_mp").length,
     peers: people.filter((p) => p.positionType === "peer").length,

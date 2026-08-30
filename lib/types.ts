@@ -11,6 +11,16 @@ export type PositionType =
   | "councillor"
   | "combined_authority"
   | "donor"
+  | "academic"
+  | "journalist"
+  | "civil_servant"
+  | "diplomat"
+  | "judge"
+  | "union_official"
+  | "corporate"
+  | "charity"
+  | "writer"
+  | "historical"
   | "other_public_figure";
 
 export type Chamber =
@@ -56,6 +66,34 @@ export type FabianStatus =
 
 export type InclusionBasis = "named_role_or_membership" | "documented_output_only";
 
+export type SourceQuality = "corroborated" | "wikipedia_only";
+
+export type Sector =
+  | "politics"
+  | "civil_service"
+  | "public_body"
+  | "nhs"
+  | "academia"
+  | "media"
+  | "union"
+  | "corporation"
+  | "charity"
+  | "think_tank"
+  | "other";
+
+export type Party =
+  | "Labour"
+  | "Labour and Co-operative"
+  | "Liberal Democrat"
+  | "Liberal"
+  | "SDP"
+  | "Conservative"
+  | "Independent"
+  | "none"
+  | "unknown";
+
+export type LifeStatus = "living" | "deceased";
+
 export interface Source {
   url: string;
   label: string;
@@ -98,15 +136,21 @@ export interface Person {
   slug: string;
   name: string;
   honorific?: string;
+  living: boolean;
+  died?: string;
+  jobTitle: string;
+  organisation: string;
+  sector: Sector;
   currentPosition: string;
   positionType: PositionType;
   constituency?: string;
   chamber: Chamber;
   labourRole: LabourRole;
-  party: "Labour" | "Labour and Co-operative" | "Not stated";
+  party: Party;
   fabianSummary: string;
   primaryFabianStatus: FabianStatus;
   inclusionBasis: InclusionBasis;
+  sourceQuality: SourceQuality;
   involvement: Involvement[];
   outputs: Output[];
   donations: Donation[];
@@ -125,6 +169,16 @@ export const POSITION_LABELS: Record<PositionType, string> = {
   councillor: "Councillor",
   combined_authority: "Combined authority",
   donor: "Donor",
+  academic: "Academic",
+  journalist: "Journalist",
+  civil_servant: "Civil servant",
+  diplomat: "Diplomat",
+  judge: "Judge",
+  union_official: "Trade union official",
+  corporate: "Company / corporate",
+  charity: "Charity or voluntary sector",
+  writer: "Writer",
+  historical: "Historical figure",
   other_public_figure: "Other public figure",
 };
 
@@ -170,4 +224,40 @@ export const FABIAN_STATUS_LABELS: Record<FabianStatus, string> = {
   fabian_womens_network: "Fabian Women's Network",
   donor: "Named donor to the Society",
   pamphlet_author: "Pamphlet or essay author",
+};
+
+export const SECTOR_LABELS: Record<Sector, string> = {
+  politics: "Politics",
+  civil_service: "Civil service",
+  public_body: "Public body",
+  nhs: "NHS / health",
+  academia: "Academia",
+  media: "Media",
+  union: "Trade union",
+  corporation: "Corporation / company",
+  charity: "Charity",
+  think_tank: "Think tank",
+  other: "Other",
+};
+
+export const PARTY_LABELS: Record<Party, string> = {
+  Labour: "Labour",
+  "Labour and Co-operative": "Labour and Co-operative",
+  "Liberal Democrat": "Liberal Democrat",
+  Liberal: "Liberal (historic)",
+  SDP: "SDP",
+  Conservative: "Conservative",
+  Independent: "Independent",
+  none: "No party",
+  unknown: "Party not stated",
+};
+
+export const SOURCE_QUALITY_LABELS: Record<SourceQuality, string> = {
+  corroborated: "Corroborated beyond Wikipedia",
+  wikipedia_only: "Wikipedia only",
+};
+
+export const LIFE_STATUS_LABELS: Record<LifeStatus, string> = {
+  living: "Living",
+  deceased: "Deceased",
 };
