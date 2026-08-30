@@ -21,9 +21,11 @@ export default function AboutPage() {
         <p className="mt-3 text-base leading-7">
           The Fabian Society is a membership think tank affiliated to the Labour
           Party. It does not publish a complete membership roll. This register
-          collects only those Labour public office-holders whose Fabian
-          relationship is documented in a public source with a URL.
+          collects Labour politicians, former office-holders, peers, donors and
+          other public figures whose Fabian relationship is documented in a
+          public source with a URL.
         </p>
+        <p className="mt-3 text-base leading-7">{site.methodologyNote}</p>
       </section>
 
       <section className="mt-10">
@@ -31,12 +33,26 @@ export default function AboutPage() {
         <ul className="mt-3 list-disc space-y-2 pl-5 text-base leading-7">
           <li>
             A named Fabian office: executive, chair, vice-chair, treasurer,
-            vice-president, local society officer, Young Fabians or Fabian
-            Women&apos;s Network role.
+            general secretary, vice-president, local society officer, Young
+            Fabians or Fabian Women&apos;s Network role.
           </li>
           <li>
             An explicit membership statement on an official register or
             biography (for example the Holyrood register of interests).
+          </li>
+          <li>
+            Former MPs, ministers, mayors, MSPs, Senedd members and peers, on
+            the same evidence test as sitting office-holders.
+          </li>
+          <li>
+            Other public figures named on Fabian papers, conference programmes
+            as chairs or keynote hosts, or as officers of the Society or its
+            networks, where a public page exists.
+          </li>
+          <li>
+            Gifts to the Fabian Society named by the Society or the Electoral
+            Commission. A donation to the Labour Party is recorded only as a
+            Labour donation.
           </li>
           <li>
             Authorship of a Fabian pamphlet or named essay collection, labelled
@@ -70,7 +86,7 @@ export default function AboutPage() {
           </li>
           <li>UK Parliament biographies and registers of interests.</li>
           <li>TheyWorkForYou register extracts, used only as a pointer to official filings.</li>
-          <li>GOV.UK ministerial lists and appointment notices (current as of 29 August 2026).</li>
+          <li>GOV.UK ministerial lists and appointment notices (checked 30 August 2026).</li>
           <li>Scottish Parliament biographies and the Holyrood register of interests.</li>
           <li>
             Electoral Commission political finance registers, cited where a
@@ -88,11 +104,11 @@ export default function AboutPage() {
         <h2 className="font-serif text-2xl text-ink">Donations</h2>
         <p className="mt-3 text-base leading-7">
           A donation is recorded only when an official record was opened and the
-          donor, amount, date, nature and recipient could be copied. A Fabian
+          donor, amount, date, nature and recipient could be copied. Gifts{" "}
+          <em>to</em> the Fabian Society are flagged as Society-related. A gift
+          to the Labour Party is not described as a Fabian donation. A Fabian
           Society unpaid office declared on a parliamentary register is listed
-          in the donations table as a register entry, not as money. Nothing is
-          described as a “Fabian donation” unless the donor is the Fabian
-          Society or a clearly related body.
+          in the donations table as a register entry, not as money.
         </p>
       </section>
 

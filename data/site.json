@@ -1,15 +1,17 @@
 {
   "title": "Labour–Fabian public register",
   "shortTitle": "Public register",
-  "lastUpdated": "2026-08-29",
-  "tagline": "A sourced directory of Labour public office-holders with a documented relationship to the Fabian Society.",
+  "lastUpdated": "2026-08-30",
+  "tagline": "An unofficial directory of Labour politicians, former office-holders, peers, donors and other public figures with a published Fabian Society link.",
   "repoUrl": "https://github.com/irharison/vercel-github-poc",
+  "methodologyNote": "A person is listed only when a named Fabian role, an explicit membership statement, a donation to the Society, or a published pamphlet, essay or similar output can be cited from a public page. Former MPs, ministers, mayors, MSPs, Senedd members, peers and other public figures are included on the same evidence test as sitting office-holders. Authorship of a Fabian pamphlet, without a named role or membership statement, is labelled separately and is not treated as proof of membership. Ordinary private members are not listed.",
   "limitations": [
-    "The Fabian Society does not publish a complete membership list. This register only includes people for whom a named Fabian role, an explicit membership statement, or a published Fabian pamphlet/essay can be cited from a public URL.",
-    "The society’s 2024–25 annual report said 141 Fabian MPs were elected in July 2024. That list was not published. Those unnamed MPs are not invented here.",
-    "Writing a pamphlet or speaking at a Fabian event is not the same as membership. People included only as authors are labelled as such and are excluded from the ‘named role or membership’ count.",
-    "Wikipedia is treated as a lead, never as the sole source.",
-    "Donation and register-of-interests coverage is incomplete. Where a figure was not copied from an official record, the field is left blank.",
-    "This is not an official Fabian Society or Labour Party list."
+    "This is not an official Fabian Society or Labour Party register. It does not claim to list every member.",
+    "The Society’s 2024–25 annual report said 141 Fabian MPs were elected in 2024. That list has not been published. Names are not inferred from the total.",
+    "Former office-holders and other public figures are included only where a published Fabian link can be cited. Leaving office does not remove a sourced record.",
+    "A pamphlet, essay or conference listing is not treated as proof of membership unless the source also names a role or states membership.",
+    "A donation to the Labour Party is not a donation to the Fabian Society. Society gifts are recorded only where the Society or the Electoral Commission names them.",
+    "Wikipedia is used only as a lead. Every fact on a person page cites a non-Wikipedia URL.",
+    "Government, parliamentary and Society pages change. Each source records the date it was checked."
   ]
 }

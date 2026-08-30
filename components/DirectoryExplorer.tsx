@@ -27,7 +27,14 @@ export function DirectoryExplorer({ people }: { people: Person[] }) {
     const q = query.trim().toLowerCase();
 
     return people.filter((person) => {
-      if (positionType && person.positionType !== positionType) return false;
+      if (positionType === "donor") {
+        const isDonor =
+          person.positionType === "donor" ||
+          person.donations.some((donation) => Boolean(donation.amount));
+        if (!isDonor) return false;
+      } else if (positionType && person.positionType !== positionType) {
+        return false;
+      }
       if (labourRole && person.labourRole !== labourRole) return false;
       if (chamber && person.chamber !== chamber) return false;
       if (fabianRole && person.primaryFabianStatus !== fabianRole) return false;

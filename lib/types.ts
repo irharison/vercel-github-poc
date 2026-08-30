@@ -1,14 +1,17 @@
-export const ACCESS_DATE = "2026-08-29";
+export const ACCESS_DATE = "2026-08-30";
 
 export type PositionType =
   | "mp"
+  | "former_mp"
   | "peer"
   | "msp"
   | "senedd"
   | "mayor"
   | "pcc"
   | "councillor"
-  | "combined_authority";
+  | "combined_authority"
+  | "donor"
+  | "other_public_figure";
 
 export type Chamber =
   | "commons"
@@ -18,7 +21,8 @@ export type Chamber =
   | "mayoral"
   | "local_government"
   | "combined_authority"
-  | "pcc";
+  | "pcc"
+  | "none";
 
 export type LabourRole =
   | "cabinet"
@@ -26,10 +30,14 @@ export type LabourRole =
   | "whip"
   | "backbench"
   | "former_minister"
+  | "former_mp"
   | "local_executive"
   | "mayor"
   | "pcc"
-  | "opposition_frontbench";
+  | "opposition_frontbench"
+  | "think_tank"
+  | "donor"
+  | "none";
 
 export type FabianStatus =
   | "member"
@@ -39,9 +47,11 @@ export type FabianStatus =
   | "vice_chair"
   | "vice_president"
   | "treasurer"
+  | "general_secretary"
   | "local_officer"
   | "young_fabian"
   | "fabian_womens_network"
+  | "donor"
   | "pamphlet_author";
 
 export type InclusionBasis = "named_role_or_membership" | "documented_output_only";
@@ -93,7 +103,7 @@ export interface Person {
   constituency?: string;
   chamber: Chamber;
   labourRole: LabourRole;
-  party: "Labour" | "Labour and Co-operative";
+  party: "Labour" | "Labour and Co-operative" | "Not stated";
   fabianSummary: string;
   primaryFabianStatus: FabianStatus;
   inclusionBasis: InclusionBasis;
@@ -106,6 +116,7 @@ export interface Person {
 
 export const POSITION_LABELS: Record<PositionType, string> = {
   mp: "MP",
+  former_mp: "Former MP",
   peer: "Peer",
   msp: "MSP",
   senedd: "Senedd member",
@@ -113,6 +124,8 @@ export const POSITION_LABELS: Record<PositionType, string> = {
   pcc: "Police and crime commissioner",
   councillor: "Councillor",
   combined_authority: "Combined authority",
+  donor: "Donor",
+  other_public_figure: "Other public figure",
 };
 
 export const CHAMBER_LABELS: Record<Chamber, string> = {
@@ -124,6 +137,7 @@ export const CHAMBER_LABELS: Record<Chamber, string> = {
   local_government: "Local government",
   combined_authority: "Combined authority",
   pcc: "PCC",
+  none: "Not a parliamentary chamber",
 };
 
 export const LABOUR_ROLE_LABELS: Record<LabourRole, string> = {
@@ -132,10 +146,14 @@ export const LABOUR_ROLE_LABELS: Record<LabourRole, string> = {
   whip: "Whip",
   backbench: "Backbench",
   former_minister: "Former minister / recent office",
+  former_mp: "Former MP",
   local_executive: "Local executive",
   mayor: "Mayor",
   pcc: "PCC",
   opposition_frontbench: "Opposition front bench",
+  think_tank: "Think tank / society officer",
+  donor: "Donor",
+  none: "No current Labour office",
 };
 
 export const FABIAN_STATUS_LABELS: Record<FabianStatus, string> = {
@@ -146,8 +164,10 @@ export const FABIAN_STATUS_LABELS: Record<FabianStatus, string> = {
   vice_chair: "Vice-chair",
   vice_president: "Vice-president",
   treasurer: "Treasurer",
+  general_secretary: "General secretary",
   local_officer: "Local society officer",
   young_fabian: "Young Fabians",
   fabian_womens_network: "Fabian Women's Network",
+  donor: "Named donor to the Society",
   pamphlet_author: "Pamphlet or essay author",
 };

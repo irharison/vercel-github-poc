@@ -12,20 +12,22 @@ export default function Home() {
         Political transparency · last updated {formatDate(site.lastUpdated)}
       </p>
       <h1 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-balance text-ink sm:text-5xl">
-        Labour public office-holders with a documented Fabian Society
-        relationship
+        Labour politicians and other public figures with a documented Fabian
+        Society relationship
       </h1>
       <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
         {site.tagline} The Fabian Society does not publish a complete membership
         list. This site records only what public sources name.
       </p>
 
-      <dl className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <dl className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {[
           ["People in this register", stats.total],
           ["Named role or membership", stats.named],
           ["Pamphlet or essay only", stats.outputOnly],
-          ["MPs included", stats.mps],
+          ["Sitting MPs", stats.mps],
+          ["Former MPs", stats.formerMps],
+          ["Other public figures", stats.otherPublicFigures],
         ].map(([label, value]) => (
           <div key={label} className="rounded-xl border border-line bg-card px-5 py-4">
             <dt className="text-xs tracking-wide text-muted uppercase">{label}</dt>
@@ -38,9 +40,16 @@ export default function Home() {
         <h2 className="font-serif text-2xl text-ink">What is included</h2>
         <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-muted">
           <li>
-            Current and recent Labour MPs, peers, MSPs, Senedd members, mayors,
-            PCCs and prominent councillors where a named Fabian role or an
-            explicit membership statement can be cited.
+            Sitting and former Labour MPs, ministers, peers, MSPs, Senedd
+            members, mayors, PCCs and prominent councillors where a named Fabian
+            role, an explicit membership statement, or a donation to the Society
+            can be cited.
+          </li>
+          <li>
+            Other public figures with a published link: pamphlet authors,
+            Society officers, conference chairs, think-tank people named on
+            Fabian papers, and donors the Society or the Electoral Commission
+            names.
           </li>
           <li>
             People whose only public link is a Fabian pamphlet or essay. They are
@@ -48,7 +57,8 @@ export default function Home() {
           </li>
           <li>
             Ordinary private Labour members are excluded. Event speakers are
-            excluded unless another sourced role exists.
+            excluded unless another sourced role exists. A Labour Party donation
+            is not treated as a Fabian donation.
           </li>
         </ul>
         <p className="mt-4 text-sm leading-7 text-muted">

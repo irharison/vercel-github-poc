@@ -30,9 +30,18 @@ export function counts() {
     withPamphlets: withPamphlets.length,
     cabinetOrMinister: cabinetOrMinister.length,
     mps: people.filter((p) => p.positionType === "mp").length,
+    formerMps: people.filter((p) => p.positionType === "former_mp").length,
     peers: people.filter((p) => p.positionType === "peer").length,
     msps: people.filter((p) => p.positionType === "msp").length,
     senedd: people.filter((p) => p.positionType === "senedd").length,
+    donors: people.filter(
+      (p) =>
+        p.positionType === "donor" ||
+        p.donations.some((donation) => Boolean(donation.amount)),
+    ).length,
+    otherPublicFigures: people.filter(
+      (p) => p.positionType === "other_public_figure",
+    ).length,
     local: people.filter((p) =>
       ["councillor", "mayor", "pcc", "combined_authority"].includes(p.positionType),
     ).length,
