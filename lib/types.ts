@@ -261,3 +261,50 @@ export const LIFE_STATUS_LABELS: Record<LifeStatus, string> = {
   living: "Living",
   deceased: "Deceased",
 };
+
+export type ReferenceCategoryId =
+  | "official"
+  | "parliament"
+  | "encyclopaedia"
+  | "academic"
+  | "news"
+  | "hansard"
+  | "archives"
+  | "related"
+  | "international"
+  | "criticism";
+
+export interface ReferenceLink {
+  title: string;
+  publisher: string;
+  date?: string;
+  summary: string;
+  url: string;
+}
+
+export interface ReferenceCategory {
+  id: ReferenceCategoryId;
+  title: string;
+  intro: string;
+  links: ReferenceLink[];
+}
+
+export interface ReferencesData {
+  title: string;
+  lastUpdated: string;
+  methodology: string;
+  categories: ReferenceCategory[];
+}
+
+export const REFERENCE_CATEGORY_LABELS: Record<ReferenceCategoryId, string> = {
+  official: "Official Fabian Society",
+  parliament: "Parliament and Electoral Commission",
+  encyclopaedia: "Encyclopaedia and reference",
+  academic: "Academic and university",
+  news: "News and long reads",
+  hansard: "Hansard debates",
+  archives: "Archives and official records",
+  related: "Sister and related organisations",
+  international: "International Fabian and allied references",
+  criticism: "Criticism and commentary",
+};

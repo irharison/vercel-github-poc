@@ -35,7 +35,7 @@ Open [http://localhost:3000](http://localhost:3000). `npm run build` is the same
 
 Do not invent membership. Do not scrape member-only, leaked or paywalled lists. Do not call a general Labour donation a Fabian donation.
 
-Site-wide copy and the last-updated date live in `data/site.json`.
+Site-wide copy and the last-updated date live in `data/site.json`. The sourced link library lives in `data/references.json` and is published at `/references`.
 
 ## Deploy
 

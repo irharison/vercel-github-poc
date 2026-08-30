@@ -25,6 +25,11 @@ export function Footer() {
         </div>
         <ul className="flex flex-col gap-2 sm:items-end">
           <li>
+            <Link className="hover:text-ink" href="/references">
+              References and further reading
+            </Link>
+          </li>
+          <li>
             <Link className="hover:text-ink" href="/about">
               Methodology and limitations
             </Link>

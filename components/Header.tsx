@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const links = [
   { href: "/directory", label: "Directory" },
+  { href: "/references", label: "References" },
   { href: "/about", label: "Methodology" },
 ];
 

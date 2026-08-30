@@ -89,6 +89,22 @@ export default function Home() {
         </p>
       </section>
 
+      <section className="mt-12 max-w-3xl border-t border-line pt-10">
+        <h2 className="font-serif text-2xl text-ink">References and further reading</h2>
+        <p className="mt-3 text-sm leading-7 text-muted">
+          A separate page collects official Society documents, parliamentary and
+          Electoral Commission records, encyclopaedia entries, academic texts,
+          news, Hansard, archives, sister organisations and a criticism group.
+          It is a public trail for the Society and the doctrine, not only the
+          people in this register.
+        </p>
+        <p className="mt-4">
+          <Link className="text-accent underline-offset-2 hover:underline" href="/references">
+            Browse the references library
+          </Link>
+        </p>
+      </section>
+
       <section className="mt-14" aria-labelledby="directory-heading">
         <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
           <h2 id="directory-heading" className="font-serif text-2xl text-ink">

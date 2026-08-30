@@ -253,6 +253,14 @@ export default async function PersonPage({
           Every fact on this page is drawn from the citations below.
         </p>
         <SourcesList sources={person.sources} />
+        <p className="mt-6 text-sm leading-6 text-muted">
+          For debates, archives and further reading that mention the Society
+          rather than this person, see{" "}
+          <Link className="text-accent underline-offset-2 hover:underline" href="/references">
+            References and further reading
+          </Link>
+          .
+        </p>
       </section>
     </article>
   );

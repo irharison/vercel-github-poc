@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { formatDate, site } from "@/lib/people";
 
 export const metadata: Metadata = {
@@ -114,6 +115,16 @@ export default function AboutPage() {
             University, think-tank and company about pages, and reputable news,
             used to corroborate a job or a Fabian fact already grounded in a
             public page.
+          </li>
+          <li>
+            A wider public-web scan on 30 August 2026 for pages that name the
+            Society or Fabianism, collected on the{" "}
+            <Link className="text-accent underline-offset-2 hover:underline" href="/references">
+              references and further reading
+            </Link>{" "}
+            page. Wikipedia is listed once there as a hub. Anonymous conspiracy
+            pages and antisemitic “secret Fabian / cultural Marxism” material
+            found in that scan were omitted.
           </li>
         </ul>
       </section>
