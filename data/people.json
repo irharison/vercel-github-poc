@@ -9646,53 +9646,6 @@
     "died": "1942-03-00"
   },
   {
-    "slug": "edward-r-pease",
-    "name": "Edward R. Pease",
-    "currentPosition": "Writer; last known organisation Writer (died 1955)",
-    "living": false,
-    "jobTitle": "Writer",
-    "organisation": "Writer",
-    "sector": "media",
-    "positionType": "writer",
-    "chamber": "none",
-    "labourRole": "none",
-    "party": "Labour",
-    "fabianSummary": "Named on the Society chairs or general secretaries list, or a matching Wikipedia officer category. Edward Reynolds Pease (23 December 1857 \u2013 5 January 1955) was an English writer and a founding member of the Fabian Society.",
-    "primaryFabianStatus": "member",
-    "inclusionBasis": "named_role_or_membership",
-    "sourceQuality": "corroborated",
-    "involvement": [
-      {
-        "status": "member",
-        "title": "Member",
-        "current": false,
-        "summary": "Edward Reynolds Pease (23 December 1857 \u2013 5 January 1955) was an English writer and a founding member of the Fabian Society."
-      }
-    ],
-    "outputs": [],
-    "donations": [],
-    "organisations": [
-      {
-        "name": "Writer",
-        "kind": "media",
-        "role": "Writer"
-      }
-    ],
-    "sources": [
-      {
-        "url": "https://fabians.org.uk/about-us/our-history/",
-        "label": "Fabian Society, Our history",
-        "accessed": "2026-08-30"
-      },
-      {
-        "url": "https://en.wikipedia.org/wiki/Edward_R._Pease",
-        "label": "Wikipedia, Edward R. Pease",
-        "accessed": "2026-08-30"
-      }
-    ],
-    "died": "1955-01-05"
-  },
-  {
     "slug": "arthur-penty",
     "name": "Arthur Penty",
     "currentPosition": "Arthur Joseph Penty (17 March 1875 \u2013 1937) was an English architect and writer on guild socialism and distributism.",
@@ -14799,89 +14752,6 @@
     ]
   },
   {
-    "slug": "edward-pease",
-    "name": "Edward R. Pease",
-    "living": false,
-    "died": "1955",
-    "jobTitle": "First long-serving secretary of the Fabian Society",
-    "organisation": "Fabian Society",
-    "sector": "think_tank",
-    "currentPosition": "Founding member; secretary 1891\u20131913 and acting secretary 1915\u201319; LSE governor 1901\u201345 (died 1955)",
-    "positionType": "historical",
-    "chamber": "none",
-    "labourRole": "none",
-    "party": "Labour",
-    "fabianSummary": "Present at the 4 January 1884 founding meeting. The Society\u2019s history table lists E. R. Pease as general secretary 1891\u20131913 and acting secretary 1915\u201319. He wrote The History of the Fabian Society (1916) and sat on Labour\u2019s NEC as the Society\u2019s representative.",
-    "primaryFabianStatus": "general_secretary",
-    "inclusionBasis": "named_role_or_membership",
-    "sourceQuality": "corroborated",
-    "involvement": [
-      {
-        "status": "member",
-        "title": "Founding member",
-        "start": "1884",
-        "current": false,
-        "summary": "Named by the Society\u2019s Slow and Steady history as one of the nine present on 4 January 1884, and later at the founding of the LRC."
-      },
-      {
-        "status": "general_secretary",
-        "title": "General secretary",
-        "start": "1891",
-        "end": "1913",
-        "current": false,
-        "summary": "Listed on the official chairs and general secretaries table. LSE\u2019s first-governors note says he served as secretary from 1889 and represented the Society on Labour\u2019s NEC, 1900\u201313."
-      }
-    ],
-    "outputs": [
-      {
-        "kind": "report",
-        "title": "The History of the Fabian Society",
-        "date": "1916",
-        "url": "https://www.gutenberg.org/files/13715/13715-h/13715-h.htm"
-      }
-    ],
-    "donations": [],
-    "organisations": [
-      {
-        "name": "Fabian Society",
-        "kind": "think_tank",
-        "role": "Secretary"
-      },
-      {
-        "name": "London School of Economics and Political Science",
-        "kind": "academia",
-        "role": "Governor, 1901\u20131945"
-      },
-      {
-        "name": "Labour Party",
-        "kind": "politics",
-        "role": "NEC representative for the Society, 1900\u20131913"
-      }
-    ],
-    "sources": [
-      {
-        "url": "https://fabians.org.uk/about-us/our-history/",
-        "label": "Fabian Society, Our history",
-        "accessed": "2026-08-30"
-      },
-      {
-        "url": "https://fabians.org.uk/slow-and-steady/",
-        "label": "Paul Richards, Slow and Steady, Fabian Society",
-        "accessed": "2026-08-30"
-      },
-      {
-        "url": "https://blogs.lse.ac.uk/lsehistory/2021/12/20/first-governors/",
-        "label": "LSE History, first Board of Governors",
-        "accessed": "2026-08-30"
-      },
-      {
-        "url": "https://www.gutenberg.org/files/13715/13715-h/13715-h.htm",
-        "label": "Edward R. Pease, The History of the Fabian Society (Gutenberg)",
-        "accessed": "2026-08-30"
-      }
-    ]
-  },
-  {
     "slug": "henry-hunt-hutchinson",
     "name": "Henry Hunt Hutchinson",
     "living": false,
@@ -15236,6 +15106,94 @@
       {
         "url": "https://fabians.org.uk/slow-and-steady/",
         "label": "Paul Richards, Slow and Steady, Fabian Society",
+        "accessed": "2026-08-30"
+      }
+    ]
+  },
+  {
+    "slug": "edward-r-pease",
+    "name": "Edward R. Pease",
+    "living": false,
+    "died": "1955-01-05",
+    "jobTitle": "First long-serving secretary of the Fabian Society",
+    "organisation": "Fabian Society",
+    "sector": "think_tank",
+    "currentPosition": "Founding member; secretary 1891\u20131913 and acting secretary 1915\u201319; LSE governor 1901\u201345 (died 1955)",
+    "positionType": "historical",
+    "chamber": "none",
+    "labourRole": "none",
+    "party": "Labour",
+    "fabianSummary": "Present at the 4 January 1884 founding meeting. The Society\u2019s history table lists E. R. Pease as general secretary 1891\u20131913 and acting secretary 1915\u201319. He wrote The History of the Fabian Society (1916) and sat on Labour\u2019s NEC as the Society\u2019s representative.",
+    "primaryFabianStatus": "general_secretary",
+    "inclusionBasis": "named_role_or_membership",
+    "sourceQuality": "corroborated",
+    "involvement": [
+      {
+        "status": "member",
+        "title": "Founding member",
+        "start": "1884",
+        "current": false,
+        "summary": "Named by the Society\u2019s Slow and Steady history as one of the nine present on 4 January 1884, and later at the founding of the LRC."
+      },
+      {
+        "status": "general_secretary",
+        "title": "General secretary",
+        "start": "1891",
+        "end": "1913",
+        "current": false,
+        "summary": "Listed on the official chairs and general secretaries table. LSE\u2019s first-governors note says he served as secretary from 1889 and represented the Society on Labour\u2019s NEC, 1900\u201313."
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "report",
+        "title": "The History of the Fabian Society",
+        "date": "1916",
+        "url": "https://www.gutenberg.org/files/13715/13715-h/13715-h.htm"
+      }
+    ],
+    "donations": [],
+    "organisations": [
+      {
+        "name": "Fabian Society",
+        "kind": "think_tank",
+        "role": "Secretary"
+      },
+      {
+        "name": "London School of Economics and Political Science",
+        "kind": "academia",
+        "role": "Governor, 1901\u20131945"
+      },
+      {
+        "name": "Labour Party",
+        "kind": "politics",
+        "role": "NEC representative for the Society, 1900\u20131913"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://fabians.org.uk/about-us/our-history/",
+        "label": "Fabian Society, Our history",
+        "accessed": "2026-08-30"
+      },
+      {
+        "url": "https://fabians.org.uk/slow-and-steady/",
+        "label": "Paul Richards, Slow and Steady, Fabian Society",
+        "accessed": "2026-08-30"
+      },
+      {
+        "url": "https://blogs.lse.ac.uk/lsehistory/2021/12/20/first-governors/",
+        "label": "LSE History, first Board of Governors",
+        "accessed": "2026-08-30"
+      },
+      {
+        "url": "https://www.gutenberg.org/files/13715/13715-h/13715-h.htm",
+        "label": "Edward R. Pease, The History of the Fabian Society (Gutenberg)",
+        "accessed": "2026-08-30"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Edward_R._Pease",
+        "label": "Wikipedia, Edward R. Pease",
         "accessed": "2026-08-30"
       }
     ]

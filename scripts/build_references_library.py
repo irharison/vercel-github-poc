@@ -690,7 +690,7 @@ REFERENCES = {
 
 NEW_PEOPLE = [
     {
-        "slug": "edward-pease",
+        "slug": "edward-r-pease",
         "name": "Edward R. Pease",
         "living": False,
         "died": "1955",
