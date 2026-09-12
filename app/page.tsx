@@ -1,124 +1,99 @@
-import Link from "next/link";
-import { DirectoryExplorer } from "@/components/DirectoryExplorer";
-import { counts, formatDate, getPeopleSorted, site } from "@/lib/people";
-import { SECTOR_LABELS } from "@/lib/types";
+function deployFacts() {
+  const onVercel = process.env.VERCEL === "1";
+  const environment = process.env.VERCEL_ENV ?? "development";
+  const region = process.env.VERCEL_REGION ?? "local";
+  const sha = process.env.VERCEL_GIT_COMMIT_SHA;
+  const commit = sha ? sha.slice(0, 7) : "local";
+
+  return [
+    { label: "Status", value: onVercel ? "Live on Vercel" : "Running locally" },
+    { label: "Environment", value: environment },
+    { label: "Region", value: region },
+    { label: "Commit", value: commit },
+    { label: "Built at", value: new Date().toISOString() },
+  ];
+}
 
 export default function Home() {
-  const stats = counts();
-  const people = getPeopleSorted();
-  const sectorEntries = Object.entries(stats.bySector).filter(([, value]) => value > 0);
+  const facts = deployFacts();
+  const onVercel = process.env.VERCEL === "1";
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
-      <p className="text-xs tracking-[0.2em] text-accent uppercase">
-        Public register · last updated {formatDate(site.lastUpdated)}
-      </p>
-      <h1 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-balance text-ink sm:text-5xl">
-        A public register of documented Fabian Society connections
-      </h1>
-      <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-        {site.tagline} The Society does not publish a complete membership list.
-        This site records only what public pages name.
-      </p>
+    <div className="relative flex min-h-full flex-1 flex-col overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="hero-grid pointer-events-none absolute inset-0"
+      />
+      <header className="relative z-10 mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-6">
+        <p className="font-mono text-xs tracking-[0.22em] text-muted uppercase">
+          vercel-github-poc
+        </p>
+        <span className="inline-flex items-center gap-2 rounded-full border border-line bg-card/80 px-3 py-1 text-xs text-foreground">
+          <span
+            className={`h-1.5 w-1.5 rounded-full ${onVercel ? "bg-accent" : "bg-amber-400"}`}
+            aria-hidden="true"
+          />
+          {onVercel ? "Production deploy" : "Local preview"}
+        </span>
+      </header>
 
-      <dl className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {[
-          ["People in this register", stats.total],
-          ["Living", stats.living],
-          ["Deceased", stats.deceased],
-          ["Corroborated beyond Wikipedia", stats.corroborated],
-          ["Wikipedia only", stats.wikipediaOnly],
-          ["Pamphlet or essay only", stats.outputOnly],
-        ].map(([label, value]) => (
-          <div key={label} className="rounded-xl border border-line bg-card px-5 py-4">
-            <dt className="text-xs tracking-wide text-muted uppercase">{label}</dt>
-            <dd className="mt-2 font-serif text-3xl text-ink">{value}</dd>
-          </div>
-        ))}
-      </dl>
-
-      <section className="mt-10">
-        <h2 className="font-serif text-2xl text-ink">By sector</h2>
-        <dl className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {sectorEntries.map(([sector, value]) => (
-            <div key={sector} className="rounded-lg border border-line px-4 py-3">
-              <dt className="text-xs tracking-wide text-muted uppercase">
-                {SECTOR_LABELS[sector as keyof typeof SECTOR_LABELS]}
-              </dt>
-              <dd className="mt-1 font-serif text-2xl text-ink">{value}</dd>
-            </div>
-          ))}
-        </dl>
-      </section>
-
-      <section className="mt-12 max-w-3xl border-t border-line pt-10">
-        <h2 className="font-serif text-2xl text-ink">What is included</h2>
-        <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-muted">
-          <li>
-            Sitting and former office-holders, peers, civil servants, public-body
-            chairs, NHS and regulator figures, academics, journalists, union
-            officials and people in companies, where a published Fabian link
-            can be cited.
-          </li>
-          <li>
-            Historic Liberals, SDP figures, Conservatives, independents and
-            people with no stated party, if a public page names them as Fabians.
-          </li>
-          <li>
-            Deceased historical figures (Webb, Shaw, Attlee and later chairs)
-            with last known job and organisation.
-          </li>
-          <li>
-            Wikipedia is a lead. If the article body states membership but no
-            second source was found, the record is labelled Wikipedia only.
-          </li>
-          <li>
-            Authorship-only pamphlets are labelled and not counted as confirmed
-            membership. Ordinary private members without a public source are
-            excluded. A Labour donation is not a Fabian donation.
-          </li>
-        </ul>
-        <p className="mt-4 text-sm leading-7 text-muted">
-          The society’s 2024–25 annual report said 141 Fabian MPs were elected in
-          July 2024. That list was not published, so those unnamed people are not
-          invented here.{" "}
-          <Link className="text-accent underline-offset-2 hover:underline" href="/about">
-            Read the full methodology
-          </Link>
+      <main className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center px-6 pt-8 pb-16">
+        <p className="mb-4 font-mono text-sm text-accent">Placeholder</p>
+        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-balance sm:text-6xl">
+          This repo is free for new work.
+        </h1>
+        <p className="mt-5 max-w-2xl text-lg leading-8 text-pretty text-muted">
+          Standard Next.js App Router. Push to{" "}
+          <code className="rounded bg-accent-dim px-1.5 py-0.5 font-mono text-[0.9em] text-accent">
+            main
+          </code>{" "}
+          and Vercel builds this page automatically.
+        </p>
+        <p className="mt-4 max-w-2xl text-sm leading-7 text-muted">
+          The previous Labour–Fabian public directory was archived to{" "}
+          <code className="rounded bg-accent-dim px-1.5 py-0.5 font-mono text-[0.9em] text-accent">
+            archive/fabian-directory
+          </code>
           .
         </p>
-      </section>
 
-      <section className="mt-12 max-w-3xl border-t border-line pt-10">
-        <h2 className="font-serif text-2xl text-ink">References and further reading</h2>
-        <p className="mt-3 text-sm leading-7 text-muted">
-          A separate page collects official Society documents, parliamentary and
-          Electoral Commission records, encyclopaedia entries, academic texts,
-          news, Hansard, archives, sister organisations and a criticism group.
-          It is a public trail for the Society and the doctrine, not only the
-          people in this register.
-        </p>
-        <p className="mt-4">
-          <Link className="text-accent underline-offset-2 hover:underline" href="/references">
-            Browse the references library
-          </Link>
-        </p>
-      </section>
+        <section
+          aria-labelledby="deploy-facts"
+          className="mt-12 overflow-hidden rounded-2xl border border-line bg-card/70 backdrop-blur-sm"
+        >
+          <div className="border-b border-line px-5 py-4">
+            <h2 id="deploy-facts" className="text-sm font-medium tracking-tight">
+              Deploy facts
+            </h2>
+            <p className="mt-1 text-sm text-muted">
+              Values come from the Vercel build environment.
+            </p>
+          </div>
+          <dl className="grid sm:grid-cols-2 lg:grid-cols-5">
+            {facts.map((fact) => (
+              <div
+                key={fact.label}
+                className="border-t border-line px-5 py-4 last:border-b-0 sm:odd:border-r lg:border-r lg:last:border-r-0"
+              >
+                <dt className="font-mono text-[11px] tracking-wider text-muted uppercase">
+                  {fact.label}
+                </dt>
+                <dd className="mt-1 font-mono text-sm break-all">{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      </main>
 
-      <section className="mt-14" aria-labelledby="directory-heading">
-        <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
-          <h2 id="directory-heading" className="font-serif text-2xl text-ink">
-            Search the register
-          </h2>
-          <Link
-            className="text-sm text-accent underline-offset-2 hover:underline"
-            href="/directory"
-          >
-            Open the full directory page
-          </Link>
-        </div>
-        <DirectoryExplorer people={people} />
-      </section>
-    </main>
+      <footer className="relative z-10 mx-auto flex w-full max-w-5xl items-center justify-between gap-4 px-6 py-6 text-xs text-muted">
+        <p>GitHub → Vercel · Next.js App Router</p>
+        <a
+          href="https://github.com/irharison/vercel-github-poc"
+          className="hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        >
+          irharison/vercel-github-poc
+        </a>
+      </footer>
+    </div>
   );
 }
