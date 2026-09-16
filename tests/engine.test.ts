@@ -1,5 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { defaultDeal, defaultLending, defaultSdlt, defaultSettings, defaultTax, salePrice } from "../lib/calc/defaults";
+import {
+  clampHoldMonths,
+  defaultDeal,
+  defaultLending,
+  defaultSdlt,
+  defaultSettings,
+  defaultTax,
+  salePrice,
+} from "../lib/calc/defaults";
 import {
   calculateDeal,
   calculateLending,
@@ -246,6 +254,22 @@ describe("Whole deal", () => {
     });
     closeTo(personal.rental.profitBeforeTax, co.rental.profitBeforeTax);
     expect(personal.rental.tax).toBeGreaterThan(co.rental.tax);
+  });
+
+  it("clamps a zero or negative hold period to one month when calculating", () => {
+    const zero = calculateDeal({ deal: { ...deal, holdMonths: 0 }, settings: defaultSettings() });
+    expect(zero.inputs.holdMonths).toBe(1);
+    expect(zero.rental.years).toHaveLength(1);
+    expect(zero.rental.years[0]?.monthsInYear).toBe(1);
+
+    const negative = calculateDeal({ deal: { ...deal, holdMonths: -12 }, settings: defaultSettings() });
+    expect(negative.inputs.holdMonths).toBe(1);
+  });
+
+  it("does not treat an empty mid-edit hold as a keystroke clamp to 1", () => {
+    expect(clampHoldMonths(0)).toBe(1);
+    expect(clampHoldMonths(36)).toBe(36);
+    expect(clampHoldMonths(601)).toBe(600);
   });
 });
 

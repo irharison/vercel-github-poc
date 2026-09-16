@@ -60,6 +60,14 @@ export function defaultSettings(): AppSettings {
   };
 }
 
+export const HOLD_MONTHS_MIN = 1;
+export const HOLD_MONTHS_MAX = 600;
+
+export function clampHoldMonths(value: number): number {
+  if (!Number.isFinite(value)) return HOLD_MONTHS_MIN;
+  return Math.min(HOLD_MONTHS_MAX, Math.max(HOLD_MONTHS_MIN, Math.round(value)));
+}
+
 export function defaultDeal(): DealInputs {
   return {
     label: "New deal",
@@ -103,6 +111,6 @@ export function lendingForDeal(
 
 export function salePrice(deal: DealInputs): number {
   if (deal.salePriceMode === "explicit") return deal.explicitSalePrice;
-  const years = deal.holdMonths / 12;
+  const years = clampHoldMonths(deal.holdMonths) / 12;
   return deal.purchasePrice * Math.pow(1 + deal.annualGrowthPercent / 100, years);
 }

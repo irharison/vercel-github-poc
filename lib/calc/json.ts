@@ -1,4 +1,11 @@
-import { defaultDeal, defaultLending, defaultSdlt, defaultSettings, defaultTax } from "./defaults";
+import {
+  clampHoldMonths,
+  defaultDeal,
+  defaultLending,
+  defaultSdlt,
+  defaultSettings,
+  defaultTax,
+} from "./defaults";
 import type {
   AppSettings,
   DealInputs,
@@ -113,7 +120,7 @@ export function dealFromJson(raw: unknown): DealInputs {
     targetLoan: num(j.targetLoan, d.targetLoan),
     lendingOverride: j.lendingOverride == null ? null : lendingFromJson(j.lendingOverride),
     monthlyRent: num(j.monthlyRent, d.monthlyRent),
-    holdMonths: Math.round(num(j.holdMonths, d.holdMonths)),
+    holdMonths: clampHoldMonths(num(j.holdMonths, d.holdMonths)),
     voidPercent: num(j.voidPercent, d.voidPercent),
     managementPercent: num(j.managementPercent, d.managementPercent),
     maintenancePercentOfRent: num(j.maintenancePercentOfRent, d.maintenancePercentOfRent),

@@ -4,6 +4,7 @@ import { useDeal } from "./deal-provider";
 import { Appraisal } from "./appraisal";
 import { MoneyField, NoteBanner, PercentField, ResultRow, SectionCard, Segmented, Toggle } from "./fields";
 import { money, percent, ratio } from "@/lib/format";
+import { HOLD_MONTHS_MAX, HOLD_MONTHS_MIN } from "@/lib/calc/defaults";
 import type { FinancingMode, SalePriceMode } from "@/lib/calc/types";
 
 export function DealWorkspace() {
@@ -99,7 +100,10 @@ export function DealWorkspace() {
             value={deal.holdMonths}
             prefix={null}
             suffix="months"
-            onChange={(value) => updateDeal({ ...deal, holdMonths: Math.min(600, Math.max(1, Math.round(value))) })}
+            min={HOLD_MONTHS_MIN}
+            max={HOLD_MONTHS_MAX}
+            integer
+            onChange={(holdMonths) => updateDeal({ ...deal, holdMonths })}
           />
           <PercentField label="Voids" value={deal.voidPercent} onChange={(voidPercent) => updateDeal({ ...deal, voidPercent })} />
           <PercentField label="Management fee" value={deal.managementPercent} onChange={(managementPercent) => updateDeal({ ...deal, managementPercent })} />

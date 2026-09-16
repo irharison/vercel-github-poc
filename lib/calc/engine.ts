@@ -6,7 +6,7 @@
  * NDPropertyDev/app/test/engine_test.dart (copied to tests/engine.test.ts).
  */
 
-import { lendingForDeal, salePrice } from "./defaults";
+import { clampHoldMonths, lendingForDeal, salePrice } from "./defaults";
 import type {
   AppSettings,
   DealInputs,
@@ -201,7 +201,9 @@ export function calculateDeal(args: {
   deal: DealInputs;
   settings: AppSettings;
 }): DealResult {
-  const { deal, settings } = args;
+  const { settings } = args;
+  const holdMonths = clampHoldMonths(args.deal.holdMonths);
+  const deal = { ...args.deal, holdMonths };
   const isCompany = settings.tax.ownership === "limitedCompany";
   const lendingTerms = lendingForDeal(deal, settings.lending);
 

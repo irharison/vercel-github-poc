@@ -1,6 +1,7 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
+import { isAllowedNumericDraft, parseNumericInput, settleNumericDraft } from "@/lib/numeric-input";
 
 export function SectionCard({
   title,
@@ -63,6 +64,10 @@ export function NoteBanner({ text }: { text: string }) {
   );
 }
 
+function formatFieldValue(value: number): string {
+  return Number.isFinite(value) ? String(value) : "";
+}
+
 export function MoneyField({
   label,
   value,
@@ -71,6 +76,9 @@ export function MoneyField({
   prefix = "£",
   suffix,
   decimals = false,
+  min,
+  max,
+  integer = false,
 }: {
   label: string;
   value: number;
@@ -79,7 +87,14 @@ export function MoneyField({
   prefix?: string | null;
   suffix?: string;
   decimals?: boolean;
+  min?: number;
+  max?: number;
+  integer?: boolean;
 }) {
+  const [focused, setFocused] = useState(false);
+  const [draft, setDraft] = useState(() => formatFieldValue(value));
+  const display = focused ? draft : formatFieldValue(value);
+
   return (
     <label className="block text-sm">
       <span className="mb-1 block text-stone-600 dark:text-stone-300">{label}</span>
@@ -87,16 +102,29 @@ export function MoneyField({
         {prefix ? <span className="pl-3 text-stone-400">{prefix}</span> : null}
         <input
           className="w-full bg-transparent px-3 py-2 outline-none"
-          inputMode="decimal"
-          value={Number.isFinite(value) ? String(value) : ""}
+          inputMode={integer && !decimals ? "numeric" : "decimal"}
+          value={display}
+          onFocus={() => {
+            setFocused(true);
+            setDraft(formatFieldValue(value));
+          }}
           onChange={(event) => {
             const text = event.target.value;
-            if (text === "") {
-              onChange(0);
-              return;
-            }
-            const next = Number(text);
-            if (Number.isFinite(next)) onChange(decimals ? next : next);
+            if (!isAllowedNumericDraft(text)) return;
+            setDraft(text);
+            const parsed = parseNumericInput(text);
+            if (parsed != null) onChange(parsed);
+          }}
+          onBlur={() => {
+            const next = settleNumericDraft(draft, {
+              min,
+              max,
+              integer,
+              emptyValue: min ?? 0,
+            });
+            onChange(next);
+            setDraft(formatFieldValue(next));
+            setFocused(false);
           }}
         />
         {suffix ? <span className="pr-3 text-stone-400">{suffix}</span> : null}
@@ -111,6 +139,8 @@ export function PercentField(props: {
   value: number;
   onChange: (value: number) => void;
   helper?: string;
+  min?: number;
+  max?: number;
 }) {
   return <MoneyField {...props} prefix={null} suffix="%" decimals />;
 }
