@@ -65,6 +65,7 @@ Open http://localhost:3000
 - Saved deals / current deal / settings in `localStorage`
 - Research + browser cache UI for PropertyData
 - Vercel route `GET /api/pd/[...endpoint]` (allowlisted proxy)
+- Auth.js (NextAuth v5) Google sign-in, restricted to `@nataliedennis.co.uk`
 
 Seeded defaults match Flutter: £250k purchase, £1,200/month rent, 24-month
 hold, 3% growth, company ownership, 75% LTV, 1.25× ICR at 5.5% stress. On
@@ -98,7 +99,12 @@ app/page.tsx                 Deal
 app/research/page.tsx        PropertyData lookups
 app/cache/page.tsx           Browser cache of paid lookups
 app/settings/page.tsx        Tax / lending tables
+app/signin/page.tsx          Google sign-in (nataliedennis.co.uk only)
+app/api/auth/[...nextauth]   Auth.js route handlers
 app/api/pd/[...endpoint]     PropertyData proxy (key stays on the server)
+auth.ts                      Auth.js (Google + domain allowlist)
+proxy.ts                     Require a session on every non-auth route
+lib/auth-domain.ts           `@nataliedennis.co.uk` check
 lib/calc/engine.ts           Pure functions — no UI, no I/O
 lib/calc/types.ts
 lib/calc/defaults.ts
@@ -128,6 +134,30 @@ over that.
   charged on the drawn balance.
 - `extractNumber` returns **null, not zero**, when a field is missing.
 
+## Auth (Google domain allowlist)
+
+The site is not public. `proxy.ts` sends anonymous visitors to `/signin`.
+Only a Google account whose email ends with `@nataliedennis.co.uk`
+(case-insensitive) can get a session. That check runs in the Auth.js
+`signIn` callback and again on the JWT/session. Google also receives
+`hd=nataliedennis.co.uk` as an account-picker hint.
+
+Unauthenticated routes: `/signin`, `/auth/error`, `/api/auth/*`.
+
+Env (never commit real values):
+
+- `AUTH_SECRET`
+- `AUTH_GOOGLE_ID` / `AUTH_GOOGLE_SECRET`
+- `AUTH_URL` (production: `https://vercel-github-poc.vercel.app`)
+- `AUTH_TRUST_HOST=true`
+
+Google Cloud OAuth redirect URIs:
+
+- `http://localhost:3000/api/auth/callback/google`
+- `https://vercel-github-poc.vercel.app/api/auth/callback/google`
+
+See README for the full Console steps.
+
 ## Deploy
 
 Repo is already the Vercel project `vercel-github-poc`. Push `main`:
@@ -136,9 +166,14 @@ Repo is already the Vercel project `vercel-github-poc`. Push `main`:
 git push origin main
 ```
 
-Add env in Vercel only if needed:
+Add env in Vercel:
 
-- `PROPERTYDATA_API_KEY`
+- `AUTH_SECRET`
+- `AUTH_GOOGLE_ID`
+- `AUTH_GOOGLE_SECRET`
+- `AUTH_URL=https://vercel-github-poc.vercel.app`
+- `AUTH_TRUST_HOST=true`
+- `PROPERTYDATA_API_KEY` (optional; Research only)
 
 ## Product tone
 

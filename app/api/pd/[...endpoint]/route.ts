@@ -1,3 +1,5 @@
+import { auth } from "@/auth";
+import { isAllowedEmail } from "@/lib/auth-domain";
 import { ALLOWED_ENDPOINTS, normalisePostcode } from "@/lib/propertydata";
 
 const PD_BASE = "https://api.propertydata.co.uk";
@@ -6,6 +8,11 @@ export async function GET(
   request: Request,
   context: { params: Promise<{ endpoint: string[] }> },
 ) {
+  const session = await auth();
+  if (!isAllowedEmail(session?.user?.email)) {
+    return Response.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   const { endpoint: parts } = await context.params;
   const endpoint = parts.join("/");
   const spec = ALLOWED_ENDPOINTS[endpoint];

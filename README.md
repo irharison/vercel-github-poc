@@ -14,6 +14,8 @@ All development happens in this folder:
 ```bash
 cd C:\Users\IanHarrison\OneDrive\svn\NDPropertyVercel
 npm install
+copy .env.example .env.local
+# then set AUTH_SECRET, AUTH_GOOGLE_ID, AUTH_GOOGLE_SECRET in .env.local
 npm test
 npm run dev
 ```
@@ -32,11 +34,43 @@ Appraises a residential purchase held in a limited company (or personally):
 
 Every rate is editable in Settings. None of it is advice.
 
+## Access (Google, nataliedennis.co.uk only)
+
+The whole site is private. Auth.js (NextAuth v5) with the Google provider
+allows only accounts whose email ends with `@nataliedennis.co.uk`. Other
+Google / Gmail accounts are rejected. Copy `.env.example` to `.env.local`
+and set:
+
+| Variable | Purpose |
+| --- | --- |
+| `AUTH_SECRET` | Session signing secret (`openssl rand -base64 32`) |
+| `AUTH_GOOGLE_ID` | Google OAuth 2.0 client ID |
+| `AUTH_GOOGLE_SECRET` | Google OAuth 2.0 client secret |
+| `AUTH_URL` | App origin (`http://localhost:3000` locally) |
+| `AUTH_TRUST_HOST=true` | Trust `X-Forwarded-*` on Vercel |
+
+### Google Cloud Console
+
+1. [APIs & Services → Credentials](https://console.cloud.google.com/apis/credentials) → Create credentials → OAuth client ID → Web application.
+2. Authorized JavaScript origins:
+   - `http://localhost:3000`
+   - `https://vercel-github-poc.vercel.app`
+3. Authorized redirect URIs:
+   - `http://localhost:3000/api/auth/callback/google`
+   - `https://vercel-github-poc.vercel.app/api/auth/callback/google`
+4. Copy the client ID and secret into `.env.local` / Vercel env. Do not commit them.
+5. Set the same values (plus `AUTH_SECRET`, `AUTH_URL=https://vercel-github-poc.vercel.app`, `AUTH_TRUST_HOST=true`) on the Vercel project.
+
+The OAuth `hd=nataliedennis.co.uk` hint narrows the account picker. The app
+still **hard-checks** the email domain in the Auth.js `signIn` / JWT
+callbacks.
+
 ## PropertyData
 
 Research lookups go through `GET /api/pd/...`. They are optional. Set
 `PROPERTYDATA_API_KEY` in `.env.local` / Vercel to enable them. Cached
-answers live in the browser; a refresh asks before spending a credit.
+answers live in the browser; a refresh asks before spending a credit. Authenticated
+`@nataliedennis.co.uk` users only.
 
 ## Tests
 
