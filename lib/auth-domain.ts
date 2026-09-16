@@ -2,6 +2,11 @@
 export const ALLOWED_EMAIL_DOMAIN = "nataliedennis.co.uk";
 export const ALLOWED_EMAIL_SUFFIX = `@${ALLOWED_EMAIL_DOMAIN}`;
 
+/** JWT + cookie lifetime. Activity via proxy/auth() rolls this forward. */
+export const SESSION_MAX_AGE_SECONDS = 30 * 24 * 60 * 60;
+/** Throttle how often a rolling JWT cookie is re-issued (Auth.js updateAge). */
+export const SESSION_UPDATE_AGE_SECONDS = 24 * 60 * 60;
+
 export function isAllowedEmail(email: string | null | undefined): boolean {
   if (!email) return false;
   const normalised = email.trim().toLowerCase();

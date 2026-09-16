@@ -18,11 +18,8 @@ export default async function AuthErrorPage({
         <p className="mt-3 text-sm leading-6 text-stone-600 dark:text-stone-300">
           {denied
             ? "Only Google accounts whose email ends with @nataliedennis.co.uk can use this site. Gmail and other Google accounts cannot get a session."
-            : "Something went wrong while signing in. Use an @nataliedennis.co.uk Google account and try again."}
+            : "Sign-in is temporarily unavailable. Please try again later."}
         </p>
-        {error && error !== "AccessDenied" ? (
-          <p className="mt-3 font-mono text-xs text-stone-500">Error code: {error}</p>
-        ) : null}
         <Link
           href="/signin"
           className="mt-6 inline-flex rounded-md bg-[var(--brand)] px-4 py-2.5 text-sm font-medium text-white hover:opacity-95"

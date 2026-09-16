@@ -144,6 +144,15 @@ Only a Google account whose email ends with `@nataliedennis.co.uk`
 
 Unauthenticated routes: `/signin`, `/auth/error`, `/api/auth/*`.
 
+Sessions are JWT cookies, **30 days**, rolling (activity extends expiry). Cookies are
+`httpOnly`, `sameSite=lax`, and `secure` on HTTPS/Vercel. They are not
+browser-session cookies — closing the tab does not sign Ian out. Sign out
+still clears the cookie. `AUTH_SECRET` must be a stable Vercel env value or
+JWTs cannot survive deploys.
+
+The public `/signin` page must never mention env var names, README, or
+missing credentials. Setup lives only in this file, README, and `.env.example`.
+
 Env (never commit real values):
 
 - `AUTH_SECRET`

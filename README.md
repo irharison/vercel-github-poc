@@ -65,6 +65,13 @@ The OAuth `hd=nataliedennis.co.uk` hint narrows the account picker. The app
 still **hard-checks** the email domain in the Auth.js `signIn` / JWT
 callbacks.
 
+Signed-in sessions last **30 days** (JWT cookie, rolling — activity extends
+the login). Production cookies are `httpOnly`, `secure`, and `sameSite=lax`.
+They survive browser restarts. Sign out clears them. Keep `AUTH_SECRET`
+stable on Vercel so existing sessions stay valid across deploys.
+
+The public sign-in page must not mention env var names or setup steps.
+
 ## PropertyData
 
 Research lookups go through `GET /api/pd/...`. They are optional. Set

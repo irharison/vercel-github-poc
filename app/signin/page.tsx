@@ -14,7 +14,6 @@ export default async function SignInPage({
   }
 
   const { callbackUrl, error } = await searchParams;
-  const configured = Boolean(process.env.AUTH_GOOGLE_ID && process.env.AUTH_GOOGLE_SECRET);
 
   return (
     <div className="flex flex-1 flex-col items-center justify-center px-4 py-16">
@@ -32,17 +31,10 @@ export default async function SignInPage({
           <p className="mt-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800 dark:bg-red-950/40 dark:text-red-100">
             {error === "AccessDenied"
               ? "That Google account is not on nataliedennis.co.uk, so access was denied."
-              : "Sign-in failed. Try again with an @nataliedennis.co.uk Google account."}
+              : "Sign-in is temporarily unavailable. Please try again later."}
           </p>
         ) : null}
-        {!configured ? (
-          <p className="mt-4 rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-950 dark:bg-amber-950/40 dark:text-amber-100">
-            Google sign-in is not configured yet. Set AUTH_GOOGLE_ID, AUTH_GOOGLE_SECRET, and
-            AUTH_SECRET (see README).
-          </p>
-        ) : (
-          <SignInForm callbackUrl={callbackUrl} />
-        )}
+        <SignInForm callbackUrl={callbackUrl} />
       </div>
     </div>
   );

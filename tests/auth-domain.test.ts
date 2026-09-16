@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
   ALLOWED_EMAIL_DOMAIN,
+  SESSION_MAX_AGE_SECONDS,
+  SESSION_UPDATE_AGE_SECONDS,
   canCreateSession,
   isAllowedEmail,
   isPublicPath,
@@ -53,6 +55,14 @@ describe("isPublicPath", () => {
     expect(isPublicPath("/cache")).toBe(false);
     expect(isPublicPath("/settings")).toBe(false);
     expect(isPublicPath("/api/pd/sold-prices")).toBe(false);
+  });
+});
+
+describe("session lifetime", () => {
+  it("persists 30 days and rolls at least daily", () => {
+    expect(SESSION_MAX_AGE_SECONDS).toBe(30 * 24 * 60 * 60);
+    expect(SESSION_UPDATE_AGE_SECONDS).toBe(24 * 60 * 60);
+    expect(SESSION_UPDATE_AGE_SECONDS).toBeLessThan(SESSION_MAX_AGE_SECONDS);
   });
 });
 
