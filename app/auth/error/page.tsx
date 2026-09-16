@@ -13,11 +13,11 @@ export default async function AuthErrorPage({
       <div className="w-full max-w-md rounded-2xl border border-stone-200 bg-white p-8 shadow-sm dark:border-stone-800 dark:bg-stone-900">
         <p className="text-sm font-medium tracking-wide text-[var(--brand)]">ND Property</p>
         <h1 className="mt-2 text-2xl font-semibold tracking-tight">
-          {denied ? "Account not allowed" : "Sign-in error"}
+          {denied ? "Access denied" : "Sign-in error"}
         </h1>
         <p className="mt-3 text-sm leading-6 text-stone-600 dark:text-stone-300">
           {denied
-            ? "Only Google accounts whose email ends with @nataliedennis.co.uk can use this site. Gmail and other Google accounts cannot get a session."
+            ? "This account does not have access."
             : "Sign-in is temporarily unavailable. Please try again later."}
         </p>
         <Link

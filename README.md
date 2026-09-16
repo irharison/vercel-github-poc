@@ -70,7 +70,8 @@ the login). Production cookies are `httpOnly`, `secure`, and `sameSite=lax`.
 They survive browser restarts. Sign out clears them. Keep `AUTH_SECRET`
 stable on Vercel so existing sessions stay valid across deploys.
 
-The public sign-in page must not mention env var names or setup steps.
+The public sign-in page is only a Google login button. Domain rules stay
+server-side; a non-ND account fails after Google with an access-denied error.
 
 ## PropertyData
 

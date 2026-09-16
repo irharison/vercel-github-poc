@@ -150,8 +150,9 @@ browser-session cookies — closing the tab does not sign Ian out. Sign out
 still clears the cookie. `AUTH_SECRET` must be a stable Vercel env value or
 JWTs cannot survive deploys.
 
-The public `/signin` page must never mention env var names, README, or
-missing credentials. Setup lives only in this file, README, and `.env.example`.
+The public `/signin` page is only branding plus Sign in with Google. It must not
+mention env var names, README, missing credentials, or the allowed email domain.
+Rejected Google accounts fail after sign-in with a generic access-denied error.
 
 Env (never commit real values):
 
