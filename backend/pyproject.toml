@@ -1,0 +1,17 @@
+[project]
+name = "fathom-desk-api"
+version = "1.0.0"
+requires-python = ">=3.12"
+description = "Fathom Desk API, a FastAPI service for the learning desk."
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn>=0.32",
+  "sqlalchemy>=2.0",
+  "pydantic>=2",
+  "QuantLib>=1.36",
+  "numpy>=2",
+  "joserfc>=1.0",
+]
+
+[tool.vercel]
+entrypoint = "app.main:app"

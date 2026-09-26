@@ -44,11 +44,20 @@ export function DealProvider({ children }: { children: React.ReactNode }) {
   const [worker, setWorker] = useState<WorkerConfig>({ baseUrl: "/api/pd", appToken: "" });
 
   useEffect(() => {
-    setSettings(loadSettings());
-    setDeal(loadCurrentDeal());
-    setSavedDeals(loadDeals());
-    setWorker(loadWorkerConfig());
-    setHydrated(true);
+    const loaded = {
+      settings: loadSettings(),
+      deal: loadCurrentDeal(),
+      savedDeals: loadDeals(),
+      worker: loadWorkerConfig(),
+    };
+    const timer = window.setTimeout(() => {
+      setSettings(loaded.settings);
+      setDeal(loaded.deal);
+      setSavedDeals(loaded.savedDeals);
+      setWorker(loaded.worker);
+      setHydrated(true);
+    }, 0);
+    return () => window.clearTimeout(timer);
   }, []);
 
   const result = useMemo(() => calculateDeal({ deal, settings }), [deal, settings]);

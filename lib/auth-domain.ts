@@ -23,16 +23,27 @@ export function isPublicPath(pathname: string): boolean {
   return false;
 }
 
+/**
+ * Machine endpoints. Anonymous callers get JSON 401 rather than an HTML
+ * redirect. Fathom pages (including /fathom/docs) stay out of this list so a
+ * browser navigation can still land on the sign-in page.
+ */
+export function isApiPath(pathname: string): boolean {
+  const path = pathname.split("?")[0] || pathname;
+  if (path.startsWith("/api/")) return true;
+  if (path === "/fathom/api" || path.startsWith("/fathom/api/")) return true;
+  if (path === "/fathom/Monitoring" || path.startsWith("/fathom/Monitoring/")) return true;
+  if (path === "/fathom/openapi.json") return true;
+  return false;
+}
+
 /** Only same-origin relative paths; never protocol-relative or auth/API loops. */
 export function safeCallbackUrl(url: string | null | undefined): string {
   if (!url) return "/";
   if (!url.startsWith("/") || url.startsWith("//") || url.startsWith("/\\")) return "/";
   if (url.includes("://") || url.includes("\\")) return "/";
-  if (
-    url.startsWith("/signin") ||
-    url.startsWith("/auth/error") ||
-    url.startsWith("/api/")
-  ) {
+  const path = url.split("?")[0] || url;
+  if (path.startsWith("/signin") || path.startsWith("/auth/error") || isApiPath(path)) {
     return "/";
   }
   return url;

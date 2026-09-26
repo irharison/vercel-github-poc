@@ -13,9 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ND Property",
-  description:
-    "Deal appraisal for residential property development and buy-to-let held in a limited company.",
+  title: {
+    default: "ND",
+    template: "%s · ND",
+  },
+  description: "Natalie Dennis apps: property appraisal and the Fathom teaching desk.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

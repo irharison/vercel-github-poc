@@ -1,4 +1,5 @@
 import { auth } from "@/auth";
+import { isAuthDevBypass } from "@/lib/auth-dev";
 import { isAllowedEmail } from "@/lib/auth-domain";
 import { ALLOWED_ENDPOINTS, normalisePostcode } from "@/lib/propertydata";
 
@@ -8,9 +9,11 @@ export async function GET(
   request: Request,
   context: { params: Promise<{ endpoint: string[] }> },
 ) {
-  const session = await auth();
-  if (!isAllowedEmail(session?.user?.email)) {
-    return Response.json({ error: "Unauthorized" }, { status: 401 });
+  if (!isAuthDevBypass()) {
+    const session = await auth();
+    if (!isAllowedEmail(session?.user?.email)) {
+      return Response.json({ error: "Unauthorized" }, { status: 401 });
+    }
   }
 
   const { endpoint: parts } = await context.params;

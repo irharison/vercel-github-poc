@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/auth";
-import { isAllowedEmail, isPublicPath, safeCallbackUrl } from "@/lib/auth-domain";
+import { isAuthDevBypass } from "@/lib/auth-dev";
+import { isAllowedEmail, isApiPath, isPublicPath, safeCallbackUrl } from "@/lib/auth-domain";
 
-export const proxy = auth((req) => {
+const authProxy = auth((req) => {
   const { pathname } = req.nextUrl;
   const allowed = isAllowedEmail(req.auth?.user?.email);
 
@@ -18,7 +19,7 @@ export const proxy = auth((req) => {
     return NextResponse.next();
   }
 
-  if (pathname.startsWith("/api/")) {
+  if (isApiPath(pathname)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -29,6 +30,15 @@ export const proxy = auth((req) => {
   }
   return NextResponse.redirect(signInUrl);
 });
+
+export function proxy(
+  ...args: Parameters<typeof authProxy>
+): ReturnType<typeof authProxy> {
+  if (isAuthDevBypass()) {
+    return NextResponse.next();
+  }
+  return authProxy(...args);
+}
 
 export const config = {
   matcher: [

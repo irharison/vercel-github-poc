@@ -1,0 +1,243 @@
+.fathom-desk{
+  --bg: #101412;
+  --bg-raised: #181d1a;
+  --bg-sunken: #0b0e0c;
+  --bg-hover: #212824;
+  --line: #2a332e;
+  --line-strong: #3d4a43;
+  --text: #e7eee8;
+  --muted: #93a198;
+  --faint: #66746c;
+  --brass: #e0b15a;
+  --brass-dim: #8c6b2e;
+  --up: #8fd0a8;
+  --down: #e58b7a;
+  --info: #8eb8c9;
+  --warn: #e2b15a;
+  --clay: #d39a74;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  --font-sans: var(--font-fathom-sans), "Segoe UI", sans-serif;
+  --font-mono: var(--font-fathom-mono), ui-monospace, monospace;
+  --font-display: var(--font-fathom-display), Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  flex: 1 1 auto;
+  min-height: calc(100vh - 4.25rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.fathom-desk, .fathom-desk *{ box-sizing: border-box; }
+.fathom-desk button, .fathom-desk input, .fathom-desk select, .fathom-desk textarea{ font: inherit; color: inherit; }
+.fathom-desk button{ cursor: pointer; }
+.fathom-desk a{ color: inherit; text-decoration: none; }
+.fathom-desk ::selection{ background: #3d3420; color: var(--text); }
+
+.fathom-desk .app{
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 196px 1fr;
+  grid-template-rows: 52px 1fr;
+}
+.fathom-desk .topbar{
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 14px;
+  background: var(--bg-sunken);
+  border-bottom: 1px solid var(--line);
+}
+.fathom-desk .brand{ display: flex; align-items: baseline; gap: 8px; min-width: 180px; }
+.fathom-desk .brand em{
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 560;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+  color: var(--brass);
+}
+.fathom-desk .brand span{ color: var(--faint); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; }
+.fathom-desk .top-meta{ display: flex; gap: 18px; color: var(--muted); font-family: var(--font-mono); font-size: 11px; }
+.fathom-desk .top-meta b{ color: var(--text); font-weight: 500; }
+.fathom-desk .top-actions{ margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.fathom-desk .nav{
+  background: var(--bg-sunken);
+  border-right: 1px solid var(--line);
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.fathom-desk .nav a{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+.fathom-desk .nav a small{ color: var(--faint); font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.08em; }
+.fathom-desk .nav a.active, .fathom-desk .nav a:hover{ background: var(--bg-hover); color: var(--text); }
+.fathom-desk .nav a.active{ box-shadow: inset 2px 0 0 var(--brass); }
+.fathom-desk .main{ min-width: 0; min-height: 0; overflow: auto; padding: 14px 16px 28px; }
+.fathom-desk .page-head{ display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.fathom-desk .page-head h1{ margin: 0; font-size: 18px; font-weight: 560; letter-spacing: -0.02em; }
+.fathom-desk .kicker{ color: var(--brass); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 3px; }
+.fathom-desk .lede{ color: var(--muted); max-width: 640px; margin: 4px 0 0; line-height: 1.45; }
+
+.fathom-desk .panel{
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.fathom-desk .panel-hd{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.fathom-desk .kpis{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 10px; }
+.fathom-desk .kpi{ padding: 10px 12px; }
+.fathom-desk .kpi .lbl{ color: var(--faint); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
+.fathom-desk .kpi .val{ font-family: var(--font-mono); font-size: 20px; margin-top: 4px; letter-spacing: -0.03em; }
+.fathom-desk .kpi .sub{ color: var(--muted); font-size: 11px; margin-top: 3px; }
+.fathom-desk .up{ color: var(--up); }
+.fathom-desk .down{ color: var(--down); }
+.fathom-desk .flat{ color: var(--text); }
+
+.fathom-desk .toolbar{ display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; align-items: center; }
+.fathom-desk .btn, .fathom-desk .field, .fathom-desk .select{
+  background: var(--bg-sunken);
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  padding: 6px 9px;
+  outline: none;
+}
+.fathom-desk .btn{ color: var(--text); }
+.fathom-desk .btn:hover{ border-color: var(--brass-dim); }
+.fathom-desk .btn.primary{ background: #2a2418; border-color: var(--brass-dim); color: var(--brass); }
+.fathom-desk .btn.danger{ color: var(--down); }
+.fathom-desk .btn:disabled{ opacity: 0.45; cursor: not-allowed; }
+.fathom-desk .field, .fathom-desk .select{ min-width: 0; }
+.fathom-desk .field:focus, .fathom-desk .select:focus, .fathom-desk .btn:focus-visible{ border-color: var(--brass); box-shadow: 0 0 0 1px var(--brass-dim); }
+.fathom-desk label.stack{ display: flex; flex-direction: column; gap: 4px; color: var(--muted); font-size: 11px; }
+.fathom-desk label.stack .field, .fathom-desk label.stack .select{ width: 100%; }
+
+.fathom-desk .grid-wrap{ overflow: auto; max-height: calc(100vh - 230px); }
+.fathom-desk table.grid{ width: 100%; border-collapse: collapse; font-size: 12px; }
+.fathom-desk table.grid th, .fathom-desk table.grid td{
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+  text-align: left;
+}
+.fathom-desk table.grid th{
+  position: sticky;
+  top: 0;
+  background: #1c221e;
+  color: var(--faint);
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 1;
+}
+.fathom-desk table.grid td.num, .fathom-desk table.grid th.num{ text-align: right; font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.fathom-desk table.grid tbody tr:hover{ background: var(--bg-hover); }
+.fathom-desk table.grid tbody tr.selected{ background: #243028; }
+.fathom-desk table.grid tr.cancelled td{ color: var(--faint); }
+.fathom-desk .pill{
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 99px;
+  padding: 1px 7px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+.fathom-desk .pill.BOOKED{ color: var(--warn); border-color: #6d5a30; }
+.fathom-desk .pill.VERIFIED{ color: var(--info); border-color: #3d5c68; }
+.fathom-desk .pill.CONFIRMED{ color: var(--up); border-color: #3d6a50; }
+.fathom-desk .pill.SETTLED{ color: var(--muted); }
+.fathom-desk .pill.CANCELLED{ color: var(--down); border-color: #6a4038; }
+
+.fathom-desk .layout-2{ display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 10px; }
+.fathom-desk .layout-main{ display: flex; flex-direction: column; gap: 10px; }
+.fathom-desk .form-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; padding: 10px; }
+.fathom-desk .form-grid .wide{ grid-column: 1 / -1; }
+.fathom-desk .err{ color: var(--down); font-size: 11px; }
+.fathom-desk .banner{
+  border: 1px solid #6a4038;
+  background: #241816;
+  color: var(--down);
+  padding: 8px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.fathom-desk .note{
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 10px 12px;
+}
+.fathom-desk .bars{ display: flex; flex-direction: column; gap: 6px; padding: 10px 12px 12px; }
+.fathom-desk .bar-row{ display: grid; grid-template-columns: 92px 1fr 88px; gap: 8px; align-items: center; font-family: var(--font-mono); font-size: 11px; }
+.fathom-desk .track{ height: 7px; background: #101412; border-radius: 99px; overflow: hidden; position: relative; }
+.fathom-desk .track i{ display: block; height: 100%; border-radius: 99px; }
+.fathom-desk .timeline{ padding: 8px 12px 14px; display: flex; flex-direction: column; gap: 0; }
+.fathom-desk .event{ display: grid; grid-template-columns: 16px 1fr; gap: 8px; }
+.fathom-desk .event .rail{ width: 8px; display: flex; flex-direction: column; align-items: center; }
+.fathom-desk .event .dot{ width: 8px; height: 8px; border-radius: 99px; background: var(--brass); margin-top: 4px; }
+.fathom-desk .event .stem{ width: 1px; flex: 1; background: var(--line-strong); }
+.fathom-desk .event .body{ padding-bottom: 12px; }
+.fathom-desk .event .when{ color: var(--faint); font-family: var(--font-mono); font-size: 10px; }
+.fathom-desk .tabs{ display: flex; gap: 4px; margin-bottom: 8px; flex-wrap: wrap; }
+.fathom-desk .tabs button{ background: transparent; border: 1px solid transparent; color: var(--muted); padding: 5px 8px; border-radius: 4px; }
+.fathom-desk .tabs button.on{ border-color: var(--line-strong); color: var(--text); background: var(--bg-raised); }
+.fathom-desk .learn-btn{ border-color: var(--brass-dim); color: var(--brass); }
+.fathom-desk .drawer-back{
+  position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 20;
+}
+.fathom-desk .drawer{
+  position: fixed; top: 0; right: 0; height: 100%; width: min(420px, 100%);
+  background: #141916; border-left: 1px solid var(--line); z-index: 21;
+  overflow: auto; padding: 16px 16px 32px; box-shadow: var(--shadow);
+}
+.fathom-desk .drawer h2{ font-family: var(--font-display); font-weight: 560; font-size: 26px; margin: 6px 0 8px; }
+.fathom-desk .drawer p{ color: var(--muted); line-height: 1.55; }
+.fathom-desk .drawer .map{ border-top: 1px solid var(--line); margin-top: 12px; padding-top: 10px; color: var(--text); }
+.fathom-desk .modal-back{ position: fixed; inset: 0; background: rgba(0,0,0,0.55); display: grid; place-items: center; z-index: 30; }
+.fathom-desk .modal{ width: min(420px, calc(100% - 24px)); background: var(--bg-raised); border: 1px solid var(--line-strong); border-radius: 8px; padding: 14px; }
+.fathom-desk .muted{ color: var(--muted); }
+.fathom-desk .faint{ color: var(--faint); }
+.fathom-desk .mono{ font-family: var(--font-mono); }
+.fathom-desk .split{ display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.fathom-desk .pad{ padding: 10px; }
+.fathom-desk .mt{ margin-top: 10px; }
+.fathom-desk .tag{ font-family: var(--font-mono); font-size: 10px; color: var(--brass); letter-spacing: 0.04em; }
+
+@media (max-width: 980px) {
+  .fathom-desk .app{ grid-template-columns: 1fr; grid-template-rows: auto auto 1fr; }
+  .fathom-desk .nav{ flex-direction: row; overflow: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+  .fathom-desk .nav a{ white-space: nowrap; }
+  .fathom-desk .kpis, .fathom-desk .layout-2, .fathom-desk .form-grid{ grid-template-columns: 1fr 1fr; }
+  .fathom-desk .top-meta{ display: none; }
+}
+@media (max-width: 640px) {
+  .fathom-desk .kpis, .fathom-desk .layout-2, .fathom-desk .form-grid{ grid-template-columns: 1fr; }
+  .fathom-desk .brand span{ display: none; }
+}
+
+.fathom-desk .app { min-height: calc(100vh - 4.25rem); }

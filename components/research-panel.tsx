@@ -136,7 +136,9 @@ export function ResearchPanel() {
 export function CachePanel() {
   const [entries, setEntries] = useState<CachedPdEntry[]>([]);
   useEffect(() => {
-    setEntries(loadPdCache());
+    const loaded = loadPdCache();
+    const timer = window.setTimeout(() => setEntries(loaded), 0);
+    return () => window.clearTimeout(timer);
   }, []);
 
   return (

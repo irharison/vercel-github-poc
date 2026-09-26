@@ -1,14 +1,17 @@
 {
-  "name": "nd-property-vercel",
+  "name": "nd-apps",
   "version": "0.1.0",
   "private": true,
-  "description": "Vercel-hosted port of the NDPropertyDev Flutter deal appraisal app",
+  "description": "Umbrella for ND Property and Fathom Desk",
   "scripts": {
     "dev": "next dev",
+    "dev:api": "cd backend && .venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8741",
+    "dev:stack": "node scripts/dev-stack.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:api": "cd backend && .venv/bin/pytest"
   },
   "dependencies": {
     "next": "16.3.5",

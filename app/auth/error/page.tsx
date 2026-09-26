@@ -11,7 +11,7 @@ export default async function AuthErrorPage({
   return (
     <div className="flex flex-1 flex-col items-center justify-center px-4 py-16">
       <div className="w-full max-w-md rounded-2xl border border-stone-200 bg-white p-8 shadow-sm dark:border-stone-800 dark:bg-stone-900">
-        <p className="text-sm font-medium tracking-wide text-[var(--brand)]">ND Property</p>
+        <p className="text-sm font-medium tracking-wide text-[var(--brand)]">ND</p>
         <h1 className="mt-2 text-2xl font-semibold tracking-tight">
           {denied ? "Access denied" : "Sign-in error"}
         </h1>

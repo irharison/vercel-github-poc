@@ -1,0 +1,22 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "web": {
+      "root": ".",
+      "framework": "nextjs"
+    },
+    "fathom": {
+      "root": "backend",
+      "entrypoint": "app.main:app"
+    }
+  },
+  "rewrites": [
+    { "source": "/fathom/api/(.*)", "destination": { "service": "fathom" } },
+    { "source": "/fathom/Monitoring/(.*)", "destination": { "service": "fathom" } },
+    { "source": "/fathom/docs", "destination": { "service": "fathom" } },
+    { "source": "/fathom/docs/(.*)", "destination": { "service": "fathom" } },
+    { "source": "/fathom/redoc", "destination": { "service": "fathom" } },
+    { "source": "/fathom/openapi.json", "destination": { "service": "fathom" } },
+    { "source": "/(.*)", "destination": { "service": "web" } }
+  ]
+}
