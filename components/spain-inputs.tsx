@@ -1,9 +1,11 @@
 "use client";
 
 import { eur, eurPence, fxQuote, money, moneyFromEur, moneyPence, percent } from "@/lib/format";
+import { spainHelp } from "@/lib/help/spain";
 import { RENOVATION_ITEM_KEYS, RENOVATION_ITEM_LABELS, RENOVATION_TIERS } from "@/lib/spain/defaults";
 import type { SpainVillaInputs, SpainVillaResult } from "@/lib/spain/types";
 import { MoneyField, NoteBanner, PercentField, ResultRow, SectionCard, Segmented, Toggle } from "./fields";
+import { InfoTip } from "./info-tip";
 
 function gbpNote(amount: number, rate: number): string {
   return moneyFromEur(amount, rate);
@@ -84,7 +86,8 @@ export function SpainInputs({
           label="Currency transfer spread"
           value={inputs.fxSpreadPercent}
           min={0}
-          helper="Lost when you buy euros with pounds. Charged on the euros that finance option converts. A specialist is often under 1%; a high-street bank can be nearer 2–3%."
+          helper="Lost when you buy euros with pounds. Charged on the euros that finance option converts."
+          info={spainHelp.fx}
           onChange={set("fxSpreadPercent")}
         />
       </SectionCard>
@@ -98,7 +101,8 @@ export function SpainInputs({
             label="ITP transfer tax"
             value={inputs.itpPercent}
             min={0}
-            helper="Andalucía's general resale rate is 7%. A non-resident second home usually does not qualify for the reduced rates."
+            helper="Andalucía's general resale rate is 7%."
+            info={spainHelp.itp}
             onChange={set("itpPercent")}
           />
         ) : (
@@ -108,13 +112,15 @@ export function SpainInputs({
               value={inputs.ivaPercent}
               min={0}
               helper="VAT on a new home is usually 10%. Some purchases are 21%."
+              info={spainHelp.iva}
               onChange={set("ivaPercent")}
             />
             <PercentField
               label="AJD stamp duty"
               value={inputs.ajdPercent}
               min={0}
-              helper="About 1.2% is a common Andalucía figure for a new build. Confirm the current rate."
+              helper="About 1.2% is a common Andalucía figure for a new build."
+              info={spainHelp.ajd}
               onChange={set("ajdPercent")}
             />
           </>
@@ -124,6 +130,7 @@ export function SpainInputs({
           value={inputs.notaryPercent}
           min={0}
           helper="Usual planning range is about 0.5–1% of the price."
+          info={spainHelp.notary}
           onChange={set("notaryPercent")}
         />
         <PercentField
@@ -131,6 +138,7 @@ export function SpainInputs({
           value={inputs.landRegistryPercent}
           min={0}
           helper="Usual planning range is about 0.5–1% of the price."
+          info={spainHelp.landRegistry}
           onChange={set("landRegistryPercent")}
         />
         <PercentField
@@ -138,6 +146,7 @@ export function SpainInputs({
           value={inputs.lawyerPercent}
           min={0}
           helper="Fee before IVA. About 1% of the price is a common allowance."
+          info={spainHelp.lawyer}
           onChange={set("lawyerPercent")}
         />
         <PercentField
@@ -153,6 +162,7 @@ export function SpainInputs({
           value={inputs.nieAdminEur}
           min={0}
           helper="NIE, opening a bank account and small admin costs, as a lump sum."
+          info={spainHelp.nie}
           onChange={set("nieAdminEur")}
         />
         <MoneyField
@@ -181,6 +191,7 @@ export function SpainInputs({
           label={inputs.acquisitionType === "resale" ? "ITP" : "IVA and AJD"}
           value={eur(result.purchase.taxEur)}
           note={gbpNote(result.purchase.taxEur, result.gbpPerEur)}
+          info={inputs.acquisitionType === "resale" ? spainHelp.itp : `${spainHelp.iva} ${spainHelp.ajd}`}
           emphasis
         />
         <ResultRow
@@ -223,6 +234,10 @@ export function SpainInputs({
               value={inputs.floorAreaM2}
               onChange={set("floorAreaM2")}
             />
+            <div className="flex items-center text-sm text-stone-600 dark:text-stone-300">
+              <span>Renovation tier</span>
+              <InfoTip label="Renovation tiers" text={spainHelp.renovationTiers} />
+            </div>
             <Segmented
               value={inputs.renovationTier}
               onChange={set("renovationTier")}
@@ -275,14 +290,16 @@ export function SpainInputs({
           label="Licencia / ICIO"
           value={inputs.icioPercent}
           min={0}
-          helper="Licence and the municipal works tax, as a percent of the works budget. Many town halls charge up to about 4%. Contingency does not increase it here."
+          helper="Licence and the municipal works tax, as a percent of the works budget."
+          info={spainHelp.icio}
           onChange={set("icioPercent")}
         />
         <PercentField
           label="IVA on works"
           value={inputs.worksIvaPercent}
           min={0}
-          helper="On the works, the professional fees and the contingency. 21% is the standard rate. A reduced 10% can apply to some renovations of a home."
+          helper="On the works, the professional fees and the contingency."
+          info={spainHelp.worksIva}
           onChange={set("worksIvaPercent")}
         />
         <PercentField
@@ -290,6 +307,7 @@ export function SpainInputs({
           value={inputs.contingencyPercent}
           min={0}
           helper="Percent of the works plus professional fees."
+          info={spainHelp.contingency}
           onChange={set("contingencyPercent")}
         />
         <ResultRow
@@ -315,6 +333,7 @@ export function SpainInputs({
           min={0}
           max={100}
           helper="Often capped at 60–70% for a non-resident. The rest of the price is the deposit."
+          info={spainHelp.ltv}
           onChange={set("spanishLtvPercent")}
         />
         {inputs.spanishLtvPercent > 70 ? (
@@ -354,6 +373,7 @@ export function SpainInputs({
           value={inputs.spanishArrangementFeePercent}
           min={0}
           helper="Percent of the loan, paid in cash. It is not added to the balance."
+          info={spainHelp.arrangement}
           onChange={set("spanishArrangementFeePercent")}
         />
         <MoneyField
@@ -376,6 +396,7 @@ export function SpainInputs({
           label="Deposit"
           value={eur(deposit)}
           note={`${percent(depositPct)} of the price · ${gbpNote(deposit, result.gbpPerEur)}`}
+          info={spainHelp.mortgageDeposit}
           emphasis
         />
         <ResultRow
@@ -392,6 +413,7 @@ export function SpainInputs({
               ? moneyPence(result.finance.spanish.monthlyPaymentEur * result.gbpPerEur)
               : "—"
           }
+          info={spainHelp.monthlyPayment}
         />
       </SectionCard>
 
@@ -445,6 +467,7 @@ export function SpainInputs({
           value={inputs.ukArrangementFeePercent}
           min={0}
           helper="Percent of the sterling loan, paid in cash. It is not added to the balance."
+          info={spainHelp.arrangement}
           onChange={set("ukArrangementFeePercent")}
         />
         <MoneyField
@@ -458,6 +481,7 @@ export function SpainInputs({
           label="Monthly payment"
           value={moneyPence(result.finance.uk.monthlyPaymentGbp ?? 0)}
           note={eurPence(result.finance.uk.monthlyPaymentEur)}
+          info={spainHelp.monthlyPayment}
         />
         <ResultRow
           label="Cash still required"
@@ -483,6 +507,7 @@ export function SpainInputs({
           label="Appreciation per year"
           value={inputs.appreciationPercent}
           helper="Estimate only, not a forecast. Used when this page compares buying with renting."
+          info={spainHelp.appreciation}
           onChange={set("appreciationPercent")}
         />
       </SectionCard>
@@ -497,6 +522,7 @@ export function SpainInputs({
           value={inputs.ibiAnnualEur}
           min={0}
           helper="Council tax. A placeholder, not a percentage of the purchase price."
+          info={spainHelp.ibi}
           onChange={set("ibiAnnualEur")}
         />
         <MoneyField
@@ -505,6 +531,7 @@ export function SpainInputs({
           value={inputs.communityAnnualEur}
           min={0}
           helper="Urbanisation or community. A villa can be far above or below this."
+          info={spainHelp.community}
           onChange={set("communityAnnualEur")}
         />
         <MoneyField
@@ -513,6 +540,7 @@ export function SpainInputs({
           value={inputs.basuraAnnualEur}
           min={0}
           helper="Rubbish collection."
+          info={spainHelp.basura}
           onChange={set("basuraAnnualEur")}
         />
         <MoneyField
@@ -543,6 +571,7 @@ export function SpainInputs({
           value={inputs.imputationPercent}
           min={0}
           helper="1.1% if the cadastral value was revised in the last 10 years, otherwise 2%."
+          info={spainHelp.irnr}
           onChange={set("imputationPercent")}
         />
         <PercentField
@@ -550,11 +579,13 @@ export function SpainInputs({
           value={inputs.irnrPercent}
           min={0}
           helper="UK residents are generally 24%. EU and EEA residents are often 19%."
+          info={spainHelp.irnr}
           onChange={set("irnrPercent")}
         />
         <Toggle
           label="Let it in the months you are away"
           subtitle="Peak-season holiday income. Andalucía requires a VFT tourist registration before a let is advertised."
+          info={spainHelp.vft}
           checked={inputs.holidayLetEnabled}
           onChange={set("holidayLetEnabled")}
         />
@@ -585,6 +616,7 @@ export function SpainInputs({
               min={0}
               max={100}
               helper="Share of those months you expect to be booked."
+              info={spainHelp.occupancy}
               onChange={set("holidayOccupancyPercent")}
             />
             <PercentField
@@ -592,6 +624,7 @@ export function SpainInputs({
               value={inputs.holidayManagementPercent}
               min={0}
               helper="Percent of the gross, before IVA. Often about 15–25%."
+              info={spainHelp.management}
               onChange={set("holidayManagementPercent")}
             />
             <PercentField
@@ -605,7 +638,8 @@ export function SpainInputs({
               prefix="€"
               min={0}
               value={inputs.vftSetupEur}
-              helper="One-off allowance for registering a vivienda con fines turísticos. You need the registration before you advertise."
+              helper="One-off allowance for registering a vivienda con fines turísticos."
+              info={spainHelp.vft}
               onChange={set("vftSetupEur")}
             />
             <MoneyField
@@ -675,6 +709,7 @@ export function SpainInputs({
           max={6}
           value={inputs.depositMonths}
           helper="Usually 1 or 2 months, and it is refundable. It is not counted as a cost."
+          info={spainHelp.rentDeposit}
           onChange={set("depositMonths")}
         />
         <MoneyField
@@ -685,6 +720,7 @@ export function SpainInputs({
           min={0}
           value={inputs.agencyFeeMonths}
           helper="Often one month's rent, charged again each season. Set this to 0 if you pay the agency only once."
+          info={spainHelp.agency}
           onChange={set("agencyFeeMonths")}
         />
         <PercentField

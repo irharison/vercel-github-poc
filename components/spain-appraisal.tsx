@@ -2,8 +2,31 @@
 
 import type { ReactNode } from "react";
 import { eur, eurPence, fxQuote, money, moneyFromEur, moneyPence, percent } from "@/lib/format";
+import { spainHelp } from "@/lib/help/spain";
 import type { FinanceColumn, SpainVillaResult } from "@/lib/spain/types";
 import { NoteBanner, ResultRow, SectionCard } from "./fields";
+import { InfoTip } from "./info-tip";
+
+const lineInfo: Record<string, string> = {
+  "ITP transfer tax": spainHelp.itp,
+  IVA: spainHelp.iva,
+  "AJD stamp duty": spainHelp.ajd,
+  Notary: spainHelp.notary,
+  "Land registry": spainHelp.landRegistry,
+  Lawyer: spainHelp.lawyer,
+  "NIE, bank and admin": spainHelp.nie,
+  "Licencia / ICIO": spainHelp.icio,
+  Contingency: spainHelp.contingency,
+  "IVA on works": spainHelp.worksIva,
+  IBI: spainHelp.ibi,
+  "Community fees": spainHelp.community,
+  Basura: spainHelp.basura,
+  "Non-resident income tax": spainHelp.irnr,
+  "Holiday management": spainHelp.management,
+  "VFT registration": spainHelp.vft,
+  "Agency fee": spainHelp.agency,
+  "Deposit held": spainHelp.rentDeposit,
+};
 
 function gbpNote(amount: number, rate: number, extra?: string): string {
   const pounds = moneyFromEur(amount, rate);
@@ -17,6 +40,7 @@ function EurRow({
   note,
   emphasis,
   negative,
+  info,
 }: {
   label: string;
   amount: number;
@@ -24,6 +48,7 @@ function EurRow({
   note?: string;
   emphasis?: boolean;
   negative?: boolean;
+  info?: string;
 }) {
   return (
     <ResultRow
@@ -32,6 +57,7 @@ function EurRow({
       note={gbpNote(amount, rate, note)}
       emphasis={emphasis}
       negative={negative}
+      info={info ?? lineInfo[label]}
     />
   );
 }
@@ -91,9 +117,19 @@ export function SpainAppraisal({ result }: { result: SpainVillaResult }) {
           emphasis
         />
         <div className="border-t border-stone-200 dark:border-stone-800" />
-        <EurRow label="Cash required, cash purchase" amount={finance.cash.cashRequiredEur} rate={rate} />
-        <EurRow label="Cash required, Spanish mortgage" amount={finance.spanish.cashRequiredEur} rate={rate} />
-        <EurRow label="Cash required, UK remortgage" amount={finance.uk.cashRequiredEur} rate={rate} />
+        <EurRow label="Cash required, cash purchase" amount={finance.cash.cashRequiredEur} rate={rate} info={spainHelp.cash} />
+        <EurRow
+          label="Cash required, Spanish mortgage"
+          amount={finance.spanish.cashRequiredEur}
+          rate={rate}
+          info={spainHelp.spanishMortgage}
+        />
+        <EurRow
+          label="Cash required, UK remortgage"
+          amount={finance.uk.cashRequiredEur}
+          rate={rate}
+          info={spainHelp.ukRemortgage}
+        />
         <div className="border-t border-stone-200 dark:border-stone-800" />
         {valueEntered ? (
           <>
@@ -211,6 +247,7 @@ export function SpainAppraisal({ result }: { result: SpainVillaResult }) {
             amount={renovation.m2CostEur}
             rate={rate}
             note={`${renovation.floorAreaM2} m² at ${eur(renovation.eurPerM2)}`}
+            info={spainHelp.renovationTiers}
           />
         ) : null}
         {renovation.lineItems.map((line) => (
@@ -420,16 +457,18 @@ function Amount({
 export function SpainFinance({ result }: { result: SpainVillaResult }) {
   const { inputs, finance } = result;
   const rate = result.gbpPerEur;
-  const columns: Array<{ title: string; detail: string; column: FinanceColumn }> = [
-    { title: "Cash", detail: "No borrowing", column: finance.cash },
+  const columns: Array<{ title: string; detail: string; info: string; column: FinanceColumn }> = [
+    { title: "Cash", detail: "No borrowing", info: spainHelp.cash, column: finance.cash },
     {
       title: "Spanish mortgage",
       detail: `${percent(inputs.spanishLtvPercent)} LTV · ${percent(inputs.spanishRatePercent)} ${inputs.spanishRateType} · ${inputs.spanishTermYears} years`,
+      info: spainHelp.spanishMortgage,
       column: finance.spanish,
     },
     {
       title: "UK remortgage",
       detail: `${money(inputs.ukLoanGbp)} · ${percent(inputs.ukRatePercent)} · ${inputs.ukTermYears} years`,
+      info: spainHelp.ukRemortgage,
       column: finance.uk,
     },
   ];
@@ -442,6 +481,7 @@ export function SpainFinance({ result }: { result: SpainVillaResult }) {
   const rows: Array<{
     label: string;
     note?: string;
+    info?: string;
     emphasis?: boolean;
     render: (column: FinanceColumn) => ReactNode;
   }> = [
@@ -454,6 +494,7 @@ export function SpainFinance({ result }: { result: SpainVillaResult }) {
     {
       label: "Currency transfer",
       note: "Included in the cash above",
+      info: spainHelp.fx,
       render: (column) => <Amount eurAmount={column.currencyTransferEur} rate={rate} />,
     },
     {
@@ -464,6 +505,7 @@ export function SpainFinance({ result }: { result: SpainVillaResult }) {
     },
     {
       label: "Monthly payment",
+      info: spainHelp.monthlyPayment,
       render: (column) => (
         <Amount
           eurAmount={column.monthlyPaymentEur}
@@ -486,6 +528,7 @@ export function SpainFinance({ result }: { result: SpainVillaResult }) {
     {
       label: "Total interest",
       note: "Over the full term, at the rate entered",
+      info: spainHelp.totalInterest,
       render: (column) => (
         <Amount eurAmount={column.totalInterestEur} gbpAmount={column.totalInterestGbp} rate={rate} />
       ),
@@ -493,6 +536,7 @@ export function SpainFinance({ result }: { result: SpainVillaResult }) {
     {
       label: "Total cost of ownership",
       note: "Project, transfer, fees and interest. Running costs are extra.",
+      info: spainHelp.totalCost,
       emphasis: true,
       render: (column) => <Amount eurAmount={column.totalCostEur} rate={rate} />,
     },
@@ -547,7 +591,10 @@ export function SpainFinance({ result }: { result: SpainVillaResult }) {
               </th>
               {columns.map((item) => (
                 <th key={item.column.id} scope="col" className="px-3 py-3 text-right align-bottom">
-                  <div className="font-semibold text-stone-900 dark:text-stone-100">{item.title}</div>
+                  <div className="inline-flex items-center font-semibold text-stone-900 dark:text-stone-100">
+                    <span>{item.title}</span>
+                    <InfoTip label={item.title} text={item.info} />
+                  </div>
                   <div className="mt-1 text-xs font-normal text-stone-500">{item.detail}</div>
                 </th>
               ))}
@@ -560,7 +607,10 @@ export function SpainFinance({ result }: { result: SpainVillaResult }) {
                 className={`border-b border-stone-100 dark:border-stone-800 ${row.emphasis ? "bg-stone-50 dark:bg-stone-800/40" : ""}`}
               >
                 <th scope="row" className="px-3 py-3 text-left font-medium">
-                  {row.label}
+                  <span className="inline-flex items-center">
+                    <span>{row.label}</span>
+                    {row.info ? <InfoTip label={row.label} text={row.info} /> : null}
+                  </span>
                   {row.note ? <div className="mt-0.5 text-xs font-normal text-stone-500">{row.note}</div> : null}
                 </th>
                 {columns.map((item) => (
@@ -633,8 +683,11 @@ export function SpainStay({ result }: { result: SpainVillaResult }) {
           </caption>
           <thead>
             <tr className="border-b border-stone-200 text-left dark:border-stone-800">
-              <th scope="col" className="px-3 py-3 font-medium text-stone-500">
-                <span className="sr-only">Option</span>
+              <th scope="col" className="px-3 py-3 text-left font-medium text-stone-500">
+                <span className="inline-flex items-center">
+                  <span className="sr-only">Option</span>
+                  <InfoTip label="1, 5 and 10 year comparison" text={spainHelp.comparison} />
+                </span>
               </th>
               {comparison.years.map((year) => (
                 <th key={year} scope="col" className="px-3 py-3 text-right font-semibold">
@@ -642,7 +695,10 @@ export function SpainStay({ result }: { result: SpainVillaResult }) {
                 </th>
               ))}
               <th scope="col" className="px-3 py-3 text-right font-semibold">
-                Buying cheaper from
+                <span className="inline-flex items-center">
+                  <span>Buying cheaper from</span>
+                  <InfoTip label="Breakeven year" text={spainHelp.breakeven} />
+                </span>
               </th>
             </tr>
           </thead>

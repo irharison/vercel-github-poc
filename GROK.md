@@ -232,6 +232,8 @@ VFT allowance. That income feeds the net annual cost. Imputed non-resident
 tax remains on the months that are not offered. Andalucía requires the VFT
 registration before a tourist let is advertised.
 
+Small **i** buttons sit beside the main inputs and results. Hover opens the note on a desktop pointer; a tap pins it, including on a phone; Escape or a tap outside closes it. The note says what the figure is, how this model calculates it, and where to check it with a lawyer or gestor. The same button is used on the Deal page for the price, stamp duty, borrowing and profit lines. The notes describe the model. They are not advice.
+
 None of this is advice.
 
 Fathom fetches are same-origin. `lib/fathom/api.ts` prefixes them with

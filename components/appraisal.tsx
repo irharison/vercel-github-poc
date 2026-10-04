@@ -2,6 +2,7 @@
 
 import { money, percent, ratio } from "@/lib/format";
 import type { DealResult } from "@/lib/calc/types";
+import { dealHelp, dealLineInfo } from "@/lib/help/deal";
 import { NoteBanner, ResultRow, SectionCard } from "./fields";
 
 export function Appraisal({ result }: { result: DealResult }) {
@@ -23,6 +24,7 @@ export function Appraisal({ result }: { result: DealResult }) {
           label="Total profit"
           value={money(r.totalProfit)}
           note="Rental profit plus sale proceeds, less cash in"
+          info={dealHelp.profit}
           emphasis
           negative={!profitable}
         />
@@ -30,6 +32,7 @@ export function Appraisal({ result }: { result: DealResult }) {
           label="Return on cash"
           value={percent(r.returnOnCashPercent)}
           note={`${percent(r.annualisedReturnPercent)} a year over ${r.inputs.holdMonths} months`}
+          info={dealHelp.returnOnCash}
           negative={!profitable}
         />
         <div className="border-t border-stone-200 dark:border-stone-800" />
@@ -51,7 +54,7 @@ export function Appraisal({ result }: { result: DealResult }) {
 
       <SectionCard title="Cash required on day one" subtitle="What you actually have to fund">
         {r.purchase.lineItems.map(([label, value]) => (
-          <ResultRow key={label} label={label} value={money(value)} />
+          <ResultRow key={label} label={label} value={money(value)} info={dealLineInfo(label)} />
         ))}
         <div className="border-t border-stone-200 dark:border-stone-800" />
         <ResultRow label="Total cash in" value={money(r.totalCashIn)} emphasis />
@@ -83,6 +86,7 @@ export function Appraisal({ result }: { result: DealResult }) {
           label="Stamp duty"
           value={money(r.sdlt.total)}
           note={`Effective ${percent(r.sdlt.effectiveRate)}`}
+          info={dealHelp.sdlt}
           emphasis
         />
       </SectionCard>
@@ -128,6 +132,7 @@ export function Appraisal({ result }: { result: DealResult }) {
         <ResultRow
           label="Rental profit after tax"
           value={money(r.rental.profitAfterTax)}
+          info={dealHelp.rentalProfit}
           emphasis
           negative={r.rental.profitAfterTax < 0}
         />
@@ -161,6 +166,7 @@ export function Appraisal({ result }: { result: DealResult }) {
         />
         <ResultRow
           label={isCompany ? "Corporation Tax on gain" : "Capital Gains Tax"}
+          info={dealHelp.gainTax}
           value={`−${money(r.exit.tax)}`}
           note={
             r.exit.gain <= 0
@@ -179,9 +185,9 @@ export function Appraisal({ result }: { result: DealResult }) {
       </SectionCard>
 
       <SectionCard title="Borrowing result">
-        <ResultRow label="Deposit" value={money(r.lending.deposit)} emphasis />
-        <ResultRow label="Loan" value={money(r.lending.loan)} emphasis />
-        <ResultRow label="Resulting LTV" value={percent(r.lending.actualLtv)} />
+        <ResultRow label="Deposit" info={dealHelp.deposit} value={money(r.lending.deposit)} emphasis />
+        <ResultRow label="Loan" info={dealHelp.loan} value={money(r.lending.loan)} emphasis />
+        <ResultRow label="Resulting LTV" info={dealHelp.ltv} value={percent(r.lending.actualLtv)} />
         <ResultRow
           label="Interest cover achieved"
           value={Number.isFinite(r.lending.actualIcr) ? `${ratio(r.lending.actualIcr)}×` : "—"}

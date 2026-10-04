@@ -3,6 +3,7 @@
 import { useDeal } from "./deal-provider";
 import { Appraisal } from "./appraisal";
 import { MoneyField, NoteBanner, PercentField, ResultRow, SectionCard, Segmented, Toggle } from "./fields";
+import { dealHelp } from "@/lib/help/deal";
 import { money, percent, ratio } from "@/lib/format";
 import { HOLD_MONTHS_MAX, HOLD_MONTHS_MIN } from "@/lib/calc/defaults";
 import type { FinancingMode, SalePriceMode } from "@/lib/calc/types";
@@ -51,6 +52,7 @@ export function DealWorkspace() {
           <MoneyField
             label="Purchase price"
             value={deal.purchasePrice}
+            info={dealHelp.price}
             onChange={(purchasePrice) => updateDeal({ ...deal, purchasePrice })}
           />
           <MoneyField
@@ -78,11 +80,12 @@ export function DealWorkspace() {
                 ? `Company flat rate ${percent(settings.sdlt.companyFlatRate)}`
                 : `Effective ${percent(result.sdlt.effectiveRate)}, including ${percent(result.sdlt.surchargeApplied)} surcharge`
             }
+            info={dealHelp.sdlt}
             emphasis
           />
-          <MoneyField label="Legal fees" value={deal.legalFeesPurchase} onChange={(legalFeesPurchase) => updateDeal({ ...deal, legalFeesPurchase })} />
-          <MoneyField label="Survey" value={deal.surveyFees} onChange={(surveyFees) => updateDeal({ ...deal, surveyFees })} />
-          <MoneyField label="Refurbishment" value={deal.refurbCost} onChange={(refurbCost) => updateDeal({ ...deal, refurbCost })} />
+          <MoneyField label="Legal fees" info={dealHelp.legal} value={deal.legalFeesPurchase} onChange={(legalFeesPurchase) => updateDeal({ ...deal, legalFeesPurchase })} />
+          <MoneyField label="Survey" info={dealHelp.survey} value={deal.surveyFees} onChange={(surveyFees) => updateDeal({ ...deal, surveyFees })} />
+          <MoneyField label="Refurbishment" info={dealHelp.refurb} value={deal.refurbCost} onChange={(refurbCost) => updateDeal({ ...deal, refurbCost })} />
           <MoneyField label="Other purchase costs" value={deal.otherPurchaseCosts} onChange={(otherPurchaseCosts) => updateDeal({ ...deal, otherPurchaseCosts })} />
           <Toggle
             label="Treat refurb as capital"
@@ -93,8 +96,8 @@ export function DealWorkspace() {
         </SectionCard>
 
         <SectionCard title="Rental" subtitle="The rent also determines how much you can borrow">
-          <MoneyField label="Monthly rent" value={deal.monthlyRent} onChange={(monthlyRent) => updateDeal({ ...deal, monthlyRent })} />
-          <ResultRow label="Gross yield" value={percent(result.rental.grossYield)} />
+          <MoneyField label="Monthly rent" info={dealHelp.rent} value={deal.monthlyRent} onChange={(monthlyRent) => updateDeal({ ...deal, monthlyRent })} />
+          <ResultRow label="Gross yield" value={percent(result.rental.grossYield)} info={dealHelp.rent} />
           <MoneyField
             label="Hold period"
             value={deal.holdMonths}
@@ -103,10 +106,11 @@ export function DealWorkspace() {
             min={HOLD_MONTHS_MIN}
             max={HOLD_MONTHS_MAX}
             integer
+            info={dealHelp.hold}
             onChange={(holdMonths) => updateDeal({ ...deal, holdMonths })}
           />
-          <PercentField label="Voids" value={deal.voidPercent} onChange={(voidPercent) => updateDeal({ ...deal, voidPercent })} />
-          <PercentField label="Management fee" value={deal.managementPercent} onChange={(managementPercent) => updateDeal({ ...deal, managementPercent })} />
+          <PercentField label="Voids" info={dealHelp.voids} value={deal.voidPercent} onChange={(voidPercent) => updateDeal({ ...deal, voidPercent })} />
+          <PercentField label="Management fee" info={dealHelp.management} value={deal.managementPercent} onChange={(managementPercent) => updateDeal({ ...deal, managementPercent })} />
           <PercentField label="Maintenance (of gross rent)" value={deal.maintenancePercentOfRent} onChange={(maintenancePercentOfRent) => updateDeal({ ...deal, maintenancePercentOfRent })} />
           <PercentField label="Annual rent growth" value={deal.rentGrowthPercent} onChange={(rentGrowthPercent) => updateDeal({ ...deal, rentGrowthPercent })} />
           <MoneyField label="Insurance per year" value={deal.insuranceAnnual} onChange={(insuranceAnnual) => updateDeal({ ...deal, insuranceAnnual })} />
@@ -195,9 +199,10 @@ export function DealWorkspace() {
               text={`You asked to borrow ${money(l.requestedLoan)}, but the lender will only advance ${money(l.maxLoan)}. The deposit has been raised to ${money(l.deposit)}.`}
             />
           ) : null}
-          <ResultRow label="Deposit" value={money(l.deposit)} emphasis />
+          <ResultRow label="Deposit" value={money(l.deposit)} info={dealHelp.deposit} emphasis />
           <ResultRow
             label="Loan"
+            info={dealHelp.loan}
             value={money(l.loan)}
             note={
               l.isUnderBorrowed
@@ -208,13 +213,14 @@ export function DealWorkspace() {
             }
             emphasis
           />
-          <ResultRow label="Resulting LTV" value={percent(l.actualLtv)} note={`Lender allows up to ${percent(lending.maxLtv)}`} />
+          <ResultRow label="Resulting LTV" info={dealHelp.ltv} value={percent(l.actualLtv)} note={`Lender allows up to ${percent(lending.maxLtv)}`} />
           <ResultRow
             label="Interest cover achieved"
+            info={dealHelp.icr}
             value={Number.isFinite(l.actualIcr) ? `${ratio(l.actualIcr)}×` : "—"}
             note={`Lender needs ${ratio(lending.interestCoverRatio)}× at ${percent(lending.stressRate)}`}
           />
-          <ResultRow label="Monthly interest" value={money(l.monthlyInterest)} note={`Interest only at ${percent(lending.payRate)}`} />
+          <ResultRow label="Monthly interest" info={dealHelp.monthlyInterest} value={money(l.monthlyInterest)} note={`Interest only at ${percent(lending.payRate)}`} />
           <PercentField
             label="Pay rate"
             value={lending.payRate}

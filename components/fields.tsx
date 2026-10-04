@@ -2,6 +2,7 @@
 
 import { useState, type ReactNode } from "react";
 import { isAllowedNumericDraft, parseNumericInput, settleNumericDraft } from "@/lib/numeric-input";
+import { InfoTip } from "./info-tip";
 
 export function SectionCard({
   title,
@@ -34,17 +35,22 @@ export function ResultRow({
   note,
   emphasis,
   negative,
+  info,
 }: {
   label: string;
   value: string;
   note?: string;
   emphasis?: boolean;
   negative?: boolean;
+  info?: string;
 }) {
   return (
     <div className="flex items-start justify-between gap-4 py-1">
-      <div>
-        <div className={emphasis ? "font-semibold" : ""}>{label}</div>
+      <div className="min-w-0">
+        <div className={emphasis ? "font-semibold" : ""}>
+          <span>{label}</span>
+          {info ? <InfoTip label={label} text={info} /> : null}
+        </div>
         {note ? <div className="text-xs text-stone-500">{note}</div> : null}
       </div>
       <div
@@ -79,6 +85,7 @@ export function MoneyField({
   min,
   max,
   integer = false,
+  info,
 }: {
   label: string;
   value: number;
@@ -90,6 +97,7 @@ export function MoneyField({
   min?: number;
   max?: number;
   integer?: boolean;
+  info?: string;
 }) {
   const [focused, setFocused] = useState(false);
   const [draft, setDraft] = useState(() => formatFieldValue(value));
@@ -97,7 +105,10 @@ export function MoneyField({
 
   return (
     <label className="block text-sm">
-      <span className="mb-1 block text-stone-600 dark:text-stone-300">{label}</span>
+      <span className="mb-1 flex items-center text-stone-600 dark:text-stone-300">
+        <span>{label}</span>
+        {info ? <InfoTip label={label} text={info} /> : null}
+      </span>
       <div className="flex items-center rounded-md border border-stone-300 bg-white dark:border-stone-700 dark:bg-stone-950">
         {prefix ? <span className="pl-3 text-stone-400">{prefix}</span> : null}
         <input
@@ -141,6 +152,7 @@ export function PercentField(props: {
   helper?: string;
   min?: number;
   max?: number;
+  info?: string;
 }) {
   return <MoneyField {...props} prefix={null} suffix="%" decimals />;
 }
@@ -179,16 +191,21 @@ export function Toggle({
   subtitle,
   checked,
   onChange,
+  info,
 }: {
   label: string;
   subtitle?: string;
   checked: boolean;
   onChange: (value: boolean) => void;
+  info?: string;
 }) {
   return (
     <label className="flex items-start justify-between gap-4">
       <span>
-        <span className="block text-sm font-medium">{label}</span>
+        <span className="flex items-center text-sm font-medium">
+          <span>{label}</span>
+          {info ? <InfoTip label={label} text={info} /> : null}
+        </span>
         {subtitle ? <span className="block text-xs text-stone-500">{subtitle}</span> : null}
       </span>
       <input
