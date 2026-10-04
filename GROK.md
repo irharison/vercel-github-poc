@@ -22,6 +22,10 @@ An umbrella Next.js app with a header switcher and a small registry in
    - day-one cash
    - rental hold (company CT vs personal Section 24)
    - sale / exit tax (company CT on gain vs personal residential CGT)
+   - Spain villa (`/property/spain`, nav label **Spain villa**) — Andalucía
+     purchase costs, renovation, and three finance options (cash, Spanish
+     non-resident mortgage, UK remortgage). Euros, with pounds at an editable
+     rate. Defaults are estimates to verify with a Spanish lawyer or gestor.
 2. **Fathom Desk** (`/fathom`) — a teaching trading-and-risk desk. Its UI is
    inside this Next app. Its API is FastAPI + QuantLib, deployed as a second
    Vercel service in the same project. Books, firms, and prices are fictional.
@@ -94,6 +98,10 @@ forwards it from the shell or `.env.local`. Do not set it on Vercel.
 - Fathom Desk screens and Learn drawer under `/fathom`
 - Fathom FastAPI service, classroom Basic auth (`desk`/`fathom`, `ops`/`fathom`)
   as a second layer on the desk API
+- Spain villa screen at `/property/spain`. Pure model in `lib/spain/`
+  (`calculateSpainVilla`), covered by `tests/spain-villa.test.ts`. It does
+  not change the UK deal engine. Inputs autosave to `localStorage` key
+  `ndproperty.spainVilla`.
 
 Seeded property defaults match Flutter: £250k purchase, £1,200/month rent,
 24-month hold, 3% growth, company ownership, 75% LTV, 1.25× ICR at 5.5%
@@ -138,7 +146,8 @@ Adding a third app is code plus one registry entry:
 ```
 app/(umbrella)/page.tsx              Launcher
 app/(umbrella)/layout.tsx            Google gate + umbrella header
-app/(umbrella)/property/             ND Property (deal, research, cache, settings)
+app/(umbrella)/property/             ND Property (deal, Spain villa, research, cache, settings)
+app/(umbrella)/property/spain/     Spain villa screen
 app/(umbrella)/fathom/               Fathom screens + scoped desk CSS
 app/signin/page.tsx                  Google sign-in
 app/api/auth/[...nextauth]           Auth.js route handlers
@@ -148,7 +157,8 @@ proxy.ts                             Session check. Dev bypass returns before Au
 lib/apps.ts                          App registry
 lib/auth-domain.ts                   @nataliedennis.co.uk check, public paths
 lib/auth-dev.ts                      AUTH_DEV_BYPASS (development, not Vercel)
-lib/calc/                            Property engine — pure functions
+lib/calc/                            UK property engine — pure functions
+lib/spain/                         Andalucía villa model — pure functions
 lib/fathom/                          Desk client (API prefix /fathom)
 components/umbrella-shell.tsx        Header, switcher, sign out
 components/property-shell.tsx        Deal / Research / Cache / Settings
@@ -159,8 +169,70 @@ backend/app/prefix.py                PUBLIC_PREFIX = /fathom
 vercel.json                          Services: web (Next) + fathom (Python)
 ```
 
-`calculateDeal({ deal, settings })` is the whole property appraisal. UI is a
-shell over that.
+`calculateDeal({ deal, settings })` is the whole UK property appraisal. UI is a
+shell over that. `calculateSpainVilla(inputs)` in `lib/spain/engine.ts` is the
+whole Andalucía villa model, and the Spain villa screen is a shell over that.
+The two engines do not share inputs.
+
+## Spain villa
+
+Nav label **Spain villa**, route `/property/spain`, next to Deal.
+
+Currency transfer is not inside the single acquisition total. A Spanish
+mortgage does not convert the borrowed euros, so each finance column has its
+own transfer cost. Acquisition on the summary is the price plus purchase
+costs before that transfer. Total cost of ownership is that all-in project
+cost, plus the option's transfer, finance fees and interest over the term.
+Running costs stay annual.
+
+Default assumptions (all editable, all estimates — confirm with a Spanish
+lawyer or gestor):
+
+| Item | Default |
+| --- | --- |
+| Purchase | €750,000 resale, Marbella / Málaga illustration |
+| ITP | 7% (new build instead: 10% IVA + 1.2% AJD) |
+| Notary / land registry | 0.75% each of the price (often quoted 0.5–1%) |
+| Lawyer | 1% + 21% IVA on the fee |
+| NIE, bank, admin | €1,000 |
+| Survey | €1,500 |
+| Buyer's agent | 0% (21% IVA if a fee is entered; about 3% is a common fee) |
+| FX spread | 0.5% of the euros that option buys |
+| Pounds per euro | 0.86 |
+| Renovation | 200 m² at the medium tier, €1,000/m² (light €500, full €1,800). Line items are stored but not added unless that mode is on |
+| Architect / project manager | 10% of the works budget |
+| Licencia / ICIO | 4% of the works budget |
+| IVA on works | 21% of works, fees and contingency (not on the licence) |
+| Contingency | 10% of works plus professional fees |
+| Spanish mortgage | 70% LTV of the price, 3.5% fixed, 20 years, 1% arrangement fee, €450 valuation |
+| UK remortgage | £500,000, 4.5%, 20 years, 1% arrangement, £1,500 other fees |
+| IRNR | 24% on imputed income (1.1% of a €300,000 cadastral-value placeholder) |
+
+On those defaults the resale tax is €52,500, purchase costs before transfer
+are €75,325, the renovation is €300,820 and the all-in project cost before
+transfer is €1,126,145. A 70% Spanish loan is €525,000, so the deposit is
+30% of the price and the costs are extra cash.
+
+**Rent instead** is on the same screen. It prices an off-season tenancy
+(default 7 months, October to May/June, at €2,500 a month — a Costa del Sol
+estimate, not a listing). The season cost includes rent, an agency fee of one
+month plus 21% IVA, utilities, cleaning, insurance, optional car hire and
+travel. A 2-month deposit is shown and is not a cost, because it is
+refundable. Later seasons rise by 3% a year. The page compares the cumulative
+rent after 1, 5 and 10 years with the cost of buying on each finance option:
+price, purchase costs, renovation, currency transfer, finance fees, interest
+for those years and running costs, minus the villa's value. Value starts at
+the post-renovation figure, or the purchase price if that is blank, and grows
+by 2% a year. The first year (up to 40) in which buying costs less is the
+breakeven. Selling costs are not deducted.
+
+**Peak-season let** is off until switched on. It then uses 3 months at
+€5,500 a month, 60% occupancy, a 20% manager plus 21% IVA, and a €350 one-off
+VFT allowance. That income feeds the net annual cost. Imputed non-resident
+tax remains on the months that are not offered. Andalucía requires the VFT
+registration before a tourist let is advertised.
+
+None of this is advice.
 
 Fathom fetches are same-origin. `lib/fathom/api.ts` prefixes them with
 `/fathom`, so `/api/Trades` in the client becomes `/fathom/api/Trades`.

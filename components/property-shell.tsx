@@ -6,6 +6,7 @@ import { DealProvider } from "./deal-provider";
 
 const links = [
   { href: "/property", label: "Deal" },
+  { href: "/property/spain", label: "Spain villa" },
   { href: "/property/research", label: "Research" },
   { href: "/property/cache", label: "Cache" },
   { href: "/property/settings", label: "Settings" },
@@ -20,7 +21,7 @@ export function PropertyShell({ children }: { children: React.ReactNode }) {
           <div>
             <div className="text-sm font-semibold tracking-tight">ND Property</div>
             <div className="text-xs text-stone-500">
-              Deal appraisal for limited-company BTL and development
+              UK deal appraisal, and a Spain villa purchase model
             </div>
           </div>
           <nav aria-label="ND Property" className="flex gap-1">

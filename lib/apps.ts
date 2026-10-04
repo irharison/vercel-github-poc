@@ -21,7 +21,7 @@ export const apps: readonly UmbrellaApp[] = [
     name: "ND Property",
     href: "/property",
     description:
-      "Deal appraisal for UK residential development and limited-company buy-to-let. Stamp duty, lending, hold, and sale. Figures are editable defaults, not advice.",
+      "UK deal appraisal for residential development and limited-company buy-to-let, plus a Spain villa purchase and renovation model. Figures are editable defaults, not advice.",
     match: ["/property"],
   },
   {
