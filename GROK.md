@@ -232,6 +232,26 @@ VFT allowance. That income feeds the net annual cost. Imputed non-resident
 tax remains on the months that are not offered. Andalucía requires the VFT
 registration before a tourist let is advertised.
 
+**Digital nomad visa** is off until switched on. Spain's property golden visa
+ended on 3 April 2025, and the model never reduces ITP, IVA or AJD because of
+a visa. Switching it on treats the owner as Spanish tax resident: imputed
+non-resident tax on the villa drops to zero, including any non-resident tax
+on rent (a resident's rental profit is IRPF, and it is not calculated here).
+Visa costs are estimates: €160 application, €16 TIE, €400 translations and
+apostilles, €120 criminal-record check, €1,500 immigration lawyer, €1,500 a
+year of health insurance, and an €800 renewal every 3 years. The one-off total
+is in year one. The annual total (health insurance plus the renewal spread
+over the interval) is in the net annual cost, in each finance option's total
+cost of ownership for that option's term (cash uses the Spanish term), and on
+both sides of the 1, 5 and 10 year comparison. The income test compares
+€48,000 of example remote-work income with €34,188, about 200% of the 2026
+minimum wage (€2,849 a month). IRPF uses combined state + Andalucía bands
+after a €5,550 allowance. Beckham is 24% of employment income up to €600,000
+and 47% above that, for 6 years, and only while the eligibility switch is on.
+UK income tax is blank until typed. Salary tax is shown beside the villa and
+is not added to its cost. Wealth tax, the solidarity tax, social security and
+the UK–Spain treaty are not calculated.
+
 Small **i** buttons sit beside the main inputs and results. Hover opens the note on a desktop pointer; a tap pins it, including on a phone; Escape or a tap outside closes it. The note says what the figure is, how this model calculates it, and where to check it with a lawyer or gestor. The same button is used on the Deal page for the price, stamp duty, borrowing and profit lines. The notes describe the model. They are not advice.
 
 None of this is advice.

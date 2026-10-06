@@ -6,6 +6,7 @@ import { RENOVATION_ITEM_KEYS, RENOVATION_ITEM_LABELS, RENOVATION_TIERS } from "
 import type { SpainVillaInputs, SpainVillaResult } from "@/lib/spain/types";
 import { MoneyField, NoteBanner, PercentField, ResultRow, SectionCard, Segmented, Toggle } from "./fields";
 import { InfoTip } from "./info-tip";
+import { SpainResidencyInputs } from "./spain-residency";
 
 function gbpNote(amount: number, rate: number): string {
   return moneyFromEur(amount, rate);
@@ -668,6 +669,8 @@ export function SpainInputs({
           onChange={set("allowEuRentalDeductions")}
         />
       </SectionCard>
+
+      <SpainResidencyInputs inputs={inputs} result={result} onChange={onChange} />
 
       <SectionCard
         title="Rent instead"

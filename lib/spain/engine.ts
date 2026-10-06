@@ -26,6 +26,11 @@
  *
  * Total cost of ownership = all-in project (before transfer) + that option's
  * transfer + its finance fees + interest over the term. Running costs stay annual.
+ * A digital nomad visa does not change purchase tax. While it is on, that
+ * total also includes the visa's one-off cost and its yearly cost for each
+ * year of the term (the Spanish term, when paying cash). Non-resident tax
+ * is removed from the annual cost and from the rent-or-buy table, not subtracted
+ * again from this total.
  *
  * A repayment mortgage uses the standard annuity. The entered rate is held
  * constant for the whole term, including when the Spanish rate is marked variable.
@@ -43,6 +48,7 @@ import {
   seasonQuote,
   BREAKEVEN_MAX_YEARS,
 } from "./compare";
+import { residencyQuote, visaAnnualEur, visaCostOverYears, visaOneOffEur } from "./residency";
 import {
   RENOVATION_ITEM_KEYS,
   RENOVATION_ITEM_LABELS,
@@ -153,6 +159,16 @@ function emptyHoliday(): HolidayLetResult {
 }
 
 function runningTax(inputs: SpainVillaInputs): RunningTax {
+  const tax = residentOrNot(inputs, runningTaxAsNonResident(inputs));
+  return tax;
+}
+
+function residentOrNot(inputs: SpainVillaInputs, tax: RunningTax): RunningTax {
+  if (!inputs.digitalNomad) return tax;
+  return { ...tax, basis: "resident", tax: () => 0 };
+}
+
+function runningTaxAsNonResident(inputs: SpainVillaInputs): RunningTax {
   const operatingEur = operatingCosts(inputs);
   const imputedIncomeEur = percentOf(inputs.cadastralValueEur, inputs.imputationPercent);
 
@@ -287,8 +303,9 @@ export function calculateSpainVilla(inputs: SpainVillaInputs): SpainVillaResult 
 
   const cashTransfer = percentOf(allInExFxEur, inputs.fxSpreadPercent);
   const cashRequired = allInExFxEur + cashTransfer;
+  const visaAnnual = visaAnnualEur(inputs);
   const cashIrnr = tax.tax(0);
-  const cashNetAnnual = netOfRunning(tax, 0);
+  const cashNetAnnual = netOfRunning(tax, 0) + visaAnnual;
 
   const loanCap = price > 0 ? price : 0;
   const spanishLoan = Math.min(loanCap, Math.max(0, percentOf(price, inputs.spanishLtvPercent)));
@@ -302,7 +319,8 @@ export function calculateSpainVilla(inputs: SpainVillaInputs): SpainVillaResult 
   const spanishCash = spanishFunded + spanishTransfer;
   const spanishAnnuity = annuity(spanishLoan, inputs.spanishRatePercent, inputs.spanishTermYears);
   const spanishIrnr = tax.tax(spanishAnnuity.yearOneInterest);
-  const spanishNetAnnual = netOfRunning(tax, spanishAnnuity.yearOneInterest) + spanishAnnuity.yearOneInterest;
+  const spanishNetAnnual =
+    netOfRunning(tax, spanishAnnuity.yearOneInterest) + spanishAnnuity.yearOneInterest + visaAnnual;
 
   const ukBorrowedGbp = inputs.ukLoanGbp > 0 ? inputs.ukLoanGbp : 0;
   const ukProceeds = toEur(ukBorrowedGbp, rate);
@@ -319,7 +337,7 @@ export function calculateSpainVilla(inputs: SpainVillaInputs): SpainVillaResult 
   const ukYearOneEur = toEur(ukAnnuity.yearOneInterest, rate);
   const ukMonthlyEur = toEur(ukAnnuity.monthlyPayment, rate);
   const ukIrnr = tax.tax(ukYearOneEur);
-  const ukNetAnnual = netOfRunning(tax, ukYearOneEur) + ukYearOneEur;
+  const ukNetAnnual = netOfRunning(tax, ukYearOneEur) + ukYearOneEur + visaAnnual;
 
   const yieldOn = (netIncome: number, base: number) => (base > 0 ? (netIncome / base) * 100 : 0);
 
@@ -329,6 +347,7 @@ export function calculateSpainVilla(inputs: SpainVillaInputs): SpainVillaResult 
     nonZero("Basura", inputs.basuraAnnualEur),
     nonZero("Insurance", inputs.insuranceAnnualEur),
     nonZero("Utilities", inputs.utilitiesAnnualEur),
+    nonZero("Visa and residency", visaAnnual),
   ].filter((line): line is CostLine => line != null);
 
   return {
@@ -390,7 +409,7 @@ export function calculateSpainVilla(inputs: SpainVillaInputs): SpainVillaResult 
         totalInterestEur: 0,
         totalInterestGbp: null,
         yearOneInterestGbp: null,
-        totalCostEur: cashRequired,
+        totalCostEur: cashRequired + visaCostOverYears(inputs, inputs.spanishTermYears),
         feesEur: 0,
         priceDepositEur: price,
         surplusEur: 0,
@@ -411,7 +430,12 @@ export function calculateSpainVilla(inputs: SpainVillaInputs): SpainVillaResult 
         totalInterestEur: spanishAnnuity.totalInterest,
         totalInterestGbp: null,
         yearOneInterestGbp: null,
-        totalCostEur: allInExFxEur + spanishTransfer + spanishFees + spanishAnnuity.totalInterest,
+        totalCostEur:
+          allInExFxEur +
+          spanishTransfer +
+          spanishFees +
+          spanishAnnuity.totalInterest +
+          visaCostOverYears(inputs, inputs.spanishTermYears),
         feesEur: spanishFees,
         priceDepositEur: spanishDeposit,
         surplusEur: 0,
@@ -432,7 +456,8 @@ export function calculateSpainVilla(inputs: SpainVillaInputs): SpainVillaResult 
         totalInterestEur: ukInterestEur,
         totalInterestGbp: ukAnnuity.totalInterest,
         yearOneInterestGbp: ukAnnuity.yearOneInterest,
-        totalCostEur: allInExFxEur + ukTransfer + ukFeesEur + ukInterestEur,
+        totalCostEur:
+          allInExFxEur + ukTransfer + ukFeesEur + ukInterestEur + visaCostOverYears(inputs, inputs.ukTermYears),
         feesEur: ukFeesEur,
         priceDepositEur: null,
         surplusEur: ukSurplus,
@@ -460,6 +485,7 @@ export function calculateSpainVilla(inputs: SpainVillaInputs): SpainVillaResult 
       gbpPerEur: rate,
       tax,
     }),
+    residency: residencyQuote(inputs, rate),
   };
 }
 
@@ -513,7 +539,9 @@ function stayComparison(args: {
         financeFeesEur,
         interestByYearEur,
         carryingEur: (interestEur, yearIndex) =>
-          netOfRunning(tax, interestEur) + (yearIndex === 0 ? tax.setupEur : 0),
+          netOfRunning(tax, interestEur) +
+          visaAnnualEur(inputs) +
+          (yearIndex === 0 ? tax.setupEur + visaOneOffEur(inputs) : 0),
         startValueEur,
         appreciationPercent: inputs.appreciationPercent,
       });

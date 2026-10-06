@@ -53,7 +53,7 @@ export const spainHelp = {
     "Total interest is the interest over the full mortgage term at the rate you enter, with no overpayments. It is not the interest for a single year. The rent-or-buy table uses only the years in that column, not this full-term total. Cash has none.",
 
   totalCost:
-    "Total cost of ownership is the price, purchase costs and renovation, plus that option's currency transfer, lender fees and interest over the full mortgage term. Yearly running costs, such as IBI and community fees, are not in it. They stay in the annual cost.",
+    "Total cost of ownership is the price, purchase costs and renovation, plus that option's currency transfer, lender fees and interest over the full mortgage term. Yearly running costs, such as IBI and community fees, are not in it. They stay in the annual cost. If the digital nomad option is on, this total also adds the visa's one-off cost and its yearly cost for each year of the term. A cash purchase uses the Spanish mortgage term for that count. The non-resident tax that drops away is in the annual cost and the rent-or-buy table, not subtracted here a second time.",
 
   ibi: "IBI is the Spanish council tax, billed each year by the town hall. It follows the cadastral value, which is usually well below the price you pay, so it is not a percentage of the purchase price. The model uses the yearly amount you enter. A bill or the town hall is the source; your gestor can confirm it.",
 
@@ -80,13 +80,76 @@ export const spainHelp = {
     "The letting agency often charges the tenant about one month's rent, plus 21% IVA on that fee. The model takes the monthly rent times the number of months of fee, then adds IVA on the fee, and it does this again each season. Set the months to 0 if you pay the agency only once.",
 
   comparison:
-    "Each column is the cost after 1, 5 or 10 years. Rent is the season cost, rising by the annual increase you set. Buying is the price, purchase costs, renovation, currency transfer and finance fees, plus interest and running costs for those years only, minus what the villa is worth by then. A negative buying cost means the villa is worth more than the money spent. Selling costs are not deducted.",
+    "Each column is the cost after 1, 5 or 10 years. Rent is the season cost, rising by the annual increase you set. Buying is the price, purchase costs, renovation, currency transfer and finance fees, plus interest and running costs for those years only, minus what the villa is worth by then. A negative buying cost means the villa is worth more than the money spent. Selling costs are not deducted. If the digital nomad option is on, the visa costs are added to both renting and buying. Non-resident tax on the villa is only on the buy side, and that option turns it off.",
 
   appreciation:
     "Appreciation is your estimate of how fast the villa's value grows each year. It is not a forecast. The comparison starts from the post-renovation value, or from the purchase price if that is left at 0, and compounds this percentage. The model does not know the market.",
 
   breakeven:
-    "This is the first year, looking ahead up to 40, in which buying costs less than renting for that finance option. It uses the same sums as the 1, 5 and 10 year columns, including the appreciation rate and the yearly rent rise. If buying is still dearer after 40 years, it says so. It compares these estimates; it is not advice to buy or to rent.",
+    "This is the first year, looking ahead up to 40, in which buying costs less than renting for that finance option. It uses the same sums as the 1, 5 and 10 year columns, including the appreciation rate and the yearly rent rise. If the digital nomad option is on, visa costs sit on both sides, and the buy side no longer includes non-resident tax. If buying is still dearer after 40 years, it says so. It compares these estimates; it is not advice to buy or to rent.",
+
+  nomad:
+    "This switches the owner from non-resident to someone living in Spain on a digital nomad visa. Visa and residency costs are then counted every year, on a purchase and on a tenancy. Non-resident tax on the villa stops, because a resident's main home has no imputed income tax. ITP, IVA and AJD do not change. Spain's property golden visa ended on 3 April 2025, and this is not that route. Confirm the visa and the tax with an immigration lawyer and a Spanish tax adviser.",
+
+  goldenVisa:
+    "Spain stopped granting the property golden visa on 3 April 2025. Buying a villa does not by itself give a residence visa. No visa reduces ITP, IVA or AJD. Those purchase taxes stay as entered above.",
+
+  nomadVisaFee:
+    "The consular visa fee and the residence-application fee, as one lump sum. Amounts differ by consulate. €160 is a planning allowance, not the current tasa. Check the fee with the consulate or your immigration lawyer.",
+
+  nomadTie:
+    "The TIE is the foreigner's identity card, collected in Spain after you arrive. The official card fee is small; the default is that fee, not the travel or the gestor who books the appointment. Check the current tasa with your gestor.",
+
+  nomadTranslations:
+    "Sworn translations and apostilles for the documents the application asks for: contract, criminal record, certificates. A few hundred euros is a common allowance. The quote comes from the translator, not from this page.",
+
+  nomadCriminal:
+    "A criminal-record certificate from the country you have lived in, often with an apostille. The UK ACRO check is a typical example. The default is a planning allowance. Use the fee you will actually pay.",
+
+  nomadLawyer:
+    "An immigration lawyer or gestor prepares the digital nomad application. Quotes are often about €1,000–€3,000 for the first filing. This is a one-off. Renewal help is the separate renewal figure. Agree the quote before you rely on it.",
+
+  nomadHealth:
+    "The visa expects private health insurance with no copays and cover comparable to the Spanish public system, for the whole stay. About €1,000–€2,000 a year is a common planning range. It is counted every year, on a purchase and on a tenancy. Get a quote from an insurer.",
+
+  nomadRenewal:
+    "The first residence permission is usually for three years, then renewed. This is the fee plus professional help at each renewal, not every year. The annual cost spreads it over the years you enter. Check the interval and the fee with your immigration lawyer.",
+
+  nomadIncome:
+    "Gross income from the remote work you would rely on for the visa, before tax, for a full year. The default is an example, not your income. The income test compares it with the threshold. It is also the income used in the IRPF, Beckham and UK tax comparison.",
+
+  nomadThreshold:
+    "The digital nomad visa usually asks the main applicant for 200% of the Spanish minimum wage (SMI). For 2026 that is about €34,188 a year, roughly €2,849 a month, from an SMI of €1,221 across 14 payments. Dependants raise it. This is an estimate — confirm the figure the consulate or UGE is using.",
+
+  nomadIncomeTest:
+    "Pass means the remote-work income is at least the threshold. Fail means it is short. The test is a straight comparison of the two figures you entered. It is not a decision on the visa.",
+
+  nomadOneOff:
+    "The visa fee, TIE, translations, criminal-record check and the first immigration lawyer, added together. It is counted once, in the first year of owning and in the first year of renting. It is not part of the recurring annual cost.",
+
+  nomadAnnual:
+    "Health insurance, plus the renewal cost divided by the years between renewals. It is added to the net annual cost of owning, and to every year of the rent-or-buy comparison on both sides. Non-resident tax is not part of this figure.",
+
+  irpf:
+    "IRPF is the income tax a Spanish tax resident pays on the general base. These bands are a combined state plus Andalucía estimate: each slice of income above the personal allowance is charged at that slice's rate. Social security, the savings base, and regional deductions are not in the figure. Confirm the scale with a Spanish tax adviser.",
+
+  irpfAllowance:
+    "The general personal allowance (mínimo personal) deducted before the bands. About €5,550 is the usual starting point. Family allowances are not added. It is an estimate.",
+
+  beckham:
+    "The Beckham special regime taxes employment income at a flat 24% up to €600,000, and at the excess rate above that. Most foreign income that is not employment income is outside Spanish tax. It can apply in the year you become resident and the following five years, and only if you were not Spanish tax resident in the previous five years. The personal allowance is not deducted. Digital nomad holders can sometimes opt in. This salary tax is not added to the villa cost. Confirm eligibility with a Spanish tax adviser.",
+
+  beckhamEligible:
+    "Leave this on only if you were not Spanish tax resident in any of the five years before you move. If you were, the regime is not available and the Beckham column is left blank. This is a switch you set, not a check the page can make.",
+
+  ukResidentTax:
+    "Type the UK income tax you would pay on the same remote-work income if you stayed UK resident. It is blank until you enter it. The page does not calculate UK bands, National Insurance or the personal allowance. Pounds are converted at the villa's EUR/GBP rate so you can set them beside the Spanish figures.",
+
+  residencyTaxNote:
+    "Spanish wealth tax and the solidarity tax can apply to residents, and the UK–Spain double tax treaty decides which country taxes which income. Social security (autónomos, or a home-country certificate) is not in these figures. A Spanish tax adviser needs to confirm the position before you rely on it.",
+
+  irnrResident:
+    "Non-resident tax is off because this option treats you as Spanish tax resident. A resident's main home has no imputed income tax. If you still let the villa, that profit is taxed under IRPF, not in this line, and it is not in the salary comparison either. Purchase tax is unchanged. Confirm it with a Spanish tax adviser.",
 } as const;
 
 export type SpainHelpKey = keyof typeof spainHelp;

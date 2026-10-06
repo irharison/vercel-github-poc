@@ -6,6 +6,7 @@ import { spainHelp } from "@/lib/help/spain";
 import type { FinanceColumn, SpainVillaResult } from "@/lib/spain/types";
 import { NoteBanner, ResultRow, SectionCard } from "./fields";
 import { InfoTip } from "./info-tip";
+import { SpainResidencySummary } from "./spain-residency";
 
 const lineInfo: Record<string, string> = {
   "ITP transfer tax": spainHelp.itp,
@@ -22,6 +23,7 @@ const lineInfo: Record<string, string> = {
   "Community fees": spainHelp.community,
   Basura: spainHelp.basura,
   "Non-resident income tax": spainHelp.irnr,
+  "Visa and residency": spainHelp.nomadAnnual,
   "Holiday management": spainHelp.management,
   "VFT registration": spainHelp.vft,
   "Agency fee": spainHelp.agency,
@@ -296,8 +298,11 @@ export function SpainAppraisal({ result }: { result: SpainVillaResult }) {
           label="Non-resident income tax"
           amount={running.irnrEur}
           rate={rate}
+          info={running.irnrBasis === "resident" ? spainHelp.irnrResident : undefined}
           note={
-            running.irnrBasis === "imputed"
+            running.irnrBasis === "resident"
+              ? "Off. A resident's main home has no imputed non-resident tax. Purchase tax is unchanged."
+              : running.irnrBasis === "imputed"
               ? `${percent(inputs.imputationPercent)} of the ${eur(inputs.cadastralValueEur)} cadastral value, taxed at ${percent(inputs.irnrPercent)}. UK residents are generally 24%.`
               : running.irnrBasis === "grossRent"
                 ? `${percent(inputs.irnrPercent)} of gross rent. Fully let, so imputed income is not also charged.`
@@ -360,10 +365,16 @@ export function SpainAppraisal({ result }: { result: SpainVillaResult }) {
           <ResultRow
             label="Yield"
             value="—"
-            note="Enter rent to see a yield. With none, tax is on imputed income."
+            note={
+              running.irnrBasis === "resident"
+                ? "Enter rent to see a yield. Non-resident tax is off while the digital nomad option is on."
+                : "Enter rent to see a yield. With none, tax is on imputed income."
+            }
           />
         )}
       </SectionCard>
+
+      <SpainResidencySummary result={result} />
 
       <SectionCard
         title="Rent instead"
@@ -535,7 +546,9 @@ export function SpainFinance({ result }: { result: SpainVillaResult }) {
     },
     {
       label: "Total cost of ownership",
-      note: "Project, transfer, fees and interest. Running costs are extra.",
+      note: inputs.digitalNomad
+        ? "Project, transfer, fees, interest and visa costs over this term. Cash uses the Spanish term. The IRNR change is in the annual cost."
+        : "Project, transfer, fees and interest. Running costs are extra.",
       info: spainHelp.totalCost,
       emphasis: true,
       render: (column) => <Amount eurAmount={column.totalCostEur} rate={rate} />,
@@ -728,6 +741,9 @@ export function SpainStay({ result }: { result: SpainVillaResult }) {
         season. The {percent(inputs.appreciationPercent)} appreciation rate is an estimate, not a forecast.
         {result.holidayLet.enabled
           ? " Peak-season income is in the buying cost, and the VFT registration is counted in year one."
+          : ""}
+        {inputs.digitalNomad
+          ? " Visa costs are in the rent row and in each buy row. Non-resident tax is only on the buy side, and it is off while this visa is on."
           : ""}
       </p>
     </SectionCard>

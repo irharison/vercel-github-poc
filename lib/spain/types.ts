@@ -10,7 +10,13 @@ export type RenovationMode = "perM2" | "lineItems" | "both";
 export type RenovationTier = "light" | "medium" | "full";
 export type MortgageRateType = "fixed" | "variable";
 export type FinanceOptionId = "cash" | "spanishMortgage" | "ukRemortgage";
-export type IrnrBasis = "imputed" | "grossRent" | "netRent" | "holidayLet";
+export type IrnrBasis = "imputed" | "grossRent" | "netRent" | "holidayLet" | "resident";
+
+/** One slice of a progressive income-tax scale. `upTo` null is the top band. */
+export interface TaxBand {
+  upTo: number | null;
+  rate: number;
+}
 
 export interface SpainVillaInputs {
   label: string;
@@ -132,6 +138,48 @@ export interface SpainVillaInputs {
   travelFlightsEur: number;
   /** Applied each year to the rent and the other seasonal costs. */
   rentIncreasePercent: number;
+
+  /**
+   * Live in Spain on a digital nomad visa and be modelled as tax resident.
+   * Off keeps the non-resident treatment. It never changes ITP, IVA or AJD.
+   */
+  digitalNomad: boolean;
+  /** Consular visa and residence-application fees. One-off. */
+  nomadVisaFeeEur: number;
+  /** TIE card fee. One-off. */
+  nomadTieEur: number;
+  /** Sworn translations and apostilles. One-off. */
+  nomadTranslationsEur: number;
+  /** Criminal-record certificate. One-off. */
+  nomadCriminalRecordEur: number;
+  /** Immigration lawyer or gestor for the first application. One-off. */
+  nomadLawyerEur: number;
+  /** Private health insurance that the visa requires. Every year. */
+  nomadHealthAnnualEur: number;
+  /** Fees and professional help at each renewal. */
+  nomadRenewalEur: number;
+  /** Years between renewals. The annual figure spreads this cost. */
+  nomadRenewalEveryYears: number;
+  /** Gross yearly income from remote work. An example until replaced. */
+  remoteIncomeEur: number;
+  /** About 200% of the Spanish minimum wage. The income test uses this. */
+  incomeThresholdEur: number;
+  /** Personal allowance deducted before the IRPF bands. */
+  irpfAllowanceEur: number;
+  /** Combined state + Andalucía general-base bands. Estimates. */
+  irpfBands: TaxBand[];
+  /** No Spanish tax residence in the previous five years. */
+  beckhamEligible: boolean;
+  /** Flat rate on employment income up to the cap. */
+  beckhamRatePercent: number;
+  /** Employment income taxed at the flat rate. The rest uses the excess rate. */
+  beckhamCapEur: number;
+  /** Rate on employment income above the cap. */
+  beckhamExcessRatePercent: number;
+  /** Year of arrival plus the following five years. */
+  beckhamYears: number;
+  /** UK income tax on the same earnings, typed in by hand. Null until entered. */
+  ukResidentTaxGbp: number | null;
 }
 
 export interface CostLine {
@@ -236,6 +284,26 @@ export interface SpainVillaResult {
   tenancy: SeasonQuote;
   holidayLet: HolidayLetResult;
   comparison: StayComparison;
+  residency: ResidencyQuote;
+}
+
+/** Visa costs and the income-tax comparison. Salary tax is not a property cost. */
+export interface ResidencyQuote {
+  enabled: boolean;
+  oneOffEur: number;
+  annualEur: number;
+  renewalEveryYears: number;
+  incomeEur: number;
+  thresholdEur: number;
+  thresholdMonthlyEur: number;
+  incomeTestPassed: boolean;
+  irpfEur: number;
+  beckhamEligible: boolean;
+  /** Null when Beckham eligibility is switched off. */
+  beckhamEur: number | null;
+  beckhamYears: number;
+  ukTaxGbp: number | null;
+  ukTaxEur: number | null;
 }
 
 /** One off-season as a tenant. The deposit is refundable and is not in `costEur`. */

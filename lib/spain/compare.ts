@@ -4,6 +4,9 @@
  * A season's cost is the rent, the agency fee (including IVA), utilities,
  * cleaning, insurance, car hire and travel. The deposit is refundable and
  * is not included. Each later season grows by the annual increase.
+ * When the digital nomad option is on, the same visa costs are added to
+ * every year of renting and every year of owning. Non-resident tax stays
+ * on the buy side only, and that option turns it off.
  *
  * The cost of owning for Y years is:
  *   price + purchase costs + renovation + currency transfer + finance fees
@@ -19,6 +22,7 @@
  * pounds-per-euro rate.
  */
 
+import { visaCostOverYears } from "./residency";
 import type { SeasonQuote, SpainVillaInputs } from "./types";
 
 export const COMPARISON_YEARS = [1, 5, 10] as const;
@@ -91,7 +95,7 @@ export function rentCostOverYears(inputs: SpainVillaInputs, years: number, gbpPe
   for (let year = 0; year < count; year += 1) {
     total += seasonQuote(inputs, year, gbpPerEur).costEur;
   }
-  return total;
+  return total + visaCostOverYears(inputs, count);
 }
 
 /**

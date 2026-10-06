@@ -1,4 +1,4 @@
-import type { RenovationTier, SpainVillaInputs } from "./types";
+import type { RenovationTier, SpainVillaInputs, TaxBand } from "./types";
 
 /**
  * Planning defaults for a resale villa in Andalucía (Málaga / Marbella area).
@@ -42,6 +42,15 @@ import type { RenovationTier, SpainVillaInputs } from "./types";
  *   month plus 21% IVA, charged each season. Utilities €250 a month, cleaning
  *   €300, insurance €180, no car hire, €600 of travel. Rent and the other
  *   seasonal costs rise 3% a year.
+ * - Digital nomad residency is off, so the owner stays a non-resident and
+ *   purchase tax is unchanged. Switching it on uses planning allowances:
+ *   visa and application €160, TIE €16, translations and apostilles €400,
+ *   criminal-record check €120, immigration lawyer €1,500, health insurance
+ *   €1,500 a year, and an €800 renewal every 3 years. The income test uses
+ *   €48,000 against €34,188 (200% of the 2026 minimum wage, about €2,849 a
+ *   month). IRPF bands are a combined state + Andalucía estimate, after a
+ *   €5,550 personal allowance. Beckham is 24% up to €600,000 and 47% above,
+ *   for 6 years, and only if eligible. UK income tax is left blank.
  */
 export const SPAIN_ESTIMATE_NOTE =
   "These rates are planning estimates for Andalucía, not a quote and not tax or mortgage advice. Confirm them with a Spanish lawyer or gestor before you rely on the figures.";
@@ -95,6 +104,20 @@ export const RENOVATION_TIERS: ReadonlyArray<{
     hint: "Layout, structure and a full replacement of services.",
   },
 ];
+
+/** Combined state and Andalucía general-base rates. An estimate, not the return. */
+export function defaultIrpfBands(): TaxBand[] {
+  return [
+    { upTo: 12450, rate: 19 },
+    { upTo: 13000, rate: 21.5 },
+    { upTo: 20200, rate: 24 },
+    { upTo: 21100, rate: 27 },
+    { upTo: 35200, rate: 30 },
+    { upTo: 60000, rate: 37 },
+    { upTo: 300000, rate: 45 },
+    { upTo: null, rate: 47 },
+  ];
+}
 
 export function defaultSpainVilla(): SpainVillaInputs {
   return {
@@ -184,5 +207,25 @@ export function defaultSpainVilla(): SpainVillaInputs {
     carHirePerMonthEur: 0,
     travelFlightsEur: 600,
     rentIncreasePercent: 3,
+
+    digitalNomad: false,
+    nomadVisaFeeEur: 160,
+    nomadTieEur: 16,
+    nomadTranslationsEur: 400,
+    nomadCriminalRecordEur: 120,
+    nomadLawyerEur: 1500,
+    nomadHealthAnnualEur: 1500,
+    nomadRenewalEur: 800,
+    nomadRenewalEveryYears: 3,
+    remoteIncomeEur: 48000,
+    incomeThresholdEur: 34188,
+    irpfAllowanceEur: 5550,
+    irpfBands: defaultIrpfBands(),
+    beckhamEligible: true,
+    beckhamRatePercent: 24,
+    beckhamCapEur: 600000,
+    beckhamExcessRatePercent: 47,
+    beckhamYears: 6,
+    ukResidentTaxGbp: null,
   };
 }

@@ -5,6 +5,7 @@ import type {
   RenovationMode,
   RenovationTier,
   SpainVillaInputs,
+  TaxBand,
 } from "./types";
 
 function num(value: unknown, fallback: number): number {
@@ -17,6 +18,25 @@ function str(value: unknown, fallback: string): string {
 
 function bool(value: unknown, fallback: boolean): boolean {
   return typeof value === "boolean" ? value : fallback;
+}
+
+function optionalNum(value: unknown, fallback: number | null): number | null {
+  if (value == null) return fallback;
+  return typeof value === "number" && Number.isFinite(value) ? value : fallback;
+}
+
+function irpfBands(value: unknown, fallback: TaxBand[]): TaxBand[] {
+  if (!Array.isArray(value) || value.length === 0) return fallback;
+  const bands: TaxBand[] = [];
+  for (const item of value) {
+    if (item == null || typeof item !== "object") return fallback;
+    const row = item as Record<string, unknown>;
+    if (typeof row.rate !== "number" || !Number.isFinite(row.rate)) return fallback;
+    if (row.upTo == null) bands.push({ upTo: null, rate: row.rate });
+    else if (typeof row.upTo === "number" && Number.isFinite(row.upTo)) bands.push({ upTo: row.upTo, rate: row.rate });
+    else return fallback;
+  }
+  return bands;
 }
 
 function oneOf<T extends string>(value: unknown, allowed: readonly T[], fallback: T): T {
@@ -112,5 +132,24 @@ export function villaFromJson(raw: unknown): SpainVillaInputs {
     carHirePerMonthEur: num(j.carHirePerMonthEur, d.carHirePerMonthEur),
     travelFlightsEur: num(j.travelFlightsEur, d.travelFlightsEur),
     rentIncreasePercent: num(j.rentIncreasePercent, d.rentIncreasePercent),
+    digitalNomad: bool(j.digitalNomad, d.digitalNomad),
+    nomadVisaFeeEur: num(j.nomadVisaFeeEur, d.nomadVisaFeeEur),
+    nomadTieEur: num(j.nomadTieEur, d.nomadTieEur),
+    nomadTranslationsEur: num(j.nomadTranslationsEur, d.nomadTranslationsEur),
+    nomadCriminalRecordEur: num(j.nomadCriminalRecordEur, d.nomadCriminalRecordEur),
+    nomadLawyerEur: num(j.nomadLawyerEur, d.nomadLawyerEur),
+    nomadHealthAnnualEur: num(j.nomadHealthAnnualEur, d.nomadHealthAnnualEur),
+    nomadRenewalEur: num(j.nomadRenewalEur, d.nomadRenewalEur),
+    nomadRenewalEveryYears: num(j.nomadRenewalEveryYears, d.nomadRenewalEveryYears),
+    remoteIncomeEur: num(j.remoteIncomeEur, d.remoteIncomeEur),
+    incomeThresholdEur: num(j.incomeThresholdEur, d.incomeThresholdEur),
+    irpfAllowanceEur: num(j.irpfAllowanceEur, d.irpfAllowanceEur),
+    irpfBands: irpfBands(j.irpfBands, d.irpfBands),
+    beckhamEligible: bool(j.beckhamEligible, d.beckhamEligible),
+    beckhamRatePercent: num(j.beckhamRatePercent, d.beckhamRatePercent),
+    beckhamCapEur: num(j.beckhamCapEur, d.beckhamCapEur),
+    beckhamExcessRatePercent: num(j.beckhamExcessRatePercent, d.beckhamExcessRatePercent),
+    beckhamYears: num(j.beckhamYears, d.beckhamYears),
+    ukResidentTaxGbp: optionalNum(j.ukResidentTaxGbp, d.ukResidentTaxGbp),
   };
 }

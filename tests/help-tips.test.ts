@@ -36,6 +36,27 @@ const spainKeys: SpainHelpKey[] = [
   "comparison",
   "appreciation",
   "breakeven",
+  "nomad",
+  "goldenVisa",
+  "nomadVisaFee",
+  "nomadTie",
+  "nomadTranslations",
+  "nomadCriminal",
+  "nomadLawyer",
+  "nomadHealth",
+  "nomadRenewal",
+  "nomadIncome",
+  "nomadThreshold",
+  "nomadIncomeTest",
+  "nomadOneOff",
+  "nomadAnnual",
+  "irpf",
+  "irpfAllowance",
+  "beckham",
+  "beckhamEligible",
+  "ukResidentTax",
+  "residencyTaxNote",
+  "irnrResident",
 ];
 
 const advisorKeys: SpainHelpKey[] = [
@@ -51,6 +72,10 @@ const advisorKeys: SpainHelpKey[] = [
   "irnr",
   "vft",
   "ltv",
+  "nomad",
+  "irpf",
+  "beckham",
+  "irnrResident",
 ];
 
 describe("Spain villa explanations", () => {
@@ -62,7 +87,7 @@ describe("Spain villa explanations", () => {
 
   it("tells the reader to check tax and lending figures", () => {
     for (const key of advisorKeys) {
-      expect(spainHelp[key].toLowerCase()).toMatch(/lawyer|gestor|lender/);
+      expect(spainHelp[key].toLowerCase()).toMatch(/lawyer|gestor|lender|adviser/);
     }
   });
 

@@ -145,6 +145,80 @@ export function MoneyField({
   );
 }
 
+/** A money field that can be left empty. Empty stays empty instead of becoming zero. */
+export function OptionalMoneyField({
+  label,
+  value,
+  onChange,
+  helper,
+  prefix = "£",
+  suffix,
+  decimals = false,
+  min,
+  max,
+  info,
+}: {
+  label: string;
+  value: number | null;
+  onChange: (value: number | null) => void;
+  helper?: string;
+  prefix?: string | null;
+  suffix?: string;
+  decimals?: boolean;
+  min?: number;
+  max?: number;
+  info?: string;
+}) {
+  const [focused, setFocused] = useState(false);
+  const [draft, setDraft] = useState(() => (value == null ? "" : formatFieldValue(value)));
+  const display = focused ? draft : value == null ? "" : formatFieldValue(value);
+
+  return (
+    <label className="block text-sm">
+      <span className="mb-1 flex items-center text-stone-600 dark:text-stone-300">
+        <span>{label}</span>
+        {info ? <InfoTip label={label} text={info} /> : null}
+      </span>
+      <div className="flex items-center rounded-md border border-stone-300 bg-white dark:border-stone-700 dark:bg-stone-950">
+        {prefix ? <span className="pl-3 text-stone-400">{prefix}</span> : null}
+        <input
+          className="w-full bg-transparent px-3 py-2 outline-none"
+          inputMode={decimals ? "decimal" : "numeric"}
+          value={display}
+          onFocus={() => {
+            setFocused(true);
+            setDraft(value == null ? "" : formatFieldValue(value));
+          }}
+          onChange={(event) => {
+            const text = event.target.value;
+            if (!isAllowedNumericDraft(text)) return;
+            setDraft(text);
+            if (text.trim() === "") onChange(null);
+            else {
+              const parsed = parseNumericInput(text);
+              if (parsed != null) onChange(parsed);
+            }
+          }}
+          onBlur={() => {
+            if (draft.trim() === "") {
+              onChange(null);
+              setDraft("");
+              setFocused(false);
+              return;
+            }
+            const next = settleNumericDraft(draft, { min, max, emptyValue: min ?? 0 });
+            onChange(next);
+            setDraft(formatFieldValue(next));
+            setFocused(false);
+          }}
+        />
+        {suffix ? <span className="pr-3 text-stone-400">{suffix}</span> : null}
+      </div>
+      {helper ? <span className="mt-1 block text-xs text-stone-500">{helper}</span> : null}
+    </label>
+  );
+}
+
 export function PercentField(props: {
   label: string;
   value: number;
